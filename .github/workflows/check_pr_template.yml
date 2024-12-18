@@ -22,32 +22,7 @@ jobs:
           # Check for empty fields
           if [[ "$PR_BODY" == *'""'* ]]; then
             echo "Some fields in the PR template are not filled out."
-            
-            # Find specific empty fields (for better feedback)
-            if [[ "$PR_BODY" == *'- **Submission Name:** \(\*\)  - ""'* ]]; then
-              echo "  - Submission Name is empty."
-            fi
-            if [[ "$PR_BODY" == *'- **Submission Folder:** \(\*\)  - ""'* ]]; then
-              echo "  - Submission Folder is empty."
-            fi
-            if [[ "$PR_BODY" == *'- **Authors/Team:** \(\*\)  - ""'* ]]; then
-              echo "  - Authors/Team is empty."
-            fi
-            if [[ "$PR_BODY" == *'- **Affiliations:** \(\*\)  - ""'* ]]; then
-              echo "  - Affiliations is empty."
-            fi
-            if [[ "$PR_BODY" == *'- **Ruleset:** \(\*\)  - ""'* ]]; then
-              echo "  - Ruleset is empty."
-            fi
-            if [[ "$PR_BODY" == *'- **Framework:** \(\*\)  - ""'* ]]; then
-              echo "  - Framework is empty."
-            fi
-            if [[ "$PR_BODY" == *'- **Submission Description:** \(\*\)  - ""'* ]]; then
-              echo "  - Submission Description is empty."
-            fi
-
             echo "::set-output name=filled_out::false"
-            exit 1
           else
             echo "All fields in the PR template are filled out."
             echo "::set-output name=filled_out::true"
@@ -66,6 +41,7 @@ jobs:
         if: steps.check_filled_out.outputs.filled_out == 'false'
         run: |
           gh pr edit ${{ github.event.number }} --add-label "Incomplete"
+          exit 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
