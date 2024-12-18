@@ -8,11 +8,23 @@ jobs:
   check_template:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install js-yaml
+
       - name: Check PR template
         id: check_template
         uses: actions/github-script@v6
         with:
           script: |
+            const yaml = require('js-yaml');
             const prBody = context.payload.pull_request.body || '';
             
             // Normalize line endings
@@ -46,7 +58,6 @@ jobs:
             const yamlContent = normalizedBody.slice(contentStart, endIndex);
             console.log('Extracted YAML content:', yamlContent);
             
-            const yaml = require('js-yaml');
             let data;
             try {
               // Remove comments from YAML content
