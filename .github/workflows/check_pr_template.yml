@@ -7,9 +7,15 @@ on:
 jobs:
   check_template:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -19,24 +25,19 @@ jobs:
       - name: Install dependencies
         run: npm install js-yaml
 
-      - name: Check PR template
+      - name: Check PR template and create submission file
         id: check_template
         uses: actions/github-script@v6
         with:
           script: |
+            const fs = require('fs').promises;
             const yaml = require('js-yaml');
             const prBody = context.payload.pull_request.body || '';
             
             // Normalize line endings
             const normalizedBody = prBody.replace(/\r\n/g, '\n');
             
-            // Debug logging
-            console.log('PR Body length:', normalizedBody.length);
-            console.log('PR Body first 500 chars:', normalizedBody.substring(0, 500));
-            console.log('PR Body contains ```yaml:', normalizedBody.includes('```yaml'));
-            console.log('PR Body contains backticks:', normalizedBody.split('```').length - 1);
-            
-            // Find start and end indices
+            // Extract and parse YAML
             const startMarker = '```yaml\n';
             const endMarker = '\n```';
             
@@ -81,6 +82,7 @@ jobs:
               return;
             }
             
+            // Validate required fields
             const requiredFields = [
               'submission_name',
               'submission_folder',
@@ -121,7 +123,7 @@ jobs:
               core.setFailed('Empty fields found');
               return;
             }
-            
+
             // Remove incomplete label if present
             try {
               const { data: labels } = await github.rest.issues.listLabelsOnIssue({
@@ -144,3 +146,49 @@ jobs:
             
             core.setOutput('filled_out', 'true');
             core.setOutput('submission_data', data);
+            
+            // Create submission_info.yml
+            try {
+              let submissionPath;
+              if (data.ruleset === 'external') {
+                submissionPath = `submissions/external_tuning/${data.submission_folder}`;
+              } else if (data.ruleset === 'self-tuning') {
+                submissionPath = `submissions/self_tuning/${data.submission_folder}`;
+              } else {
+                core.setFailed(`Invalid ruleset value: ${data.ruleset}. Must be "external" or "self-tuning".`);
+                return;
+              }
+              
+              // Check if directory exists, create if it doesn't
+              try {
+                await fs.mkdir(submissionPath, { recursive: true });
+              } catch (error) {
+                console.log('Error creating directory:', error);
+                core.setFailed(`Failed to create directory: ${error.message}`);
+                return;
+              }
+              
+              // Write the YAML file
+              const yamlStr = yaml.dump(data);
+              const filePath = `${submissionPath}/submission_info.yml`;
+              await fs.writeFile(filePath, yamlStr);
+              
+              console.log('Created submission_info.yml');
+              
+            } catch (error) {
+              console.log('Error creating submission file:', error);
+              core.setFailed(`Failed to create submission file: ${error.message}`);
+              return;
+            }
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add submissions/*/*/*
+          
+          # Check if there are changes to commit
+          git diff --staged --quiet || (
+            git commit -m "Add/Update submission_info.yml" -m "Automated commit by GitHub Action"
+            git push
+          )
