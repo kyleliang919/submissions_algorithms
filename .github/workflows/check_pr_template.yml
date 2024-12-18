@@ -20,50 +20,6 @@ jobs:
           PR_BODY=$(gh pr view ${{ github.event.number }} --json body --jq .body)
 
           echo $PR_Body
-
-          # Extract YAML section
-          YAML_START=$(echo "$PR_BODY" | grep -n "```yaml" | head -n 1 | cut -d: -f1)
-          YAML_END=$(echo "$PR_BODY" | grep -n "```" | tail -n 1 | cut -d: -f1)
-          
-          if [[ -z "$YAML_START" || -z "$YAML_END" ]]; then
-            echo "YAML section not found in PR body."
-            echo "::set-output name=filled_out::false"
-          else
-            YAML_SECTION=$(echo "$PR_BODY" | head -n "$YAML_END" | tail -n $(("$YAML_END" - "$YAML_START" - 1)))
-
-            # Check for empty fields in YAML section
-            if [[ "$YAML_SECTION" == *": \"\""* ]]; then
-              echo "Some fields in the YAML section are not filled out."
-
-              # Find specific empty fields
-              if [[ "$YAML_SECTION" == *"submission_name: \"\""* ]]; then
-                echo "  - submission_name is empty."
-              fi
-              if [[ "$YAML_SECTION" == *"submission_folder: \"\""* ]]; then
-                echo "  - submission_folder is empty."
-              fi
-              if [[ "$YAML_SECTION" == *"authors: \"\""* ]]; then
-                echo "  - authors is empty."
-              fi
-              if [[ "$YAML_SECTION" == *"affiliations: \"\""* ]]; then
-                echo "  - affiliations is empty."
-              fi
-              if [[ "$YAML_SECTION" == *"ruleset: \"\""* ]]; then
-                echo "  - ruleset is empty."
-              fi
-              if [[ "$YAML_SECTION" == *"framework: \"\""* ]]; then
-                echo "  - framework is empty."
-              fi
-              if [[ "$YAML_SECTION" == *"description: \"\""* ]]; then
-                echo "  - description is empty."
-              fi
-
-              echo "::set-output name=filled_out::false"
-            else
-              echo "All fields in the YAML section are filled out."
-              echo "::set-output name=filled_out::true"
-            fi
-          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
