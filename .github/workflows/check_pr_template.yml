@@ -22,7 +22,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: ':warning: Could not find YAML section in PR description. Please use the PR template.'
+                body: ':warning: Could not find the YAML section in Pull Request. Please use the PR template and fill out all fields in the YAML section.'
               });
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
