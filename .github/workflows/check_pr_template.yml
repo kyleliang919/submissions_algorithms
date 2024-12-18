@@ -15,58 +15,48 @@ jobs:
           script: |
             const prBody = context.payload.pull_request.body || '';
             
+            // Normalize line endings
+            const normalizedBody = prBody.replace(/\r\n/g, '\n');
+            
             // Debug logging
-            console.log('PR Body length:', prBody.length);
-            console.log('PR Body first 500 chars:', prBody.substring(0, 500));
-            console.log('PR Body contains ```yaml:', prBody.includes('```yaml'));
-            console.log('PR Body contains backticks:', prBody.split('```').length - 1);
+            console.log('PR Body length:', normalizedBody.length);
+            console.log('PR Body first 500 chars:', normalizedBody.substring(0, 500));
+            console.log('PR Body contains ```yaml:', normalizedBody.includes('```yaml'));
+            console.log('PR Body contains backticks:', normalizedBody.split('```').length - 1);
             
-            // Try multiple approaches to extract YAML
-            let yamlContent = null;
+            // Find start and end indices
+            const startMarker = '```yaml\n';
+            const endMarker = '\n```';
             
-            // Approach 1: Simple split
-            const parts = prBody.split('```yaml\n');
-            if (parts.length > 1) {
-              const endParts = parts[1].split('```');
-              if (endParts.length > 1) {
-                yamlContent = endParts[0];
-                console.log('Found YAML using split approach');
-              }
-            }
-            
-            // Approach 2: Regex if split failed
-            if (!yamlContent) {
-              const yamlMatch = prBody.match(/```yaml\n([\s\S]*?)\n```/);
-              if (yamlMatch) {
-                yamlContent = yamlMatch[1];
-                console.log('Found YAML using regex approach');
-              }
-            }
-            
-            if (!yamlContent) {
-              console.log('Failed to extract YAML section');
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                body: ':warning: Could not find the YAML section in Pull Request. Please use the PR template and fill out all fields in the YAML section.'
-              });
-              await github.rest.issues.addLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                labels: ['🚧 Incomplete']
-              });
-              core.setFailed('YAML section not found');
+            const startIndex = normalizedBody.indexOf(startMarker);
+            if (startIndex === -1) {
+              console.log('Could not find start marker');
+              core.setFailed('Start marker not found');
               return;
             }
             
+            const contentStart = startIndex + startMarker.length;
+            const endIndex = normalizedBody.indexOf(endMarker, contentStart);
+            if (endIndex === -1) {
+              console.log('Could not find end marker');
+              core.setFailed('End marker not found');
+              return;
+            }
+            
+            const yamlContent = normalizedBody.slice(contentStart, endIndex);
             console.log('Extracted YAML content:', yamlContent);
             
             const yaml = require('js-yaml');
             let data;
             try {
-              data = yaml.load(yamlContent);
+              // Remove comments from YAML content
+              const cleanYaml = yamlContent
+                .split('\n')
+                .map(line => line.split('#')[0].trim())
+                .join('\n');
+              
+              console.log('Cleaned YAML content:', cleanYaml);
+              data = yaml.load(cleanYaml);
               console.log('Parsed YAML data:', data);
             } catch (error) {
               console.log('YAML parsing error:', error);
