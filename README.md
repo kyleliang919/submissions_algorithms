@@ -5,22 +5,14 @@
 <a href="#"><img width="600" img src=".assets/mlc_logo.png" alt="MLCommons Logo"/></a>
 </p>
 
-<!-- <p align="center">
-  <a href="https://github.com/mlcommons/algorithmic-efficiency">Benchmark Codebase</a> •
-  <a href="/GETTING_STARTED.md">Getting Started</a> •
-  <a href="/DOCUMENTATION.md">Documentation</a>
-</p> -->
-
-## AlgoPerf: Training Algorithms Leaderboard
-
-> **Leaderboard Version:** 0.5  
-> **Last Updated:** 2023-12-18 09:54 UTC
-
 This repository hosts the official rolling leaderboard for the [**AlgoPerf: Training Algorithms benchmark**](https://github.com/mlcommons/algorithmic-efficiency) by [**MLCommons**](https://mlcommons.org/).
 The benchmark measures neural network training speedups due to algorithmic improvements in training algorithms.
 The leaderboard tracks the aggregate performance of different algorithms on a variety of [workloads](https://github.com/mlcommons/algorithmic-efficiency/blob/main/DOCUMENTATION.md#workloads) and under two different [tuning rulesets](https://github.com/mlcommons/algorithmic-efficiency/blob/main/DOCUMENTATION.md#tuning).
 
-### External Tuning Ruleset Leaderboard
+> **Leaderboard Version:** 0.5  
+> **Last Updated:** 2023-12-18 09:54 UTC
+
+## External Tuning Ruleset Leaderboard
 
 *In the external tuning ruleset, submission must provide workload-agnostic hyperparameter search spaces and they will get $5$ tuning trials per workload sampled from this search space.*
 
@@ -42,7 +34,7 @@ The leaderboard tracks the aggregate performance of different algorithms on a va
 | 11.      | <details><summary>**Schedule Free Prodigy**</summary>Combining Schedule-free ([Defazio et al., 2024](https://openreview.net/forum?id=0XeNkkENuI)) with the Prodigy optimizer ([Mishchenko & Defazio, 2024](https://openreview.net/forum?id=WpQbM1kBuy)).</details> | Alice Yang, Aaron Defazio, Konstantin Mishchenko                                                                     | Meta AI, Samsung AI              | PyTorch       | **0.0000** |
 <!-- END EXTERNAL TUNING LEADERBOARD -->
 
-### Self-Tuning Ruleset Leaderboard
+## Self-Tuning Ruleset Leaderboard
 
 *In the self-tuning ruleset, submissions must be completely hyperparameter-free.*
 
