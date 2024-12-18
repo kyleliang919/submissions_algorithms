@@ -189,6 +189,7 @@ jobs:
           
           # Check if there are changes to commit
           git diff --staged --quiet || (
-            git commit -m "Add/Update submission_info.yml" -m "Automated commit by GitHub Action"
-            git push
+            # Amend the existing commit instead of creating a new one
+            git commit --amend --no-edit
+            git push --force-with-lease
           )
