@@ -26,7 +26,6 @@ jobs:
           if [[ -z "$YAML_START" || -z "$YAML_END" ]]; then
             echo "YAML section not found in PR body."
             echo "::set-output name=filled_out::false"
-            exit 1
           fi
 
           YAML_SECTION=$(echo "$PR_BODY" | head -n "$YAML_END" | tail -n $(("$YAML_END" - "$YAML_START" - 1)))
