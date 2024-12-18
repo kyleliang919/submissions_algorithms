@@ -1,0 +1,53 @@
+name: Check if PR Template Is Complete
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check_template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Check if PR template is filled out
+        id: check_filled_out
+        run: |
+          PR_BODY=$(gh pr view ${{ github.event.number }} --json body --jq .body)
+
+          # Check for empty fields
+          if [[ "$PR_BODY" == *'""'* ]]; then
+            echo "Some fields in the PR template are not filled out."
+            echo "::set-output name=filled_out::false"
+          else
+            echo "All fields in the PR template are filled out."
+            echo "::set-output name=filled_out::true"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR if not filled out
+        if: steps.check_filled_out.outputs.filled_out == 'false'
+        run: |
+          gh pr comment ${{ github.event.number }} --body "Please fill out all required fields in the PR template before merging. :warning:"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add 'Incomplete' label if not filled out
+        if: steps.check_filled_out.outputs.filled_out == 'false'
+        run: |
+          gh pr edit ${{ github.event.number }} --add-label "Incomplete"
+          exit 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove 'Incomplete' label if filled out
+        if: steps.check_filled_out.outputs.filled_out == 'true'
+        run: |
+          gh pr edit ${{ github.event.number }} --remove-label "Incomplete"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

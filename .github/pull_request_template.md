@@ -6,7 +6,7 @@
 
 - **Submission Name:** *(as it will appear on the leaderboard.)*
   - ""
-- **Submission Folder:** *(name of the submission folder within `submissions/external_tuning/` or `submissions/self_tuning/`. Should be lower case and not contain spaces.)*
+- **Submission Folder:** *(name of the submission folder within `submissions/external_tuning/` or `submissions/self_tuning/`. Should be lowercase and not contain spaces.)*
   - ""
 - **Authors/Team:** *(please list them seperated by commas.)*
   - ""
@@ -23,7 +23,7 @@
 
 ## Evidence for the Submission's Performance
 
-*If possible provide some evidence of your submission's performance. E.g. a link to a paper/pre-print, training logs, screenshots, etc. The working group will prioritize to evalute submissions with more evidence.*
+*If possible provide some evidence of your submission's performance. E.g. a link to a paper/pre-print, training logs, screenshots, etc. The working group will prioritize the evaluation of submissions with more convincing evidence.*
 
 ## Comments
 
