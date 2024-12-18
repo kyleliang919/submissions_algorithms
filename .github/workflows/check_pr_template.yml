@@ -15,9 +15,36 @@ jobs:
           script: |
             const prBody = context.payload.pull_request.body || '';
             
-            // Extract YAML section
-            const yamlMatch = prBody.match(/```yaml\n([\s\S]*?)```/);
-            if (!yamlMatch) {
+            // Debug logging
+            console.log('PR Body length:', prBody.length);
+            console.log('PR Body first 500 chars:', prBody.substring(0, 500));
+            console.log('PR Body contains ```yaml:', prBody.includes('```yaml'));
+            console.log('PR Body contains backticks:', prBody.split('```').length - 1);
+            
+            // Try multiple approaches to extract YAML
+            let yamlContent = null;
+            
+            // Approach 1: Simple split
+            const parts = prBody.split('```yaml\n');
+            if (parts.length > 1) {
+              const endParts = parts[1].split('```');
+              if (endParts.length > 1) {
+                yamlContent = endParts[0];
+                console.log('Found YAML using split approach');
+              }
+            }
+            
+            // Approach 2: Regex if split failed
+            if (!yamlContent) {
+              const yamlMatch = prBody.match(/```yaml\n([\s\S]*?)\n```/);
+              if (yamlMatch) {
+                yamlContent = yamlMatch[1];
+                console.log('Found YAML using regex approach');
+              }
+            }
+            
+            if (!yamlContent) {
+              console.log('Failed to extract YAML section');
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -34,11 +61,15 @@ jobs:
               return;
             }
             
+            console.log('Extracted YAML content:', yamlContent);
+            
             const yaml = require('js-yaml');
             let data;
             try {
-              data = yaml.load(yamlMatch[1]);
+              data = yaml.load(yamlContent);
+              console.log('Parsed YAML data:', data);
             } catch (error) {
+              console.log('YAML parsing error:', error);
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -49,7 +80,6 @@ jobs:
               return;
             }
             
-            // Check required fields
             const requiredFields = [
               'submission_name',
               'submission_folder',
@@ -61,8 +91,11 @@ jobs:
             ];
             
             const emptyFields = requiredFields.filter(field => {
-              const value = data[field];
-              return !value || value.trim() === '' || value === '""';
+              const value = data?.[field];
+              return !value || 
+                     value.toString().trim() === '' || 
+                     value === '""' ||
+                     value === '\"\"';
             });
             
             if (emptyFields.length > 0) {
@@ -88,9 +121,8 @@ jobs:
               return;
             }
             
-            // If we get here, all fields are filled out
+            // Remove incomplete label if present
             try {
-              // Try to remove the incomplete label if it exists
               const { data: labels } = await github.rest.issues.listLabelsOnIssue({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -106,7 +138,7 @@ jobs:
                 });
               }
             } catch (error) {
-              // Ignore errors when trying to remove non-existent label
+              console.log('Error handling labels:', error);
             }
             
             core.setOutput('filled_out', 'true');
