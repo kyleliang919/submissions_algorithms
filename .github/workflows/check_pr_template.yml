@@ -8,39 +8,106 @@ jobs:
   check_template:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+      - name: Check PR template
+        id: check_template
+        uses: actions/github-script@v6
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-
-      - name: Check if YAML section is filled out
-        id: check_filled_out
-        run: |
-          PR_BODY=$(gh pr view ${{ github.event.number }} --json body --jq .body)
-
-          echo $PR_Body
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Comment on PR if not filled out
-        if: steps.check_filled_out.outputs.filled_out == 'false'
-        run: |
-          gh pr comment ${{ github.event.number }} --body ":warning: Please fill out all required fields in the PR template."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Add 'Incomplete' label if not filled out
-        if: steps.check_filled_out.outputs.filled_out == 'false'
-        run: |
-          gh pr edit ${{ github.event.number }} --add-label "🚧 Incomplete"
-          exit 1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Remove 'Incomplete' label if filled out
-        if: steps.check_filled_out.outputs.filled_out == 'true'
-        run: |
-          gh pr edit ${{ github.event.number }} --remove-label "🚧 Incomplete"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prBody = context.payload.pull_request.body || '';
+            
+            // Extract YAML section
+            const yamlMatch = prBody.match(/```yaml\n([\s\S]*?)```/);
+            if (!yamlMatch) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: ':warning: Could not find YAML section in PR description. Please use the PR template.'
+              });
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels: ['🚧 Incomplete']
+              });
+              core.setFailed('YAML section not found');
+              return;
+            }
+            
+            const yaml = require('js-yaml');
+            let data;
+            try {
+              data = yaml.load(yamlMatch[1]);
+            } catch (error) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `:warning: Error parsing YAML: ${error.message}`
+              });
+              core.setFailed(`Invalid YAML: ${error.message}`);
+              return;
+            }
+            
+            // Check required fields
+            const requiredFields = [
+              'submission_name',
+              'submission_folder',
+              'authors',
+              'affiliations',
+              'ruleset',
+              'framework',
+              'description'
+            ];
+            
+            const emptyFields = requiredFields.filter(field => {
+              const value = data[field];
+              return !value || value.trim() === '' || value === '""';
+            });
+            
+            if (emptyFields.length > 0) {
+              const emptyFieldsList = emptyFields
+                .map(field => `  - ${field} is empty`)
+                .join('\n');
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `:warning: Please fill out all required fields in the PR template:\n\n${emptyFieldsList}`
+              });
+              
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels: ['🚧 Incomplete']
+              });
+              
+              core.setFailed('Empty fields found');
+              return;
+            }
+            
+            // If we get here, all fields are filled out
+            try {
+              // Try to remove the incomplete label if it exists
+              const { data: labels } = await github.rest.issues.listLabelsOnIssue({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number
+              });
+              
+              if (labels.some(label => label.name === '🚧 Incomplete')) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.pull_request.number,
+                  name: '🚧 Incomplete'
+                });
+              }
+            } catch (error) {
+              // Ignore errors when trying to remove non-existent label
+            }
+            
+            core.setOutput('filled_out', 'true');
+            core.setOutput('submission_data', data);
