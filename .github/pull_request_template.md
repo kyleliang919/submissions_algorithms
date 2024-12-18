@@ -4,27 +4,21 @@
 
 *Please fill out the following information about your submission within the quotation marks.*
 
-- **Submission Name:** *(as it will appear on the leaderboard.)*
-  - ""
-- **Submission Folder:** *(name of the submission folder within `submissions/external_tuning/` or `submissions/self_tuning/`. Should be lowercase and not contain spaces.)*
-  - ""
-- **Authors/Team:** *(please list them seperated by commas.)*
-  - ""
-- **Affiliations:** *(please list all affiliations of the authors, seperated by commas.)*
-  - ""
-- **Version:** *(optionally, provide a version number of your submission. Defaults to `1.0`.)*
-  - "1.0"
-- **Ruleset:** *(Either `"External Tuning"` or `"Self-Tuning"`.)*
-  - ""
-- **Framework:** *(The deep learning framework used. Either `"PyTorch"` or `"JAX"`.)*
-  - ""
-- **Submission Description:** *(A short, high-level description of the algorithm.)*
-  - ""
+```yaml
+submission_name: ""  # As it will appear on the leaderboard
+submission_folder: ""  # Name of folder within `submissions/external_tuning/` or `submissions/self_tuning/` (lowercase, no spaces)
+authors: ""  # List authors separated by commas
+affiliations: ""  # List all affiliations of the authors, separated by commas
+version: "1.0"  # Optional version number of your submission
+ruleset: ""  # Either "external" or "self-tuning"
+framework: ""  # Either "PyTorch" or "JAX"
+description: ""  # A short, high-level description of the algorithm
+```
 
 ## Evidence for the Submission's Performance
 
-*If possible provide some evidence of your submission's performance. E.g. a link to a paper/pre-print, training logs, screenshots, etc. The working group will prioritize the evaluation of submissions with more convincing evidence.*
+*If possible provide some evidence of your submission's performance. E.g. a link to a paper/pre-print, training logs, screenshots, etc. The working group will prioritize evaluating submissions with more convincing evidence.*
 
 ## Comments
 
-*Feel free to add any comments, descriptions, or questions you have here.*
+*Feel free to add any comments, descriptions, or questions here.*

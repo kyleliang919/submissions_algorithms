@@ -7,47 +7,188 @@ on:
 jobs:
   check_template:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
-      - name: Check if PR template is filled out
-        id: check_filled_out
-        run: |
-          PR_BODY=$(gh pr view ${{ github.event.number }} --json body --jq .body)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-          # Check for empty fields
-          if [[ "$PR_BODY" == *'""'* ]]; then
-            echo "Some fields in the PR template are not filled out."
-            echo "::set-output name=filled_out::false"
-          else
-            echo "All fields in the PR template are filled out."
-            echo "::set-output name=filled_out::true"
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install dependencies
+        run: npm install js-yaml
 
-      - name: Comment on PR if not filled out
-        if: steps.check_filled_out.outputs.filled_out == 'false'
-        run: |
-          gh pr comment ${{ github.event.number }} --body "Please fill out all required fields in the PR template before merging. :warning:"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check PR template and create submission file
+        id: check_template
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs').promises;
+            const yaml = require('js-yaml');
+            const prBody = context.payload.pull_request.body || '';
+            
+            // Normalize line endings
+            const normalizedBody = prBody.replace(/\r\n/g, '\n');
+            
+            // Extract and parse YAML
+            const startMarker = '```yaml\n';
+            const endMarker = '\n```';
+            
+            const startIndex = normalizedBody.indexOf(startMarker);
+            if (startIndex === -1) {
+              console.log('Could not find start marker');
+              core.setFailed('Start marker not found');
+              return;
+            }
+            
+            const contentStart = startIndex + startMarker.length;
+            const endIndex = normalizedBody.indexOf(endMarker, contentStart);
+            if (endIndex === -1) {
+              console.log('Could not find end marker');
+              core.setFailed('End marker not found');
+              return;
+            }
+            
+            const yamlContent = normalizedBody.slice(contentStart, endIndex);
+            console.log('Extracted YAML content:', yamlContent);
+            
+            let data;
+            try {
+              // Remove comments from YAML content
+              const cleanYaml = yamlContent
+                .split('\n')
+                .map(line => line.split('#')[0].trim())
+                .join('\n');
+              
+              console.log('Cleaned YAML content:', cleanYaml);
+              data = yaml.load(cleanYaml);
+              console.log('Parsed YAML data:', data);
+            } catch (error) {
+              console.log('YAML parsing error:', error);
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `:warning: Error parsing YAML: ${error.message}`
+              });
+              core.setFailed(`Invalid YAML: ${error.message}`);
+              return;
+            }
+            
+            // Validate required fields
+            const requiredFields = [
+              'submission_name',
+              'submission_folder',
+              'authors',
+              'affiliations',
+              'ruleset',
+              'framework',
+              'description'
+            ];
+            
+            const emptyFields = requiredFields.filter(field => {
+              const value = data?.[field];
+              return !value || 
+                     value.toString().trim() === '' || 
+                     value === '""' ||
+                     value === '\"\"';
+            });
+            
+            if (emptyFields.length > 0) {
+              const emptyFieldsList = emptyFields
+                .map(field => `  - ${field} is empty`)
+                .join('\n');
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: `:warning: Please fill out all required fields in the PR template:\n\n${emptyFieldsList}`
+              });
+              
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels: ['🚧 Incomplete']
+              });
+              
+              core.setFailed('Empty fields found');
+              return;
+            }
 
-      - name: Add 'Incomplete' label if not filled out
-        if: steps.check_filled_out.outputs.filled_out == 'false'
-        run: |
-          gh pr edit ${{ github.event.number }} --add-label "Incomplete"
-          exit 1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            // Remove incomplete label if present
+            try {
+              const { data: labels } = await github.rest.issues.listLabelsOnIssue({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number
+              });
+              
+              if (labels.some(label => label.name === '🚧 Incomplete')) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.pull_request.number,
+                  name: '🚧 Incomplete'
+                });
+              }
+            } catch (error) {
+              console.log('Error handling labels:', error);
+            }
+            
+            core.setOutput('filled_out', 'true');
+            core.setOutput('submission_data', data);
+            
+            // Create submission_info.yml
+            try {
+              let submissionPath;
+              if (data.ruleset === 'external') {
+                submissionPath = `submissions/external_tuning/${data.submission_folder}`;
+              } else if (data.ruleset === 'self-tuning') {
+                submissionPath = `submissions/self_tuning/${data.submission_folder}`;
+              } else {
+                core.setFailed(`Invalid ruleset value: ${data.ruleset}. Must be "external" or "self-tuning".`);
+                return;
+              }
+              
+              // Check if directory exists, create if it doesn't
+              try {
+                await fs.mkdir(submissionPath, { recursive: true });
+              } catch (error) {
+                console.log('Error creating directory:', error);
+                core.setFailed(`Failed to create directory: ${error.message}`);
+                return;
+              }
+              
+              // Write the YAML file
+              const yamlStr = yaml.dump(data);
+              const filePath = `${submissionPath}/submission_info.yml`;
+              await fs.writeFile(filePath, yamlStr);
+              
+              console.log('Created submission_info.yml');
+              
+            } catch (error) {
+              console.log('Error creating submission file:', error);
+              core.setFailed(`Failed to create submission file: ${error.message}`);
+              return;
+            }
 
-      - name: Remove 'Incomplete' label if filled out
-        if: steps.check_filled_out.outputs.filled_out == 'true'
+      - name: Commit and push if changed
         run: |
-          gh pr edit ${{ github.event.number }} --remove-label "Incomplete"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add submissions/*/*/*
+          
+          # Check if there are changes to commit
+          git diff --staged --quiet || (
+            git commit -m "Add/Update submission_info.yml" -m "Automated commit by GitHub Action"
+            git push
+          )
