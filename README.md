@@ -10,7 +10,7 @@ The benchmark measures neural network training speedups due to algorithmic impro
 The leaderboard tracks the aggregate performance of different algorithms on a variety of [workloads](https://github.com/mlcommons/algorithmic-efficiency/blob/main/DOCUMENTATION.md#workloads) and under two different [tuning rulesets](https://github.com/mlcommons/algorithmic-efficiency/blob/main/DOCUMENTATION.md#tuning).
 
 > [!NOTE]  
-> **If you want to submit to the AlgoPerf benchmark, please open a PR with your submission. For more details, see the [How to Submit](#how-to-submit) section.**
+> **If you want to submit to the AlgoPerf benchmark, please open a PR with your submission. The AlgoPerf working group will review your submission and potentially evaluate your submission on all workloads. For more details, see the [How to Submit](#how-to-submit) section.**
 
 ## Leaderboards
 
