@@ -9,10 +9,16 @@ This repository hosts the official rolling leaderboard for the [**AlgoPerf: Trai
 The benchmark measures neural network training speedups due to algorithmic improvements in training algorithms.
 The leaderboard tracks the aggregate performance of different algorithms on a variety of [workloads](https://github.com/mlcommons/algorithmic-efficiency/blob/main/DOCUMENTATION.md#workloads) and under two different [tuning rulesets](https://github.com/mlcommons/algorithmic-efficiency/blob/main/DOCUMENTATION.md#tuning).
 
-> **Leaderboard Version:** 0.5  
-> **Last Updated:** 2023-12-18 09:54 UTC
+> [!NOTE]  
+> **If you want to submit to the AlgoPerf benchmark, please open a PR with your submission. For more details, see the [How to Submit](#how-to-submit) section.**
 
-## External Tuning Ruleset Leaderboard
+## Leaderboards
+
+> **Leaderboard Version:** 0.5  
+> **Last Updated:** 2023-12-18 09:54 UTC  
+> **Using Benchmark Version:** [0.1.5](https://github.com/mlcommons/algorithmic-efficiency/tree/algoperf-benchmark-0.1.5)
+
+### External Tuning Ruleset Leaderboard
 
 *In the external tuning ruleset, submission must provide workload-agnostic hyperparameter search spaces and they will get* $5$ *tuning trials per workload sampled from this search space.*
 
@@ -33,7 +39,7 @@ The leaderboard tracks the aggregate performance of different algorithms on a va
 | 11.      | <details><summary>**Schedule Free Prodigy**</summary>Combining Schedule-free ([Defazio et al., 2024](https://openreview.net/forum?id=0XeNkkENuI)) with the Prodigy optimizer ([Mishchenko & Defazio, 2024](https://openreview.net/forum?id=WpQbM1kBuy)).</details> | Alice Yang, Aaron Defazio, Konstantin Mishchenko                                                                     | Meta AI, Samsung AI              | PyTorch       | **0.0000** |
 <!-- END EXTERNAL TUNING LEADERBOARD -->
 
-## Self-Tuning Ruleset Leaderboard
+### Self-Tuning Ruleset Leaderboard
 
 *In the self-tuning ruleset, submissions must be completely hyperparameter-free.*
 
@@ -58,8 +64,7 @@ To submit your algorithm for evaluation on the AlgoPerf leaderboard, please foll
 
 ## Citation
 
-<!-- TODO: Replace/add the results paper once it is published. -->
-If you use the *AlgoPerf benchmark* results, logs, or code in your research, please consider citing our paper as well as the relevant submissions:
+If you use the *AlgoPerf benchmark* in your research, please consider citing our paper.
 
 > [Dahl, Schneider, Nado, et al.<br/>
 > **Benchmarking Neural Network Training Algorithms**<br/>
@@ -72,5 +77,21 @@ If you use the *AlgoPerf benchmark* results, logs, or code in your research, ple
   year          = {2023},
   archiveprefix = {arXiv},
   eprint        = {2306.07179},
+}
+```
+
+If you use the results from the first *AlgoPerf competition*, please consider citing the results paper, as well as the relevant submissions:
+
+> [Kasimbeg, Schneider, Eschenhagen, et al.<br/>
+> **Accelerating neural network training: An analysis of the AlgoPerf competition**<br/>
+> ICLR 2025](https://openreview.net/forum?id=CtM5xjRSfm)
+
+```bibtex
+@inproceedings{Kasimbeg2025AlgoPerfResults,
+title           = {Accelerating neural network training: An analysis of the {AlgoPerf} competition},
+author          = {Kasimbeg, Priya and Schneider, Frank and Eschenhagen, Runa and Bae, Juhan and Sastry, Chandramouli Shama and Saroufim, Mark and Boyuan, Feng and Wright, Less and Yang, Edward Z. and Nado, Zachary and Medapati, Sourabh and Hennig, Philipp and Rabbat, Michael and Dahl, George E.},
+booktitle       = {The Thirteenth International Conference on Learning Representations},
+year            = {2025},
+url             = {https://openreview.net/forum?id=CtM5xjRSfm}
 }
 ```
