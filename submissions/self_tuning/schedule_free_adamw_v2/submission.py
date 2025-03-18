@@ -10,8 +10,8 @@ import torch
 import torch.distributed.nn as dist_nn
 import torch.distributed as dist 
 import pickle
-from algorithmic_efficiency import spec
-from algorithmic_efficiency.pytorch_utils import pytorch_setup
+from algoperf import spec
+from algoperf.pytorch_utils import pytorch_setup
 
 USE_PYTORCH_DDP = pytorch_setup()[0]
 HPARAMS = {
