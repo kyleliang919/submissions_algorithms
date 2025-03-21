@@ -1,0 +1,397 @@
+torchrun --redirects 1:0,2:0,3:0,4:0,5:0,6:0,7:0 --standalone --nnodes=1 --nproc_per_node=8 submission_runner.py --framework=pytorch --workload=wmt --submission_path=submissions_algorithms/submissions/self_tuning/schedule_free_adamw_v2/submission.py --data_dir=/data/wmt --num_tuning_trials=1 --experiment_dir=/experiment_runs --experiment_name=submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1 --overwrite=True --save_checkpoints=False --rng_seed=-1469806206 --torch_compile=true --tuning_ruleset=self 2>&1 | tee -a /logs/wmt_pytorch_03-18-2025-15-53-10.log
+W0318 15:53:11.947000 9 site-packages/torch/distributed/run.py:793] 
+W0318 15:53:11.947000 9 site-packages/torch/distributed/run.py:793] *****************************************
+W0318 15:53:11.947000 9 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0318 15:53:11.947000 9 site-packages/torch/distributed/run.py:793] *****************************************
+2025-03-18 15:53:13.066717: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.066719: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.066722: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.066728: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.066720: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.066753: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.066769: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:53:13.067488: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313193.086855      49 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313193.086852      50 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313193.086853      44 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313193.086852      47 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313193.086868      45 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313193.086855      48 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313193.087158      46 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313193.088281      51 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313193.093082      47 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.093086      50 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.093089      48 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.093092      45 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.093099      49 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.093097      44 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.093566      46 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313193.094768      51 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+[rank0]:[W318 15:53:20.865934986 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank3]:[W318 15:53:21.239331918 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank5]:[W318 15:53:21.239705715 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank6]:[W318 15:53:21.247375405 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 6]  using GPU 6 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank7]:[W318 15:53:21.248069884 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 7]  using GPU 7 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank2]:[W318 15:53:21.249405894 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank1]:[W318 15:53:21.264105274 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank4]:[W318 15:53:21.282119192 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+I0318 15:53:23.094233 140395794138304 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094234 140662450607296 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094234 140647545349312 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094233 140495329563840 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094233 139754155160768 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094239 140696130217152 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094243 140697258431680 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.094294 139818065765568 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch.
+I0318 15:53:23.135582 140395794138304 submission_runner.py:665] Creating directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch/trial_1.
+I0318 15:53:23.420131 140395794138304 submission_runner.py:218] Initializing dataset.
+I0318 15:53:23.420319 140395794138304 submission_runner.py:229] Initializing model.
+I0318 15:53:26.434015 140395794138304 submission_runner.py:268] Performing `torch.compile`.
+I0318 15:53:27.362533 140395794138304 submission_runner.py:272] Initializing optimizer.
+I0318 15:53:27.362781 139818065765568 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.362947 139818065765568 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.363450 140395794138304 submission_runner.py:279] Initializing metrics bundle.
+I0318 15:53:27.363534 139754155160768 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.363633 140395794138304 submission_runner.py:301] Initializing checkpoint and logger.
+I0318 15:53:27.363693 139754155160768 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.363829 140395794138304 submission_runner.py:321] Saving meta data to /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch/trial_1/meta_data_0.json.
+I0318 15:53:27.363842 140495329563840 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.364019 140395794138304 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.364030 140495329563840 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.364073 140395794138304 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.368074 140647545349312 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.368234 140647545349312 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.370404 140697258431680 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.370575 140697258431680 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.370702 140662450607296 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.370871 140662450607296 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.372027 140696130217152 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:53:27.372205 140696130217152 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:53:27.664599 140395794138304 submission_runner.py:325] Saving flags to /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_1/wmt_pytorch/trial_1/flags_0.json.
+I0318 15:53:27.740461 140395794138304 submission_runner.py:337] Starting training loop.
+I0318 15:53:27.970140 140395794138304 dataset_info.py:690] Load dataset info from /data/wmt/wmt17_translate/de-en/1.0.0
+I0318 15:53:27.978586 140395794138304 reader.py:261] Creating a tf.data.Dataset reading 16 files located in folders: /data/wmt/wmt17_translate/de-en/1.0.0.
+I0318 15:53:28.026870 140395794138304 logging_logger.py:49] Constructing tf.data.Dataset wmt17_translate for split train, from /data/wmt/wmt17_translate/de-en/1.0.0
+[rank3]:W0318 15:53:30.214000 47 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank2]:W0318 15:53:30.214000 46 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank4]:W0318 15:53:30.216000 48 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank5]:W0318 15:53:30.216000 49 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank6]:W0318 15:53:30.217000 50 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank0]:W0318 15:53:30.217000 44 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank1]:W0318 15:53:30.218000 45 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank7]:W0318 15:53:30.221000 51 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+I0318 15:54:15.828538 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 15:54:15.830853 140395794138304 dataset_info.py:690] Load dataset info from /data/wmt/wmt17_translate/de-en/1.0.0
+I0318 15:54:15.834447 140395794138304 reader.py:261] Creating a tf.data.Dataset reading 16 files located in folders: /data/wmt/wmt17_translate/de-en/1.0.0.
+I0318 15:54:15.867692 140395794138304 logging_logger.py:49] Constructing tf.data.Dataset wmt17_translate for split train, from /data/wmt/wmt17_translate/de-en/1.0.0
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.11/site-packages/torch/_dynamo/variables/functions.py:725: UserWarning: Graph break due to unsupported builtin torch._C._distributed_c10d.PyCapsule._broadcast_coalesced. This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind). If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround. If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use torch.compiler.allow_in_graph.
+  torch._dynamo.utils.warn_once(msg)
+I0318 15:54:34.117055 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 15:58:57.538337 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 15:58:57.569181 140395794138304 dataset_info.py:690] Load dataset info from /data/wmt/wmt14_translate/de-en/1.0.0
+I0318 15:58:57.573724 140395794138304 reader.py:261] Creating a tf.data.Dataset reading 1 files located in folders: /data/wmt/wmt14_translate/de-en/1.0.0.
+I0318 15:58:57.605800 140395794138304 logging_logger.py:49] Constructing tf.data.Dataset wmt14_translate for split validation, from /data/wmt/wmt14_translate/de-en/1.0.0
+I0318 15:59:01.085521 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:03:25.289004 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 16:03:25.291596 140395794138304 dataset_info.py:690] Load dataset info from /data/wmt/wmt14_translate/de-en/1.0.0
+I0318 16:03:25.295800 140395794138304 reader.py:261] Creating a tf.data.Dataset reading 1 files located in folders: /data/wmt/wmt14_translate/de-en/1.0.0.
+I0318 16:03:25.330424 140395794138304 logging_logger.py:49] Constructing tf.data.Dataset wmt14_translate for split test, from /data/wmt/wmt14_translate/de-en/1.0.0
+I0318 16:03:28.880544 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:07:53.057045 140395794138304 submission_runner.py:469] Time since start: 865.32s, 	Step: 1, 	{'train/accuracy': 0.00061808941693565, 'train/loss': 11.807427946798526, 'train/bleu': 0.0, 'validation/accuracy': 0.000482040886955232, 'validation/loss': 11.812859213160952, 'validation/bleu': 0.0, 'validation/num_examples': 3000, 'test/accuracy': 0.0007183408643262658, 'test/loss': 11.80992860039393, 'test/bleu': 0.0, 'test/num_examples': 3003, 'score': 47.39725732803345, 'total_duration': 865.3167645931244, 'accumulated_submission_time': 47.39725732803345, 'accumulated_eval_time': 817.2286729812622, 'accumulated_logging_time': 0}
+I0318 16:07:53.063181 140359648499456 logging_writer.py:48] [1] accumulated_eval_time=817.229, accumulated_logging_time=0, accumulated_submission_time=47.3973, global_step=1, preemption_count=0, score=47.3973, test/accuracy=0.000718341, test/bleu=0, test/loss=11.8099, test/num_examples=3003, total_duration=865.317, train/accuracy=0.000618089, train/bleu=0, train/loss=11.8074, validation/accuracy=0.000482041, validation/bleu=0, validation/loss=11.8129, validation/num_examples=3000
+I0318 16:21:54.380443 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 16:21:57.767705 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:24:23.919105 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 16:24:27.286247 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:26:53.542115 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 16:26:56.930164 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:29:09.003220 140395794138304 submission_runner.py:469] Time since start: 2141.26s, 	Step: 2297, 	{'train/accuracy': 0.5475777163609785, 'train/loss': 2.788944190973253, 'train/bleu': 24.32395683846278, 'validation/accuracy': 0.5471164066941883, 'validation/loss': 2.77681622809186, 'validation/bleu': 20.300097246077826, 'validation/num_examples': 3000, 'test/accuracy': 0.545811609315259, 'test/loss': 2.818538009790291, 'test/bleu': 18.77822238683611, 'test/num_examples': 3003, 'score': 886.0812249183655, 'total_duration': 2141.2629430294037, 'accumulated_submission_time': 886.0812249183655, 'accumulated_eval_time': 1251.8517663478851, 'accumulated_logging_time': 0.029354095458984375}
+I0318 16:29:09.014090 140359640106752 logging_writer.py:48] [2297] accumulated_eval_time=1251.85, accumulated_logging_time=0.0293541, accumulated_submission_time=886.081, global_step=2297, preemption_count=0, score=886.081, test/accuracy=0.545812, test/bleu=18.7782, test/loss=2.81854, test/num_examples=3003, total_duration=2141.26, train/accuracy=0.547578, train/bleu=24.324, train/loss=2.78894, validation/accuracy=0.547116, validation/bleu=20.3001, validation/loss=2.77682, validation/num_examples=3000
+I0318 16:43:10.151903 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 16:43:13.538351 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:45:34.663675 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 16:45:38.040950 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:47:57.848011 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 16:48:01.224486 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 16:50:05.470815 140395794138304 submission_runner.py:469] Time since start: 3397.73s, 	Step: 4669, 	{'train/accuracy': 0.6036124271137027, 'train/loss': 2.284080750045554, 'train/bleu': 28.613788991900304, 'validation/accuracy': 0.6205720218525203, 'validation/loss': 2.1597117719946604, 'validation/bleu': 25.49900648746076, 'validation/num_examples': 3000, 'test/accuracy': 0.6239833159541188, 'test/loss': 2.129691663770131, 'test/bleu': 24.068935265615394, 'test/num_examples': 3003, 'score': 1724.4843497276306, 'total_duration': 3397.730503320694, 'accumulated_submission_time': 1724.4843497276306, 'accumulated_eval_time': 1667.1707484722137, 'accumulated_logging_time': 0.04924917221069336}
+I0318 16:50:05.481122 140359648499456 logging_writer.py:48] [4669] accumulated_eval_time=1667.17, accumulated_logging_time=0.0492492, accumulated_submission_time=1724.48, global_step=4669, preemption_count=0, score=1724.48, test/accuracy=0.623983, test/bleu=24.0689, test/loss=2.12969, test/num_examples=3003, total_duration=3397.73, train/accuracy=0.603612, train/bleu=28.6138, train/loss=2.28408, validation/accuracy=0.620572, validation/bleu=25.499, validation/loss=2.15971, validation/num_examples=3000
+I0318 17:04:06.611397 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 17:04:09.989038 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:06:18.818656 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 17:06:22.193003 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:08:40.743916 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 17:08:44.125271 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:10:46.130724 140395794138304 submission_runner.py:469] Time since start: 4638.39s, 	Step: 7042, 	{'train/accuracy': 0.6458841445959718, 'train/loss': 1.9736183988297664, 'train/bleu': 31.821869920179235, 'validation/accuracy': 0.644117865176872, 'validation/loss': 1.9565168606160235, 'validation/bleu': 27.09128240811001, 'validation/num_examples': 3000, 'test/accuracy': 0.6532614992469007, 'test/loss': 1.9049433003128258, 'test/bleu': 26.16894649689459, 'test/num_examples': 3003, 'score': 2562.896430015564, 'total_duration': 4638.390451192856, 'accumulated_submission_time': 2562.896430015564, 'accumulated_eval_time': 2066.690251350403, 'accumulated_logging_time': 0.06901979446411133}
+I0318 17:10:46.140546 140365604566784 logging_writer.py:48] [7042] accumulated_eval_time=2066.69, accumulated_logging_time=0.0690198, accumulated_submission_time=2562.9, global_step=7042, preemption_count=0, score=2562.9, test/accuracy=0.653261, test/bleu=26.1689, test/loss=1.90494, test/num_examples=3003, total_duration=4638.39, train/accuracy=0.645884, train/bleu=31.8219, train/loss=1.97362, validation/accuracy=0.644118, validation/bleu=27.0913, validation/loss=1.95652, validation/num_examples=3000
+I0318 17:24:47.170439 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 17:24:50.551459 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:27:35.187048 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 17:27:38.576863 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:29:46.654576 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 17:29:50.041868 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:31:43.803858 140395794138304 submission_runner.py:469] Time since start: 5896.06s, 	Step: 9417, 	{'train/accuracy': 0.646284882530874, 'train/loss': 1.9466726557347223, 'train/bleu': 31.750346606671005, 'validation/accuracy': 0.658022890762119, 'validation/loss': 1.8433482992608707, 'validation/bleu': 28.117742490837795, 'validation/num_examples': 3000, 'test/accuracy': 0.6683930019696444, 'test/loss': 1.7837688998957246, 'test/bleu': 27.58427241470985, 'test/num_examples': 3003, 'score': 3401.331363916397, 'total_duration': 5896.063581466675, 'accumulated_submission_time': 3401.331363916397, 'accumulated_eval_time': 2483.3237545490265, 'accumulated_logging_time': 0.08770108222961426}
+I0318 17:31:43.813919 140365596174080 logging_writer.py:48] [9417] accumulated_eval_time=2483.32, accumulated_logging_time=0.0877011, accumulated_submission_time=3401.33, global_step=9417, preemption_count=0, score=3401.33, test/accuracy=0.668393, test/bleu=27.5843, test/loss=1.78377, test/num_examples=3003, total_duration=5896.06, train/accuracy=0.646285, train/bleu=31.7503, train/loss=1.94667, validation/accuracy=0.658023, validation/bleu=28.1177, validation/loss=1.84335, validation/num_examples=3000
+I0318 17:45:45.085006 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 17:45:48.480207 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:48:29.285832 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 17:48:32.673757 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:50:38.825556 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 17:50:42.216547 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 17:52:32.769788 140395794138304 submission_runner.py:469] Time since start: 7145.03s, 	Step: 11793, 	{'train/accuracy': 0.6506149653008406, 'train/loss': 1.8984570039623463, 'train/bleu': 32.32371379217597, 'validation/accuracy': 0.6677625886831632, 'validation/loss': 1.769086578869305, 'validation/bleu': 28.964247306353485, 'validation/num_examples': 3000, 'test/accuracy': 0.6782064650677789, 'test/loss': 1.7048127751708957, 'test/bleu': 28.164681504770233, 'test/num_examples': 3003, 'score': 4239.907062292099, 'total_duration': 7145.029495954514, 'accumulated_submission_time': 4239.907062292099, 'accumulated_eval_time': 2891.008714914322, 'accumulated_logging_time': 0.10648369789123535}
+I0318 17:52:32.779568 140365604566784 logging_writer.py:48] [11793] accumulated_eval_time=2891.01, accumulated_logging_time=0.106484, accumulated_submission_time=4239.91, global_step=11793, preemption_count=0, score=4239.91, test/accuracy=0.678206, test/bleu=28.1647, test/loss=1.70481, test/num_examples=3003, total_duration=7145.03, train/accuracy=0.650615, train/bleu=32.3237, train/loss=1.89846, validation/accuracy=0.667763, validation/bleu=28.9642, validation/loss=1.76909, validation/num_examples=3000
+I0318 18:06:33.786314 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 18:06:37.177268 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:09:10.978056 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 18:09:14.367325 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:11:21.488033 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 18:11:24.869242 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:13:15.822491 140395794138304 submission_runner.py:469] Time since start: 8388.08s, 	Step: 14168, 	{'train/accuracy': 0.6675667944390411, 'train/loss': 1.7820865395617598, 'train/bleu': 33.03091387092957, 'validation/accuracy': 0.6744370009640818, 'validation/loss': 1.7168706971670828, 'validation/bleu': 29.61413675169779, 'validation/num_examples': 3000, 'test/accuracy': 0.6838952612675241, 'test/loss': 1.6498359836635383, 'test/bleu': 28.917199666700046, 'test/num_examples': 3003, 'score': 5078.225158691406, 'total_duration': 8388.082218408585, 'accumulated_submission_time': 5078.225158691406, 'accumulated_eval_time': 3293.0450954437256, 'accumulated_logging_time': 0.12501811981201172}
+I0318 18:13:15.832412 140365596174080 logging_writer.py:48] [14168] accumulated_eval_time=3293.05, accumulated_logging_time=0.125018, accumulated_submission_time=5078.23, global_step=14168, preemption_count=0, score=5078.23, test/accuracy=0.683895, test/bleu=28.9172, test/loss=1.64984, test/num_examples=3003, total_duration=8388.08, train/accuracy=0.667567, train/bleu=33.0309, train/loss=1.78209, validation/accuracy=0.674437, validation/bleu=29.6141, validation/loss=1.71687, validation/num_examples=3000
+I0318 18:27:16.998193 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 18:27:20.397272 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:30:07.423587 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 18:30:10.810784 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:32:18.968228 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 18:32:22.354704 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:34:10.800238 140395794138304 submission_runner.py:469] Time since start: 9643.06s, 	Step: 16544, 	{'train/accuracy': 0.6662790830226965, 'train/loss': 1.7750472367566088, 'train/bleu': 33.14858751655694, 'validation/accuracy': 0.6793810100610586, 'validation/loss': 1.681744091909129, 'validation/bleu': 29.69227008033422, 'validation/num_examples': 3000, 'test/accuracy': 0.6899316417564593, 'test/loss': 1.6101619525547446, 'test/bleu': 29.546380223660965, 'test/num_examples': 3003, 'score': 5916.708894252777, 'total_duration': 9643.059937953949, 'accumulated_submission_time': 5916.708894252777, 'accumulated_eval_time': 3706.84721827507, 'accumulated_logging_time': 0.14330101013183594}
+I0318 18:34:10.809802 140365604566784 logging_writer.py:48] [16544] accumulated_eval_time=3706.85, accumulated_logging_time=0.143301, accumulated_submission_time=5916.71, global_step=16544, preemption_count=0, score=5916.71, test/accuracy=0.689932, test/bleu=29.5464, test/loss=1.61016, test/num_examples=3003, total_duration=9643.06, train/accuracy=0.666279, train/bleu=33.1486, train/loss=1.77505, validation/accuracy=0.679381, validation/bleu=29.6923, validation/loss=1.68174, validation/num_examples=3000
+I0318 18:48:11.903844 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 18:48:15.296816 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:51:02.745422 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 18:51:06.122033 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:53:13.312498 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 18:53:16.704865 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 18:55:08.430863 140395794138304 submission_runner.py:469] Time since start: 10900.69s, 	Step: 18920, 	{'train/accuracy': 0.6683639026511208, 'train/loss': 1.7541193133059487, 'train/bleu': 33.46188102533819, 'validation/accuracy': 0.6815316540182434, 'validation/loss': 1.6577438246236373, 'validation/bleu': 29.918366711918413, 'validation/num_examples': 3000, 'test/accuracy': 0.6942301007994439, 'test/loss': 1.5826600698065114, 'test/bleu': 29.671708627889238, 'test/num_examples': 3003, 'score': 6755.0995221138, 'total_duration': 10900.690569877625, 'accumulated_submission_time': 6755.0995221138, 'accumulated_eval_time': 4123.3743188381195, 'accumulated_logging_time': 0.1613304615020752}
+I0318 18:55:08.440180 140365596174080 logging_writer.py:48] [18920] accumulated_eval_time=4123.37, accumulated_logging_time=0.16133, accumulated_submission_time=6755.1, global_step=18920, preemption_count=0, score=6755.1, test/accuracy=0.69423, test/bleu=29.6717, test/loss=1.58266, test/num_examples=3003, total_duration=10900.7, train/accuracy=0.668364, train/bleu=33.4619, train/loss=1.75412, validation/accuracy=0.681532, validation/bleu=29.9184, validation/loss=1.65774, validation/num_examples=3000
+I0318 19:09:09.698103 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 19:09:13.093910 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:12:17.351718 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 19:12:20.731177 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:14:23.241504 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 19:14:26.617934 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:16:23.326482 140395794138304 submission_runner.py:469] Time since start: 12175.59s, 	Step: 21298, 	{'train/accuracy': 0.6783078967872038, 'train/loss': 1.6973520068518264, 'train/bleu': 34.00831045431358, 'validation/accuracy': 0.684065458680444, 'validation/loss': 1.641792056522384, 'validation/bleu': 30.106911417210373, 'validation/num_examples': 3000, 'test/accuracy': 0.6968369829683698, 'test/loss': 1.5638821906499827, 'test/bleu': 29.841204663619745, 'test/num_examples': 3003, 'score': 7593.738062381744, 'total_duration': 12175.586208105087, 'accumulated_submission_time': 7593.738062381744, 'accumulated_eval_time': 4557.002845287323, 'accumulated_logging_time': 0.17903637886047363}
+I0318 19:16:23.336146 140365604566784 logging_writer.py:48] [21298] accumulated_eval_time=4557, accumulated_logging_time=0.179036, accumulated_submission_time=7593.74, global_step=21298, preemption_count=0, score=7593.74, test/accuracy=0.696837, test/bleu=29.8412, test/loss=1.56388, test/num_examples=3003, total_duration=12175.6, train/accuracy=0.678308, train/bleu=34.0083, train/loss=1.69735, validation/accuracy=0.684065, validation/bleu=30.1069, validation/loss=1.64179, validation/num_examples=3000
+I0318 19:30:24.344866 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 19:30:27.728432 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:33:17.310624 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 19:33:20.679993 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:35:29.556641 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 19:35:32.941175 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:37:26.696393 140395794138304 submission_runner.py:469] Time since start: 13438.96s, 	Step: 23675, 	{'train/accuracy': 0.6727785130756241, 'train/loss': 1.7270213876591667, 'train/bleu': 33.01464981370495, 'validation/accuracy': 0.684596939658369, 'validation/loss': 1.6439892436902084, 'validation/bleu': 30.24812292041338, 'validation/num_examples': 3000, 'test/accuracy': 0.6967906383964778, 'test/loss': 1.5676339285714285, 'test/bleu': 29.947640879834633, 'test/num_examples': 3003, 'score': 8432.136851549149, 'total_duration': 13438.95612359047, 'accumulated_submission_time': 8432.136851549149, 'accumulated_eval_time': 4979.354526281357, 'accumulated_logging_time': 0.19764184951782227}
+I0318 19:37:26.706549 140365596174080 logging_writer.py:48] [23675] accumulated_eval_time=4979.35, accumulated_logging_time=0.197642, accumulated_submission_time=8432.14, global_step=23675, preemption_count=0, score=8432.14, test/accuracy=0.696791, test/bleu=29.9476, test/loss=1.56763, test/num_examples=3003, total_duration=13439, train/accuracy=0.672779, train/bleu=33.0146, train/loss=1.72702, validation/accuracy=0.684597, validation/bleu=30.2481, validation/loss=1.64399, validation/num_examples=3000
+I0318 19:51:27.736763 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 19:51:31.123402 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:54:22.691043 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 19:54:26.071643 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:56:30.675541 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 19:56:34.072083 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 19:58:32.580634 140395794138304 submission_runner.py:469] Time since start: 14704.84s, 	Step: 26052, 	{'train/accuracy': 0.6807343224891977, 'train/loss': 1.6802240389451544, 'train/bleu': 34.231814591402795, 'validation/accuracy': 0.6867846636837812, 'validation/loss': 1.6270900025956048, 'validation/bleu': 30.383586729329597, 'validation/num_examples': 3000, 'test/accuracy': 0.7010079944386514, 'test/loss': 1.5454122494496583, 'test/bleu': 29.99238200135332, 'test/num_examples': 3003, 'score': 9270.61310172081, 'total_duration': 14704.8403673172, 'accumulated_submission_time': 9270.61310172081, 'accumulated_eval_time': 5404.19854593277, 'accumulated_logging_time': 0.21655845642089844}
+I0318 19:58:32.590706 140365604566784 logging_writer.py:48] [26052] accumulated_eval_time=5404.2, accumulated_logging_time=0.216558, accumulated_submission_time=9270.61, global_step=26052, preemption_count=0, score=9270.61, test/accuracy=0.701008, test/bleu=29.9924, test/loss=1.54541, test/num_examples=3003, total_duration=14704.8, train/accuracy=0.680734, train/bleu=34.2318, train/loss=1.68022, validation/accuracy=0.686785, validation/bleu=30.3836, validation/loss=1.62709, validation/num_examples=3000
+I0318 20:12:33.871356 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 20:12:37.268186 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:15:38.959964 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 20:15:42.360804 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:17:48.388718 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 20:17:51.797489 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:19:47.020394 140395794138304 submission_runner.py:469] Time since start: 15979.28s, 	Step: 28429, 	{'train/accuracy': 0.6826866214802347, 'train/loss': 1.6673382912364099, 'train/bleu': 34.22241892933477, 'validation/accuracy': 0.6872790645934789, 'validation/loss': 1.6200648746693693, 'validation/bleu': 30.386812437090693, 'validation/num_examples': 3000, 'test/accuracy': 0.7005561348627042, 'test/loss': 1.539515264743367, 'test/bleu': 30.179493870590814, 'test/num_examples': 3003, 'score': 10109.268551826477, 'total_duration': 15979.280144453049, 'accumulated_submission_time': 10109.268551826477, 'accumulated_eval_time': 5837.347690582275, 'accumulated_logging_time': 0.23522257804870605}
+I0318 20:19:47.030364 140365596174080 logging_writer.py:48] [28429] accumulated_eval_time=5837.35, accumulated_logging_time=0.235223, accumulated_submission_time=10109.3, global_step=28429, preemption_count=0, score=10109.3, test/accuracy=0.700556, test/bleu=30.1795, test/loss=1.53952, test/num_examples=3003, total_duration=15979.3, train/accuracy=0.682687, train/bleu=34.2224, train/loss=1.66734, validation/accuracy=0.687279, validation/bleu=30.3868, validation/loss=1.62006, validation/num_examples=3000
+I0318 20:33:48.227412 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 20:33:51.605941 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:36:30.074685 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 20:36:33.459292 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:38:38.755423 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 20:38:42.135800 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:40:37.287617 140395794138304 submission_runner.py:469] Time since start: 17229.55s, 	Step: 30807, 	{'train/accuracy': 0.6762998485613326, 'train/loss': 1.6964554603964939, 'train/bleu': 33.55587382983252, 'validation/accuracy': 0.6865374632289324, 'validation/loss': 1.6250830439028008, 'validation/bleu': 30.260264418202844, 'validation/num_examples': 3000, 'test/accuracy': 0.7001390337156761, 'test/loss': 1.5446991585563665, 'test/bleu': 30.036360511093125, 'test/num_examples': 3003, 'score': 10947.821782827377, 'total_duration': 17229.54736995697, 'accumulated_submission_time': 10947.821782827377, 'accumulated_eval_time': 6246.4080057144165, 'accumulated_logging_time': 0.25356507301330566}
+I0318 20:40:37.297840 140365604566784 logging_writer.py:48] [30807] accumulated_eval_time=6246.41, accumulated_logging_time=0.253565, accumulated_submission_time=10947.8, global_step=30807, preemption_count=0, score=10947.8, test/accuracy=0.700139, test/bleu=30.0364, test/loss=1.5447, test/num_examples=3003, total_duration=17229.5, train/accuracy=0.6763, train/bleu=33.5559, train/loss=1.69646, validation/accuracy=0.686537, validation/bleu=30.2603, validation/loss=1.62508, validation/num_examples=3000
+I0318 20:54:38.405809 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 20:54:41.796169 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:57:19.889534 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 20:57:23.282938 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 20:59:30.959091 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 20:59:34.346781 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:01:33.892502 140395794138304 submission_runner.py:469] Time since start: 18486.15s, 	Step: 33184, 	{'train/accuracy': 0.6862666360715924, 'train/loss': 1.6504919114272603, 'train/bleu': 34.36588183873615, 'validation/accuracy': 0.687340864707191, 'validation/loss': 1.6216232031616937, 'validation/bleu': 30.372761236086525, 'validation/num_examples': 3000, 'test/accuracy': 0.7009268914378404, 'test/loss': 1.5389091646390916, 'test/bleu': 30.168910696030927, 'test/num_examples': 3003, 'score': 11786.305200099945, 'total_duration': 18486.152216911316, 'accumulated_submission_time': 11786.305200099945, 'accumulated_eval_time': 6661.894829273224, 'accumulated_logging_time': 0.2721705436706543}
+I0318 21:01:33.903726 140365596174080 logging_writer.py:48] [33184] accumulated_eval_time=6661.89, accumulated_logging_time=0.272171, accumulated_submission_time=11786.3, global_step=33184, preemption_count=0, score=11786.3, test/accuracy=0.700927, test/bleu=30.1689, test/loss=1.53891, test/num_examples=3003, total_duration=18486.2, train/accuracy=0.686267, train/bleu=34.3659, train/loss=1.65049, validation/accuracy=0.687341, validation/bleu=30.3728, validation/loss=1.62162, validation/num_examples=3000
+I0318 21:15:34.911474 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 21:15:38.306041 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:18:28.028004 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 21:18:31.399270 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:20:35.957524 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 21:20:39.341274 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:22:45.109063 140395794138304 submission_runner.py:469] Time since start: 19757.37s, 	Step: 35560, 	{'train/accuracy': 0.6855446815337719, 'train/loss': 1.65298289920011, 'train/bleu': 34.962727271484106, 'validation/accuracy': 0.6885892270041777, 'validation/loss': 1.616718784762564, 'validation/bleu': 30.285912280300668, 'validation/num_examples': 3000, 'test/accuracy': 0.702525779168115, 'test/loss': 1.5332792043216312, 'test/bleu': 30.318680538184385, 'test/num_examples': 3003, 'score': 12624.780817747116, 'total_duration': 19757.3688249588, 'accumulated_submission_time': 12624.780817747116, 'accumulated_eval_time': 7092.092534065247, 'accumulated_logging_time': 0.2923588752746582}
+I0318 21:22:45.119223 140365604566784 logging_writer.py:48] [35560] accumulated_eval_time=7092.09, accumulated_logging_time=0.292359, accumulated_submission_time=12624.8, global_step=35560, preemption_count=0, score=12624.8, test/accuracy=0.702526, test/bleu=30.3187, test/loss=1.53328, test/num_examples=3003, total_duration=19757.4, train/accuracy=0.685545, train/bleu=34.9627, train/loss=1.65298, validation/accuracy=0.688589, validation/bleu=30.2859, validation/loss=1.61672, validation/num_examples=3000
+I0318 21:36:46.227833 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 21:36:49.620279 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:39:23.372480 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 21:39:26.764142 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:41:28.894753 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 21:41:32.284654 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 21:43:34.289428 140395794138304 submission_runner.py:469] Time since start: 21006.55s, 	Step: 37936, 	{'train/accuracy': 0.6863219782120007, 'train/loss': 1.6521222404749554, 'train/bleu': 34.42275186004379, 'validation/accuracy': 0.6899611895285888, 'validation/loss': 1.6051872697945764, 'validation/bleu': 30.565440443417653, 'validation/num_examples': 3000, 'test/accuracy': 0.7048661800486618, 'test/loss': 1.5184530145695747, 'test/bleu': 30.454866016238743, 'test/num_examples': 3003, 'score': 13463.334493398666, 'total_duration': 21006.549164772034, 'accumulated_submission_time': 13463.334493398666, 'accumulated_eval_time': 7500.154296159744, 'accumulated_logging_time': 0.31183910369873047}
+I0318 21:43:34.299765 140365596174080 logging_writer.py:48] [37936] accumulated_eval_time=7500.15, accumulated_logging_time=0.311839, accumulated_submission_time=13463.3, global_step=37936, preemption_count=0, score=13463.3, test/accuracy=0.704866, test/bleu=30.4549, test/loss=1.51845, test/num_examples=3003, total_duration=21006.5, train/accuracy=0.686322, train/bleu=34.4228, train/loss=1.65212, validation/accuracy=0.689961, validation/bleu=30.5654, validation/loss=1.60519, validation/num_examples=3000
+I0318 21:57:35.430087 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 21:57:38.819870 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:00:25.095179 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 22:00:28.468085 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:02:44.927476 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 22:02:48.312558 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:04:55.221679 140395794138304 submission_runner.py:469] Time since start: 22287.48s, 	Step: 40313, 	{'train/accuracy': 0.6905791629482163, 'train/loss': 1.6243705450104116, 'train/bleu': 35.2090419868873, 'validation/accuracy': 0.6909005512570143, 'validation/loss': 1.5982119682100215, 'validation/bleu': 30.50974423864651, 'validation/num_examples': 3000, 'test/accuracy': 0.7068589966400185, 'test/loss': 1.5100928882806164, 'test/bleu': 30.63943572517607, 'test/num_examples': 3003, 'score': 14302.018385410309, 'total_duration': 22287.481405973434, 'accumulated_submission_time': 14302.018385410309, 'accumulated_eval_time': 7939.945911407471, 'accumulated_logging_time': 0.3309755325317383}
+I0318 22:04:55.231993 140365604566784 logging_writer.py:48] [40313] accumulated_eval_time=7939.95, accumulated_logging_time=0.330976, accumulated_submission_time=14302, global_step=40313, preemption_count=0, score=14302, test/accuracy=0.706859, test/bleu=30.6394, test/loss=1.51009, test/num_examples=3003, total_duration=22287.5, train/accuracy=0.690579, train/bleu=35.209, train/loss=1.62437, validation/accuracy=0.690901, validation/bleu=30.5097, validation/loss=1.59821, validation/num_examples=3000
+I0318 22:18:56.203171 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 22:18:59.597212 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:21:41.440870 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 22:21:44.813460 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:23:55.058914 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 22:23:58.441510 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:25:53.565529 140395794138304 submission_runner.py:469] Time since start: 23545.83s, 	Step: 42691, 	{'train/accuracy': 0.688814148763356, 'train/loss': 1.6340812469970485, 'train/bleu': 34.6901512325057, 'validation/accuracy': 0.6911477517118632, 'validation/loss': 1.5926967908745953, 'validation/bleu': 30.535267809937096, 'validation/num_examples': 3000, 'test/accuracy': 0.7063839647781254, 'test/loss': 1.5061940606534585, 'test/bleu': 30.577564065070366, 'test/num_examples': 3003, 'score': 15140.551662683487, 'total_duration': 23545.8252389431, 'accumulated_submission_time': 15140.551662683487, 'accumulated_eval_time': 8357.308384656906, 'accumulated_logging_time': 0.3509852886199951}
+I0318 22:25:53.576569 140365596174080 logging_writer.py:48] [42691] accumulated_eval_time=8357.31, accumulated_logging_time=0.350985, accumulated_submission_time=15140.6, global_step=42691, preemption_count=0, score=15140.6, test/accuracy=0.706384, test/bleu=30.5776, test/loss=1.50619, test/num_examples=3003, total_duration=23545.8, train/accuracy=0.688814, train/bleu=34.6902, train/loss=1.63408, validation/accuracy=0.691148, validation/bleu=30.5353, validation/loss=1.5927, validation/num_examples=3000
+I0318 22:39:54.797641 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 22:39:58.196152 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:42:43.366538 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 22:42:46.737255 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:44:49.979294 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 22:44:53.364431 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 22:46:48.149935 140395794138304 submission_runner.py:469] Time since start: 24800.41s, 	Step: 45068, 	{'train/accuracy': 0.693339999772735, 'train/loss': 1.6067729935343114, 'train/bleu': 34.67603122438687, 'validation/accuracy': 0.6918028329172126, 'validation/loss': 1.5930561005982251, 'validation/bleu': 30.67773874890952, 'validation/num_examples': 3000, 'test/accuracy': 0.7062449310624493, 'test/loss': 1.5055419780442592, 'test/bleu': 30.595991877558948, 'test/num_examples': 3003, 'score': 15979.22659444809, 'total_duration': 24800.409657239914, 'accumulated_submission_time': 15979.22659444809, 'accumulated_eval_time': 8770.660744428635, 'accumulated_logging_time': 0.37067389488220215}
+I0318 22:46:48.160403 140365604566784 logging_writer.py:48] [45068] accumulated_eval_time=8770.66, accumulated_logging_time=0.370674, accumulated_submission_time=15979.2, global_step=45068, preemption_count=0, score=15979.2, test/accuracy=0.706245, test/bleu=30.596, test/loss=1.50554, test/num_examples=3003, total_duration=24800.4, train/accuracy=0.69334, train/bleu=34.676, train/loss=1.60677, validation/accuracy=0.691803, validation/bleu=30.6777, validation/loss=1.59306, validation/num_examples=3000
+I0318 23:00:49.394865 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 23:00:52.783181 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:03:52.413720 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 23:03:55.795081 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:05:59.713775 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 23:06:03.103013 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:08:02.095778 140395794138304 submission_runner.py:469] Time since start: 26074.36s, 	Step: 47447, 	{'train/accuracy': 0.6952856022816367, 'train/loss': 1.601833518924631, 'train/bleu': 35.15862120634109, 'validation/accuracy': 0.6915185523941364, 'validation/loss': 1.5946184847230118, 'validation/bleu': 30.638438163956128, 'validation/num_examples': 3000, 'test/accuracy': 0.7073687869308307, 'test/loss': 1.5060758457884371, 'test/bleu': 30.623903409114906, 'test/num_examples': 3003, 'score': 16818.039181947708, 'total_duration': 26074.355507850647, 'accumulated_submission_time': 16818.039181947708, 'accumulated_eval_time': 9203.36179280281, 'accumulated_logging_time': 0.3908805847167969}
+I0318 23:08:02.106736 140365596174080 logging_writer.py:48] [47447] accumulated_eval_time=9203.36, accumulated_logging_time=0.390881, accumulated_submission_time=16818, global_step=47447, preemption_count=0, score=16818, test/accuracy=0.707369, test/bleu=30.6239, test/loss=1.50608, test/num_examples=3003, total_duration=26074.4, train/accuracy=0.695286, train/bleu=35.1586, train/loss=1.60183, validation/accuracy=0.691519, validation/bleu=30.6384, validation/loss=1.59462, validation/num_examples=3000
+I0318 23:22:03.310513 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 23:22:06.702713 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:24:51.924705 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 23:24:55.312323 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:26:58.866205 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 23:27:02.246152 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:29:00.364527 140395794138304 submission_runner.py:469] Time since start: 27332.62s, 	Step: 49824, 	{'train/accuracy': 0.6934659578116961, 'train/loss': 1.6042727805407877, 'train/bleu': 35.536756679600515, 'validation/accuracy': 0.6928039947593504, 'validation/loss': 1.5866519672521198, 'validation/bleu': 30.90153248046974, 'validation/num_examples': 3000, 'test/accuracy': 0.7077163712200208, 'test/loss': 1.4969567366180048, 'test/bleu': 30.55448426148093, 'test/num_examples': 3003, 'score': 17656.7119846344, 'total_duration': 27332.624260425568, 'accumulated_submission_time': 17656.7119846344, 'accumulated_eval_time': 9620.415899276733, 'accumulated_logging_time': 0.41157078742980957}
+I0318 23:29:00.375417 140365604566784 logging_writer.py:48] [49824] accumulated_eval_time=9620.42, accumulated_logging_time=0.411571, accumulated_submission_time=17656.7, global_step=49824, preemption_count=0, score=17656.7, test/accuracy=0.707716, test/bleu=30.5545, test/loss=1.49696, test/num_examples=3003, total_duration=27332.6, train/accuracy=0.693466, train/bleu=35.5368, train/loss=1.60427, validation/accuracy=0.692804, validation/bleu=30.9015, validation/loss=1.58665, validation/num_examples=3000
+I0318 23:43:01.570484 140395794138304 spec.py:321] Evaluating on the training split.
+I0318 23:43:04.965339 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:45:58.471922 140395794138304 spec.py:333] Evaluating on the validation split.
+I0318 23:46:01.855703 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:48:03.978568 140395794138304 spec.py:349] Evaluating on the test split.
+I0318 23:48:07.370809 140395794138304 workload.py:142] Translating evaluation dataset.
+I0318 23:49:59.747273 140395794138304 submission_runner.py:469] Time since start: 28592.01s, 	Step: 52201, 	{'train/accuracy': 0.6990238922725761, 'train/loss': 1.576790343300873, 'train/bleu': 35.739211750104936, 'validation/accuracy': 0.693718636442291, 'validation/loss': 1.5829049491076064, 'validation/bleu': 30.702030086466767, 'validation/num_examples': 3000, 'test/accuracy': 0.7080060247943459, 'test/loss': 1.4926793679759007, 'test/bleu': 30.66078904283926, 'test/num_examples': 3003, 'score': 18495.337985038757, 'total_duration': 28592.007010936737, 'accumulated_submission_time': 18495.337985038757, 'accumulated_eval_time': 10038.592846155167, 'accumulated_logging_time': 0.4309804439544678}
+I0318 23:49:59.757947 140365596174080 logging_writer.py:48] [52201] accumulated_eval_time=10038.6, accumulated_logging_time=0.43098, accumulated_submission_time=18495.3, global_step=52201, preemption_count=0, score=18495.3, test/accuracy=0.708006, test/bleu=30.6608, test/loss=1.49268, test/num_examples=3003, total_duration=28592, train/accuracy=0.699024, train/bleu=35.7392, train/loss=1.57679, validation/accuracy=0.693719, validation/bleu=30.702, validation/loss=1.5829, validation/num_examples=3000
+I0319 00:04:00.815180 140395794138304 spec.py:321] Evaluating on the training split.
+I0319 00:04:04.210638 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:06:41.157495 140395794138304 spec.py:333] Evaluating on the validation split.
+I0319 00:06:44.544085 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:08:47.388689 140395794138304 spec.py:349] Evaluating on the test split.
+I0319 00:08:50.775472 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:10:49.184035 140395794138304 submission_runner.py:469] Time since start: 29841.44s, 	Step: 54580, 	{'train/accuracy': 0.7003499462500857, 'train/loss': 1.566979576462112, 'train/bleu': 35.71658869605852, 'validation/accuracy': 0.6941265171927916, 'validation/loss': 1.5809393192408474, 'validation/bleu': 30.73365005333713, 'validation/num_examples': 3000, 'test/accuracy': 0.7079944386513729, 'test/loss': 1.489182344166377, 'test/bleu': 30.70070106824526, 'test/num_examples': 3003, 'score': 19333.80408024788, 'total_duration': 29841.4437584877, 'accumulated_submission_time': 19333.80408024788, 'accumulated_eval_time': 10446.96177816391, 'accumulated_logging_time': 0.45060038566589355}
+I0319 00:10:49.194879 140365604566784 logging_writer.py:48] [54580] accumulated_eval_time=10447, accumulated_logging_time=0.4506, accumulated_submission_time=19333.8, global_step=54580, preemption_count=0, score=19333.8, test/accuracy=0.707994, test/bleu=30.7007, test/loss=1.48918, test/num_examples=3003, total_duration=29841.4, train/accuracy=0.70035, train/bleu=35.7166, train/loss=1.56698, validation/accuracy=0.694127, validation/bleu=30.7337, validation/loss=1.58094, validation/num_examples=3000
+I0319 00:24:50.152863 140395794138304 spec.py:321] Evaluating on the training split.
+I0319 00:24:53.545460 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:27:41.817214 140395794138304 spec.py:333] Evaluating on the validation split.
+I0319 00:27:45.205697 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:29:51.261552 140395794138304 spec.py:349] Evaluating on the test split.
+I0319 00:29:54.644793 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:31:46.818654 140395794138304 submission_runner.py:469] Time since start: 31099.08s, 	Step: 56957, 	{'train/accuracy': 0.7011153271242957, 'train/loss': 1.5647144848798435, 'train/bleu': 35.878750562706145, 'validation/accuracy': 0.6940770771018219, 'validation/loss': 1.5799391230254864, 'validation/bleu': 30.789555841605424, 'validation/num_examples': 3000, 'test/accuracy': 0.7093268450932685, 'test/loss': 1.486823296836983, 'test/bleu': 30.66553506766247, 'test/num_examples': 3003, 'score': 20172.21661257744, 'total_duration': 31099.07840323448, 'accumulated_submission_time': 20172.21661257744, 'accumulated_eval_time': 10863.627752780914, 'accumulated_logging_time': 0.47097182273864746}
+I0319 00:31:46.829068 140365596174080 logging_writer.py:48] [56957] accumulated_eval_time=10863.6, accumulated_logging_time=0.470972, accumulated_submission_time=20172.2, global_step=56957, preemption_count=0, score=20172.2, test/accuracy=0.709327, test/bleu=30.6655, test/loss=1.48682, test/num_examples=3003, total_duration=31099.1, train/accuracy=0.701115, train/bleu=35.8788, train/loss=1.56471, validation/accuracy=0.694077, validation/bleu=30.7896, validation/loss=1.57994, validation/num_examples=3000
+I0319 00:45:47.802307 140395794138304 spec.py:321] Evaluating on the training split.
+I0319 00:45:51.188036 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:48:44.952861 140395794138304 spec.py:333] Evaluating on the validation split.
+I0319 00:48:48.338107 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:50:51.669442 140395794138304 spec.py:349] Evaluating on the test split.
+I0319 00:50:55.057494 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 00:52:51.174765 140395794138304 submission_runner.py:469] Time since start: 32363.43s, 	Step: 59334, 	{'train/accuracy': 0.7031021564327485, 'train/loss': 1.5458072416963633, 'train/bleu': 35.87526877376799, 'validation/accuracy': 0.6944478777840951, 'validation/loss': 1.5793638991545744, 'validation/bleu': 30.80272000255978, 'validation/num_examples': 3000, 'test/accuracy': 0.7100104275286757, 'test/loss': 1.485964655022593, 'test/bleu': 30.63017613974101, 'test/num_examples': 3003, 'score': 21010.64773964882, 'total_duration': 32363.434495925903, 'accumulated_submission_time': 21010.64773964882, 'accumulated_eval_time': 11287.000369548798, 'accumulated_logging_time': 0.4897952079772949}
+I0319 00:52:51.186052 140365604566784 logging_writer.py:48] [59334] accumulated_eval_time=11287, accumulated_logging_time=0.489795, accumulated_submission_time=21010.6, global_step=59334, preemption_count=0, score=21010.6, test/accuracy=0.71001, test/bleu=30.6302, test/loss=1.48596, test/num_examples=3003, total_duration=32363.4, train/accuracy=0.703102, train/bleu=35.8753, train/loss=1.54581, validation/accuracy=0.694448, validation/bleu=30.8027, validation/loss=1.57936, validation/num_examples=3000
+I0319 01:06:52.322891 140395794138304 spec.py:321] Evaluating on the training split.
+I0319 01:06:55.717532 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:09:49.723055 140395794138304 spec.py:333] Evaluating on the validation split.
+I0319 01:09:53.105721 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:11:54.109791 140395794138304 spec.py:349] Evaluating on the test split.
+I0319 01:11:57.488346 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:13:51.434479 140395794138304 submission_runner.py:469] Time since start: 33623.69s, 	Step: 61712, 	{'train/accuracy': 0.7023680456490727, 'train/loss': 1.5466813480741797, 'train/bleu': 35.784726752600804, 'validation/accuracy': 0.6949793587620201, 'validation/loss': 1.5798649628890318, 'validation/bleu': 30.719376511113456, 'validation/num_examples': 3000, 'test/accuracy': 0.7100567721005677, 'test/loss': 1.4843477544606651, 'test/bleu': 30.708002324452817, 'test/num_examples': 3003, 'score': 21849.260080099106, 'total_duration': 33623.69422984123, 'accumulated_submission_time': 21849.260080099106, 'accumulated_eval_time': 11706.112129688263, 'accumulated_logging_time': 0.5097508430480957}
+I0319 01:13:51.445057 140365596174080 logging_writer.py:48] [61712] accumulated_eval_time=11706.1, accumulated_logging_time=0.509751, accumulated_submission_time=21849.3, global_step=61712, preemption_count=0, score=21849.3, test/accuracy=0.710057, test/bleu=30.708, test/loss=1.48435, test/num_examples=3003, total_duration=33623.7, train/accuracy=0.702368, train/bleu=35.7847, train/loss=1.54668, validation/accuracy=0.694979, validation/bleu=30.7194, validation/loss=1.57986, validation/num_examples=3000
+I0319 01:27:52.567871 140395794138304 spec.py:321] Evaluating on the training split.
+I0319 01:27:55.962948 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:31:00.628611 140395794138304 spec.py:333] Evaluating on the validation split.
+I0319 01:31:04.019452 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:33:06.967507 140395794138304 spec.py:349] Evaluating on the test split.
+I0319 01:33:10.357262 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:35:05.210860 140395794138304 submission_runner.py:469] Time since start: 34897.47s, 	Step: 64089, 	{'train/accuracy': 0.7044462629569013, 'train/loss': 1.5433883930601018, 'train/bleu': 35.83945141651279, 'validation/accuracy': 0.6943366375794131, 'validation/loss': 1.5797046688440908, 'validation/bleu': 30.815204012469973, 'validation/num_examples': 3000, 'test/accuracy': 0.7101031166724597, 'test/loss': 1.4835224228073225, 'test/bleu': 30.560798628309485, 'test/num_examples': 3003, 'score': 22687.894253492355, 'total_duration': 34897.470601797104, 'accumulated_submission_time': 22687.894253492355, 'accumulated_eval_time': 12138.755158424377, 'accumulated_logging_time': 0.5289223194122314}
+I0319 01:35:05.221590 140365604566784 logging_writer.py:48] [64089] accumulated_eval_time=12138.8, accumulated_logging_time=0.528922, accumulated_submission_time=22687.9, global_step=64089, preemption_count=0, score=22687.9, test/accuracy=0.710103, test/bleu=30.5608, test/loss=1.48352, test/num_examples=3003, total_duration=34897.5, train/accuracy=0.704446, train/bleu=35.8395, train/loss=1.54339, validation/accuracy=0.694337, validation/bleu=30.8152, validation/loss=1.5797, validation/num_examples=3000
+I0319 01:49:06.390164 140395794138304 spec.py:321] Evaluating on the training split.
+I0319 01:49:09.784256 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:52:13.803551 140395794138304 spec.py:333] Evaluating on the validation split.
+I0319 01:52:17.191537 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:54:25.369446 140395794138304 spec.py:349] Evaluating on the test split.
+I0319 01:54:28.760982 140395794138304 workload.py:142] Translating evaluation dataset.
+I0319 01:56:24.158420 140395794138304 submission_runner.py:469] Time since start: 36176.42s, 	Step: 66467, 	{'train/accuracy': 0.7042495448143186, 'train/loss': 1.5396737979090087, 'train/bleu': 36.40333266234185, 'validation/accuracy': 0.6945961980570045, 'validation/loss': 1.5802121057152745, 'validation/bleu': 30.77390321565006, 'validation/num_examples': 3000, 'test/accuracy': 0.7102769088170549, 'test/loss': 1.483268704379562, 'test/bleu': 30.81222420781334, 'test/num_examples': 3003, 'score': 23526.534757375717, 'total_duration': 36176.418112277985, 'accumulated_submission_time': 23526.534757375717, 'accumulated_eval_time': 12576.523510694504, 'accumulated_logging_time': 0.5486347675323486}
+I0319 01:56:24.170523 140365596174080 logging_writer.py:48] [66467] accumulated_eval_time=12576.5, accumulated_logging_time=0.548635, accumulated_submission_time=23526.5, global_step=66467, preemption_count=0, score=23526.5, test/accuracy=0.710277, test/bleu=30.8122, test/loss=1.48327, test/num_examples=3003, total_duration=36176.4, train/accuracy=0.70425, train/bleu=36.4033, train/loss=1.53967, validation/accuracy=0.694596, validation/bleu=30.7739, validation/loss=1.58021, validation/num_examples=3000
+I0319 01:56:25.147291 140365604566784 logging_writer.py:48] [66467] global_step=66467, preemption_count=0, score=23526.5
+I0319 01:56:25.174732 140395794138304 submission_runner.py:750] Final wmt score: 23526.534757375717

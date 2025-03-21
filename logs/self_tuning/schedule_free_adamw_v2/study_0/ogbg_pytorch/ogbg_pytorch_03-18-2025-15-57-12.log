@@ -1,0 +1,927 @@
+torchrun --redirects 1:0,2:0,3:0,4:0,5:0,6:0,7:0 --standalone --nnodes=1 --nproc_per_node=8 submission_runner.py --framework=pytorch --workload=ogbg --submission_path=submissions_algorithms/submissions/self_tuning/schedule_free_adamw_v2/submission.py --data_dir=/data/ogbg --num_tuning_trials=1 --experiment_dir=/experiment_runs --experiment_name=submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0 --overwrite=True --save_checkpoints=False --rng_seed=456919344 --torch_compile=true --tuning_ruleset=self 2>&1 | tee -a /logs/ogbg_pytorch_03-18-2025-15-57-12.log
+W0318 15:57:13.714000 9 site-packages/torch/distributed/run.py:793] 
+W0318 15:57:13.714000 9 site-packages/torch/distributed/run.py:793] *****************************************
+W0318 15:57:13.714000 9 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0318 15:57:13.714000 9 site-packages/torch/distributed/run.py:793] *****************************************
+2025-03-18 15:57:14.889371: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889368: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889365: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889360: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889372: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889371: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889455: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:57:14.889708: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313434.909914      44 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313434.909918      49 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313434.909917      50 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313434.909914      48 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313434.909924      47 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313434.909914      45 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313434.909986      46 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313434.910110      51 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313434.916352      45 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916352      49 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916352      44 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916358      47 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916357      48 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916364      50 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916393      46 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313434.916554      51 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+[rank0]:[W318 15:57:22.324633557 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank1]:[W318 15:57:22.502080008 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank6]:[W318 15:57:22.554094255 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 6]  using GPU 6 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank5]:[W318 15:57:22.580288346 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank3]:[W318 15:57:22.585704954 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank2]:[W318 15:57:22.649727252 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank7]:[W318 15:57:22.707426676 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 7]  using GPU 7 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank4]:[W318 15:57:22.768753522 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+I0318 15:57:24.503415 139839025300672 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503418 140213996913856 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503415 139923777045696 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503415 140398447903936 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503423 140631675143360 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503422 139622455624896 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503420 140112949515456 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.503494 139809739461824 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch.
+I0318 15:57:24.540003 139809739461824 submission_runner.py:665] Creating directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch/trial_1.
+I0318 15:57:24.845188 139809739461824 submission_runner.py:218] Initializing dataset.
+I0318 15:57:24.845417 139809739461824 submission_runner.py:229] Initializing model.
+W0318 15:57:25.863433 140213996913856 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.863565 139923777045696 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.863676 140398447903936 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.863745 139809739461824 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.865133 139839025300672 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.875266 140631675143360 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.875270 140112949515456 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+W0318 15:57:25.879821 139622455624896 submission_runner.py:254] These workloads cannot be fully compiled under current PyTorch version. Proceeding without `torch.compile`.
+I0318 15:57:26.780896 140398447903936 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.781052 140398447903936 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.780986 140213996913856 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.781117 140213996913856 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.785977 139839025300672 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.786128 139839025300672 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.787919 139809739461824 submission_runner.py:272] Initializing optimizer.
+I0318 15:57:26.788158 139923777045696 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.788329 139923777045696 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.788530 139809739461824 submission_runner.py:279] Initializing metrics bundle.
+I0318 15:57:26.788720 139809739461824 submission_runner.py:301] Initializing checkpoint and logger.
+I0318 15:57:26.788936 139809739461824 submission_runner.py:321] Saving meta data to /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch/trial_1/meta_data_0.json.
+I0318 15:57:26.789098 139809739461824 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.789153 139809739461824 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.801213 140112949515456 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.801376 140112949515456 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.801383 140631675143360 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.801539 140631675143360 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:26.805555 139622455624896 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:57:26.805717 139622455624896 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:57:27.106208 139809739461824 submission_runner.py:325] Saving flags to /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_0/ogbg_pytorch/trial_1/flags_0.json.
+I0318 15:57:27.137213 139809739461824 submission_runner.py:337] Starting training loop.
+I0318 15:57:27.529884 139809739461824 dataset_info.py:690] Load dataset info from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:57:27.536694 139809739461824 reader.py:261] Creating a tf.data.Dataset reading 8 files located in folders: /data/ogbg/ogbg_molpcba/0.1.3.
+WARNING:tensorflow:From /usr/local/lib/python3.11/site-packages/tensorflow_datasets/core/reader.py:101: CounterV2 (from tensorflow.python.data.experimental.ops.counter) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.counter(...)` instead.
+W0318 15:57:27.600073 139809739461824 deprecation.py:50] From /usr/local/lib/python3.11/site-packages/tensorflow_datasets/core/reader.py:101: CounterV2 (from tensorflow.python.data.experimental.ops.counter) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Dataset.counter(...)` instead.
+I0318 15:57:27.655053 139809739461824 logging_logger.py:49] Constructing tf.data.Dataset ogbg_molpcba for split train, from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:57:35.432279 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 15:57:35.435595 139809739461824 dataset_info.py:690] Load dataset info from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:57:35.439550 139809739461824 reader.py:261] Creating a tf.data.Dataset reading 8 files located in folders: /data/ogbg/ogbg_molpcba/0.1.3.
+I0318 15:57:35.502690 139809739461824 logging_logger.py:49] Constructing tf.data.Dataset ogbg_molpcba for split train, from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:58:28.517469 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 15:58:28.520315 139809739461824 dataset_info.py:690] Load dataset info from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:58:28.524268 139809739461824 reader.py:261] Creating a tf.data.Dataset reading 1 files located in folders: /data/ogbg/ogbg_molpcba/0.1.3.
+I0318 15:58:28.601424 139809739461824 logging_logger.py:49] Constructing tf.data.Dataset ogbg_molpcba for split validation, from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:59:13.758287 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 15:59:13.760908 139809739461824 dataset_info.py:690] Load dataset info from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 15:59:13.764906 139809739461824 reader.py:261] Creating a tf.data.Dataset reading 1 files located in folders: /data/ogbg/ogbg_molpcba/0.1.3.
+I0318 15:59:13.838345 139809739461824 logging_logger.py:49] Constructing tf.data.Dataset ogbg_molpcba for split test, from /data/ogbg/ogbg_molpcba/0.1.3
+I0318 16:00:02.485980 139809739461824 submission_runner.py:469] Time since start: 155.35s, 	Step: 1, 	{'train/accuracy': 0.5487086218758792, 'train/loss': 0.7567902562659737, 'train/mean_average_precision': 0.022808849826297065, 'validation/accuracy': 0.5499382158256794, 'validation/loss': 0.7547643230086376, 'validation/mean_average_precision': 0.026888287429043808, 'validation/num_examples': 43793, 'test/accuracy': 0.5476192181026106, 'test/loss': 0.7545978664804425, 'test/mean_average_precision': 0.02843416630372573, 'test/num_examples': 43793, 'score': 7.82356071472168, 'total_duration': 155.34856390953064, 'accumulated_submission_time': 7.82356071472168, 'accumulated_eval_time': 147.05329966545105, 'accumulated_logging_time': 0}
+I0318 16:00:02.492130 139777613420288 logging_writer.py:48] [1] accumulated_eval_time=147.053, accumulated_logging_time=0, accumulated_submission_time=7.82356, global_step=1, preemption_count=0, score=7.82356, test/accuracy=0.547619, test/loss=0.754598, test/mean_average_precision=0.0284342, test/num_examples=43793, total_duration=155.349, train/accuracy=0.548709, train/loss=0.75679, train/mean_average_precision=0.0228088, validation/accuracy=0.549938, validation/loss=0.754764, validation/mean_average_precision=0.0268883, validation/num_examples=43793
+I0318 16:04:03.471290 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:04:59.342953 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:05:02.144804 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:05:04.993330 139809739461824 submission_runner.py:469] Time since start: 457.86s, 	Step: 971, 	{'train/accuracy': 0.9868542991560084, 'train/loss': 0.04949094418110751, 'train/mean_average_precision': 0.07624036367604524, 'validation/accuracy': 0.9843010553646281, 'validation/loss': 0.05894341399780954, 'validation/mean_average_precision': 0.07886747163332185, 'validation/num_examples': 43793, 'test/accuracy': 0.9833114241898004, 'test/loss': 0.06233857713696282, 'test/mean_average_precision': 0.07821789906704595, 'test/num_examples': 43793, 'score': 246.89283227920532, 'total_duration': 457.8561532497406, 'accumulated_submission_time': 246.89283227920532, 'accumulated_eval_time': 208.5752558708191, 'accumulated_logging_time': 0.03412985801696777}
+I0318 16:05:05.003651 139777076598528 logging_writer.py:48] [971] accumulated_eval_time=208.575, accumulated_logging_time=0.0341299, accumulated_submission_time=246.893, global_step=971, preemption_count=0, score=246.893, test/accuracy=0.983311, test/loss=0.0623386, test/mean_average_precision=0.0782179, test/num_examples=43793, total_duration=457.856, train/accuracy=0.986854, train/loss=0.0494909, train/mean_average_precision=0.0762404, validation/accuracy=0.984301, validation/loss=0.0589434, validation/mean_average_precision=0.0788675, validation/num_examples=43793
+I0318 16:09:06.072734 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:10:01.810172 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:10:04.656777 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:10:07.725947 139809739461824 submission_runner.py:469] Time since start: 760.59s, 	Step: 1928, 	{'train/accuracy': 0.9873892913090421, 'train/loss': 0.045759980397215204, 'train/mean_average_precision': 0.11563288402085284, 'validation/accuracy': 0.9846907584352448, 'validation/loss': 0.055307935957983514, 'validation/mean_average_precision': 0.11108424634149593, 'validation/num_examples': 43793, 'test/accuracy': 0.9836808119285705, 'test/loss': 0.05849783442752693, 'test/mean_average_precision': 0.11199217862053576, 'test/num_examples': 43793, 'score': 485.91263151168823, 'total_duration': 760.588812828064, 'accumulated_submission_time': 485.91263151168823, 'accumulated_eval_time': 270.2283353805542, 'accumulated_logging_time': 0.05409097671508789}
+I0318 16:10:07.737382 139777512707840 logging_writer.py:48] [1928] accumulated_eval_time=270.228, accumulated_logging_time=0.054091, accumulated_submission_time=485.913, global_step=1928, preemption_count=0, score=485.913, test/accuracy=0.983681, test/loss=0.0584978, test/mean_average_precision=0.111992, test/num_examples=43793, total_duration=760.589, train/accuracy=0.987389, train/loss=0.04576, train/mean_average_precision=0.115633, validation/accuracy=0.984691, validation/loss=0.0553079, validation/mean_average_precision=0.111084, validation/num_examples=43793
+I0318 16:14:08.816083 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:15:05.010015 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:15:08.007341 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:15:11.032619 139809739461824 submission_runner.py:469] Time since start: 1063.90s, 	Step: 2890, 	{'train/accuracy': 0.9877554189150279, 'train/loss': 0.0435038277828169, 'train/mean_average_precision': 0.1485367452339187, 'validation/accuracy': 0.9850216001045703, 'validation/loss': 0.05287841893404844, 'validation/mean_average_precision': 0.13936505018236073, 'validation/num_examples': 43793, 'test/accuracy': 0.9840354578533644, 'test/loss': 0.05584686798579226, 'test/mean_average_precision': 0.1398624365568184, 'test/num_examples': 43793, 'score': 724.7527775764465, 'total_duration': 1063.8955030441284, 'accumulated_submission_time': 724.7527775764465, 'accumulated_eval_time': 332.4450285434723, 'accumulated_logging_time': 0.07535624504089355}
+I0318 16:15:11.042499 139777806403328 logging_writer.py:48] [2890] accumulated_eval_time=332.445, accumulated_logging_time=0.0753562, accumulated_submission_time=724.753, global_step=2890, preemption_count=0, score=724.753, test/accuracy=0.984035, test/loss=0.0558469, test/mean_average_precision=0.139862, test/num_examples=43793, total_duration=1063.9, train/accuracy=0.987755, train/loss=0.0435038, train/mean_average_precision=0.148537, validation/accuracy=0.985022, validation/loss=0.0528784, validation/mean_average_precision=0.139365, validation/num_examples=43793
+I0318 16:19:12.254032 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:20:06.931101 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:20:09.833417 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:20:13.152402 139809739461824 submission_runner.py:469] Time since start: 1366.02s, 	Step: 3844, 	{'train/accuracy': 0.988016321116912, 'train/loss': 0.04181688723054936, 'train/mean_average_precision': 0.17689275059848958, 'validation/accuracy': 0.9852684120492942, 'validation/loss': 0.05115441415856206, 'validation/mean_average_precision': 0.16205737885641006, 'validation/num_examples': 43793, 'test/accuracy': 0.9843345060797347, 'test/loss': 0.054010100485469, 'test/mean_average_precision': 0.1605278900392257, 'test/num_examples': 43793, 'score': 963.559668302536, 'total_duration': 1366.0152671337128, 'accumulated_submission_time': 963.559668302536, 'accumulated_eval_time': 393.3432650566101, 'accumulated_logging_time': 0.09469413757324219}
+I0318 16:20:13.163495 139778200631040 logging_writer.py:48] [3844] accumulated_eval_time=393.343, accumulated_logging_time=0.0946941, accumulated_submission_time=963.56, global_step=3844, preemption_count=0, score=963.56, test/accuracy=0.984335, test/loss=0.0540101, test/mean_average_precision=0.160528, test/num_examples=43793, total_duration=1366.02, train/accuracy=0.988016, train/loss=0.0418169, train/mean_average_precision=0.176893, validation/accuracy=0.985268, validation/loss=0.0511544, validation/mean_average_precision=0.162057, validation/num_examples=43793
+I0318 16:24:14.614575 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:25:10.440438 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:25:13.577099 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:25:16.758502 139809739461824 submission_runner.py:469] Time since start: 1669.62s, 	Step: 4803, 	{'train/accuracy': 0.9881974772009228, 'train/loss': 0.0404911957288392, 'train/mean_average_precision': 0.2087588472541902, 'validation/accuracy': 0.9855249665707835, 'validation/loss': 0.04976877046955973, 'validation/mean_average_precision': 0.17755671207669121, 'validation/num_examples': 43793, 'test/accuracy': 0.9845661631565004, 'test/loss': 0.052530275737206526, 'test/mean_average_precision': 0.17597513150408242, 'test/num_examples': 43793, 'score': 1202.3324155807495, 'total_duration': 1669.6213166713715, 'accumulated_submission_time': 1202.3324155807495, 'accumulated_eval_time': 455.4870743751526, 'accumulated_logging_time': 0.11702942848205566}
+I0318 16:25:16.769060 139778150274816 logging_writer.py:48] [4803] accumulated_eval_time=455.487, accumulated_logging_time=0.117029, accumulated_submission_time=1202.33, global_step=4803, preemption_count=0, score=1202.33, test/accuracy=0.984566, test/loss=0.0525303, test/mean_average_precision=0.175975, test/num_examples=43793, total_duration=1669.62, train/accuracy=0.988197, train/loss=0.0404912, train/mean_average_precision=0.208759, validation/accuracy=0.985525, validation/loss=0.0497688, validation/mean_average_precision=0.177557, validation/num_examples=43793
+I0318 16:29:17.874681 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:30:15.275660 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:30:18.593592 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:30:21.936646 139809739461824 submission_runner.py:469] Time since start: 1974.80s, 	Step: 5753, 	{'train/accuracy': 0.9885411179310521, 'train/loss': 0.03910344862453561, 'train/mean_average_precision': 0.2288587630085916, 'validation/accuracy': 0.9857823329736699, 'validation/loss': 0.04862668485686937, 'validation/mean_average_precision': 0.19281901659241318, 'validation/num_examples': 43793, 'test/accuracy': 0.9848188799675175, 'test/loss': 0.05130849854519356, 'test/mean_average_precision': 0.1901722928009146, 'test/num_examples': 43793, 'score': 1440.9158811569214, 'total_duration': 1974.7994916439056, 'accumulated_submission_time': 1440.9158811569214, 'accumulated_eval_time': 519.5489599704742, 'accumulated_logging_time': 0.1376645565032959}
+I0318 16:30:21.946146 139778125096704 logging_writer.py:48] [5753] accumulated_eval_time=519.549, accumulated_logging_time=0.137665, accumulated_submission_time=1440.92, global_step=5753, preemption_count=0, score=1440.92, test/accuracy=0.984819, test/loss=0.0513085, test/mean_average_precision=0.190172, test/num_examples=43793, total_duration=1974.8, train/accuracy=0.988541, train/loss=0.0391034, train/mean_average_precision=0.228859, validation/accuracy=0.985782, validation/loss=0.0486267, validation/mean_average_precision=0.192819, validation/num_examples=43793
+I0318 16:34:23.324098 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:35:20.343918 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:35:23.660026 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:35:27.032195 139809739461824 submission_runner.py:469] Time since start: 2279.90s, 	Step: 6701, 	{'train/accuracy': 0.9889651451632755, 'train/loss': 0.03783272769169728, 'train/mean_average_precision': 0.2499762992559152, 'validation/accuracy': 0.9859678478729114, 'validation/loss': 0.047792987318615546, 'validation/mean_average_precision': 0.20655797168573342, 'validation/num_examples': 43793, 'test/accuracy': 0.9850703331944795, 'test/loss': 0.05036857299030115, 'test/mean_average_precision': 0.2045285354671432, 'test/num_examples': 43793, 'score': 1679.6457726955414, 'total_duration': 2279.8950741291046, 'accumulated_submission_time': 1679.6457726955414, 'accumulated_eval_time': 583.257242679596, 'accumulated_logging_time': 0.15687084197998047}
+I0318 16:35:27.041555 139778074789632 logging_writer.py:48] [6701] accumulated_eval_time=583.257, accumulated_logging_time=0.156871, accumulated_submission_time=1679.65, global_step=6701, preemption_count=0, score=1679.65, test/accuracy=0.98507, test/loss=0.0503686, test/mean_average_precision=0.204529, test/num_examples=43793, total_duration=2279.9, train/accuracy=0.988965, train/loss=0.0378327, train/mean_average_precision=0.249976, validation/accuracy=0.985968, validation/loss=0.047793, validation/mean_average_precision=0.206558, validation/num_examples=43793
+I0318 16:39:28.682705 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:40:24.740388 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:40:28.153004 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:40:31.606055 139809739461824 submission_runner.py:469] Time since start: 2584.47s, 	Step: 7652, 	{'train/accuracy': 0.9892783356726104, 'train/loss': 0.03658013960232029, 'train/mean_average_precision': 0.28984830787916516, 'validation/accuracy': 0.9861355013814161, 'validation/loss': 0.0470607020125322, 'validation/mean_average_precision': 0.21560328899423983, 'validation/num_examples': 43793, 'test/accuracy': 0.9852598708027424, 'test/loss': 0.04961912944112941, 'test/mean_average_precision': 0.21394842817319576, 'test/num_examples': 43793, 'score': 1918.1703915596008, 'total_duration': 2584.468786239624, 'accumulated_submission_time': 1918.1703915596008, 'accumulated_eval_time': 646.180418252945, 'accumulated_logging_time': 0.1756439208984375}
+I0318 16:40:31.616108 139778041218816 logging_writer.py:48] [7652] accumulated_eval_time=646.18, accumulated_logging_time=0.175644, accumulated_submission_time=1918.17, global_step=7652, preemption_count=0, score=1918.17, test/accuracy=0.98526, test/loss=0.0496191, test/mean_average_precision=0.213948, test/num_examples=43793, total_duration=2584.47, train/accuracy=0.989278, train/loss=0.0365801, train/mean_average_precision=0.289848, validation/accuracy=0.986136, validation/loss=0.0470607, validation/mean_average_precision=0.215603, validation/num_examples=43793
+I0318 16:44:33.178737 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:45:30.743246 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:45:35.223311 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:45:38.863719 139809739461824 submission_runner.py:469] Time since start: 2891.73s, 	Step: 8604, 	{'train/accuracy': 0.9896201809390246, 'train/loss': 0.035474331507182905, 'train/mean_average_precision': 0.29489810947085404, 'validation/accuracy': 0.9862702736933378, 'validation/loss': 0.04646505063704274, 'validation/mean_average_precision': 0.22578924488916166, 'validation/num_examples': 43793, 'test/accuracy': 0.9854279274820686, 'test/loss': 0.04907159609409321, 'test/mean_average_precision': 0.22444866617254303, 'test/num_examples': 43793, 'score': 2156.5155193805695, 'total_duration': 2891.7265219688416, 'accumulated_submission_time': 2156.5155193805695, 'accumulated_eval_time': 711.8652293682098, 'accumulated_logging_time': 0.19586396217346191}
+I0318 16:45:38.875110 139778125162240 logging_writer.py:48] [8604] accumulated_eval_time=711.865, accumulated_logging_time=0.195864, accumulated_submission_time=2156.52, global_step=8604, preemption_count=0, score=2156.52, test/accuracy=0.985428, test/loss=0.0490716, test/mean_average_precision=0.224449, test/num_examples=43793, total_duration=2891.73, train/accuracy=0.98962, train/loss=0.0354743, train/mean_average_precision=0.294898, validation/accuracy=0.98627, validation/loss=0.0464651, validation/mean_average_precision=0.225789, validation/num_examples=43793
+I0318 16:49:40.608148 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:50:38.923259 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:50:42.681281 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:50:46.353001 139809739461824 submission_runner.py:469] Time since start: 3199.22s, 	Step: 9559, 	{'train/accuracy': 0.9897459353492073, 'train/loss': 0.034869765308159995, 'train/mean_average_precision': 0.31964867704699623, 'validation/accuracy': 0.9864289965064743, 'validation/loss': 0.04597175974582429, 'validation/mean_average_precision': 0.23435738916603685, 'validation/num_examples': 43793, 'test/accuracy': 0.985507533277539, 'test/loss': 0.04863911141715585, 'test/mean_average_precision': 0.23241019173286742, 'test/num_examples': 43793, 'score': 2394.682357311249, 'total_duration': 3199.2158522605896, 'accumulated_submission_time': 2394.682357311249, 'accumulated_eval_time': 777.6100389957428, 'accumulated_logging_time': 0.21686196327209473}
+I0318 16:50:46.362968 139778360043264 logging_writer.py:48] [9559] accumulated_eval_time=777.61, accumulated_logging_time=0.216862, accumulated_submission_time=2394.68, global_step=9559, preemption_count=0, score=2394.68, test/accuracy=0.985508, test/loss=0.0486391, test/mean_average_precision=0.23241, test/num_examples=43793, total_duration=3199.22, train/accuracy=0.989746, train/loss=0.0348698, train/mean_average_precision=0.319649, validation/accuracy=0.986429, validation/loss=0.0459718, validation/mean_average_precision=0.234357, validation/num_examples=43793
+I0318 16:54:48.201987 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 16:55:46.483002 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 16:55:51.115639 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 16:55:55.070259 139809739461824 submission_runner.py:469] Time since start: 3507.93s, 	Step: 10502, 	{'train/accuracy': 0.9899583138480675, 'train/loss': 0.03389485693922784, 'train/mean_average_precision': 0.3477865482204673, 'validation/accuracy': 0.9865406301985781, 'validation/loss': 0.04556367834436274, 'validation/mean_average_precision': 0.24134813100228192, 'validation/num_examples': 43793, 'test/accuracy': 0.9856233618159219, 'test/loss': 0.04820916378007909, 'test/mean_average_precision': 0.23990953739949872, 'test/num_examples': 43793, 'score': 2632.6915740966797, 'total_duration': 3507.933029651642, 'accumulated_submission_time': 2632.6915740966797, 'accumulated_eval_time': 844.4781935214996, 'accumulated_logging_time': 0.23746514320373535}
+I0318 16:55:55.080774 139778586547968 logging_writer.py:48] [10502] accumulated_eval_time=844.478, accumulated_logging_time=0.237465, accumulated_submission_time=2632.69, global_step=10502, preemption_count=0, score=2632.69, test/accuracy=0.985623, test/loss=0.0482092, test/mean_average_precision=0.23991, test/num_examples=43793, total_duration=3507.93, train/accuracy=0.989958, train/loss=0.0338949, train/mean_average_precision=0.347787, validation/accuracy=0.986541, validation/loss=0.0455637, validation/mean_average_precision=0.241348, validation/num_examples=43793
+I0318 16:59:56.934779 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 17:00:57.764732 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 17:01:01.627371 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 17:01:05.597007 139809739461824 submission_runner.py:469] Time since start: 3818.46s, 	Step: 11425, 	{'train/accuracy': 0.990129729013085, 'train/loss': 0.033332130153502795, 'train/mean_average_precision': 0.36191738810008095, 'validation/accuracy': 0.986612481702223, 'validation/loss': 0.045256844261662876, 'validation/mean_average_precision': 0.2474591709718376, 'validation/num_examples': 43793, 'test/accuracy': 0.9857059159741876, 'test/loss': 0.04789894731338864, 'test/mean_average_precision': 0.24572836529233588, 'test/num_examples': 43793, 'score': 2870.6456758975983, 'total_duration': 3818.4598610401154, 'accumulated_submission_time': 2870.6456758975983, 'accumulated_eval_time': 913.1404399871826, 'accumulated_logging_time': 0.25988078117370605}
+I0318 17:01:05.607472 139778779465472 logging_writer.py:48] [11425] accumulated_eval_time=913.14, accumulated_logging_time=0.259881, accumulated_submission_time=2870.65, global_step=11425, preemption_count=0, score=2870.65, test/accuracy=0.985706, test/loss=0.0478989, test/mean_average_precision=0.245728, test/num_examples=43793, total_duration=3818.46, train/accuracy=0.99013, train/loss=0.0333321, train/mean_average_precision=0.361917, validation/accuracy=0.986612, validation/loss=0.0452568, validation/mean_average_precision=0.247459, validation/num_examples=43793
+I0318 17:05:07.357530 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 17:06:07.940085 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 17:06:11.857609 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 17:06:16.204790 139809739461824 submission_runner.py:469] Time since start: 4129.07s, 	Step: 12371, 	{'train/accuracy': 0.9904988306025722, 'train/loss': 0.032080105570847395, 'train/mean_average_precision': 0.37935066983125515, 'validation/accuracy': 0.9866729668663083, 'validation/loss': 0.04501059682822295, 'validation/mean_average_precision': 0.2518848293228615, 'validation/num_examples': 43793, 'test/accuracy': 0.9857880489377681, 'test/loss': 0.04767338768780544, 'test/mean_average_precision': 0.25082702922698685, 'test/num_examples': 43793, 'score': 3108.560455560684, 'total_duration': 4129.0675394535065, 'accumulated_submission_time': 3108.560455560684, 'accumulated_eval_time': 981.9874477386475, 'accumulated_logging_time': 0.2810366153717041}
+I0318 17:06:16.215058 139778234234624 logging_writer.py:48] [12371] accumulated_eval_time=981.987, accumulated_logging_time=0.281037, accumulated_submission_time=3108.56, global_step=12371, preemption_count=0, score=3108.56, test/accuracy=0.985788, test/loss=0.0476734, test/mean_average_precision=0.250827, test/num_examples=43793, total_duration=4129.07, train/accuracy=0.990499, train/loss=0.0320801, train/mean_average_precision=0.379351, validation/accuracy=0.986673, validation/loss=0.0450106, validation/mean_average_precision=0.251885, validation/num_examples=43793
+I0318 17:10:18.294439 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 17:11:18.761290 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 17:11:22.719101 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 17:11:26.930149 139809739461824 submission_runner.py:469] Time since start: 4439.79s, 	Step: 13319, 	{'train/accuracy': 0.9907833892777609, 'train/loss': 0.031176188536165095, 'train/mean_average_precision': 0.3945588627769494, 'validation/accuracy': 0.9867115312326714, 'validation/loss': 0.044837060351000685, 'validation/mean_average_precision': 0.25628650013747634, 'validation/num_examples': 43793, 'test/accuracy': 0.985860915618278, 'test/loss': 0.04748342559427411, 'test/mean_average_precision': 0.25242636248035405, 'test/num_examples': 43793, 'score': 3346.7427434921265, 'total_duration': 4439.79287648201, 'accumulated_submission_time': 3346.7427434921265, 'accumulated_eval_time': 1050.6229968070984, 'accumulated_logging_time': 0.3009493350982666}
+I0318 17:11:26.940413 139778208974592 logging_writer.py:48] [13319] accumulated_eval_time=1050.62, accumulated_logging_time=0.300949, accumulated_submission_time=3346.74, global_step=13319, preemption_count=0, score=3346.74, test/accuracy=0.985861, test/loss=0.0474834, test/mean_average_precision=0.252426, test/num_examples=43793, total_duration=4439.79, train/accuracy=0.990783, train/loss=0.0311762, train/mean_average_precision=0.394559, validation/accuracy=0.986712, validation/loss=0.0448371, validation/mean_average_precision=0.256287, validation/num_examples=43793
+I0318 17:15:28.894464 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 17:16:27.460468 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 17:16:33.719951 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 17:16:37.996606 139809739461824 submission_runner.py:469] Time since start: 4750.86s, 	Step: 14260, 	{'train/accuracy': 0.9908841615325085, 'train/loss': 0.03086261293937446, 'train/mean_average_precision': 0.40967780070940224, 'validation/accuracy': 0.9867565906502115, 'validation/loss': 0.04474840987954116, 'validation/mean_average_precision': 0.2565203487769836, 'validation/num_examples': 43793, 'test/accuracy': 0.9859089318123713, 'test/loss': 0.04737047631643346, 'test/mean_average_precision': 0.25572388162506143, 'test/num_examples': 43793, 'score': 3584.543148756027, 'total_duration': 4750.859464645386, 'accumulated_submission_time': 3584.543148756027, 'accumulated_eval_time': 1119.7250640392303, 'accumulated_logging_time': 0.32097625732421875}
+I0318 17:16:38.007436 139778410383104 logging_writer.py:48] [14260] accumulated_eval_time=1119.73, accumulated_logging_time=0.320976, accumulated_submission_time=3584.54, global_step=14260, preemption_count=0, score=3584.54, test/accuracy=0.985909, test/loss=0.0473705, test/mean_average_precision=0.255724, test/num_examples=43793, total_duration=4750.86, train/accuracy=0.990884, train/loss=0.0308626, train/mean_average_precision=0.409678, validation/accuracy=0.986757, validation/loss=0.0447484, validation/mean_average_precision=0.25652, validation/num_examples=43793
+I0318 17:20:40.067512 139809739461824 spec.py:321] Evaluating on the training split.
+I0318 17:21:39.094694 139809739461824 spec.py:333] Evaluating on the validation split.
+I0318 17:21:44.440604 139809739461824 spec.py:349] Evaluating on the test split.
+I0318 17:21:48.970544 139809739461824 submission_runner.py:469] Time since start: 5061.83s, 	Step: 15203, 	{'train/accuracy': 0.9910534120974139, 'train/loss': 0.030087032995186457, 'train/mean_average_precision': 0.43135853817921666, 'validation/accuracy': 0.9867801352107278, 'validation/loss': 0.04472905792530204, 'validation/mean_average_precision': 0.2572865187860022, 'validation/num_examples': 43793, 'test/accuracy': 0.9859413638031185, 'test/loss': 0.04728382867232275, 'test/mean_average_precision': 0.25680719038994926, 'test/num_examples': 43793, 'score': 3822.3280444145203, 'total_duration': 5061.833287239075, 'accumulated_submission_time': 3822.3280444145203, 'accumulated_eval_time': 1188.6278529167175, 'accumulated_logging_time': 0.3416152000427246}
+I0318 17:21:48.981343 139778695620352 logging_writer.py:48] [15203] accumulated_eval_time=1188.63, accumulated_logging_time=0.341615, accumulated_submission_time=3822.33, global_step=15203, preemption_count=0, score=3822.33, test/accuracy=0.985941, test/loss=0.0472838, test/mean_average_precision=0.256807, test/num_examples=43793, total_duration=5061.83, train/accuracy=0.991053, train/loss=0.030087, train/mean_average_precision=0.431359, validation/accuracy=0.98678, validation/loss=0.0447291, validation/mean_average_precision=0.257287, validation/num_examples=43793
+I0318 17:25:51.461498 139809739461824 spec.py:321] Evaluating on the training split.
+2025-03-18 17:26:25.134511: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007f222d7fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f222dfff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f226cc04700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2264c04700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f22277fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2290f25700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2227fff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2224ff9700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f21f3fff700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007f25597fa700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007f27fddb54c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/dispatch.py", line 86 in apply_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 387 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 559 in _convert_element_type
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 517 in convert_element_type
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5819 in <genexpr>
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5819 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:40.116797: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007f3f657fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f66ffd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f65ffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f667fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f677fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f7e9a5700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f67fff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f7f1a6700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f3f7f9a7700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007f3fbeafe700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007f428b06c4c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/dispatch.py", line 86 in apply_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 387 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 559 in _convert_element_type
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 517 in convert_element_type
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5819 in <genexpr>
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5819 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:40.499217: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007fade37fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf5ffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fade3fff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf4ff9700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf57fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf67fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf6ffd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf77fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fadf7fff700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007fae3d4ff700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007fb10f9d44c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/array_methods.py", line 265 in deferring_binary_op
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5377 in _normalize_index
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5767 in <genexpr>
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5769 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:40.530616: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007f6b7cff9700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b63fff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b7d7fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b7dffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b7e7fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b7effd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b7f7fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b7ffff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f6b90b59700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007f6bc5fff700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007f6e969594c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/dispatch.py", line 86 in apply_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 387 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 948 in select
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5377 in _normalize_index
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5767 in <genexpr>
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5769 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:41.221127: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007fe4417fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe441ffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe4427fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe4437fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe442ffd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe443fff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe4529a5700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe4531a6700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007fe4539a7700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007fe496afd700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007fe75d0a84c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/dispatch.py", line 86 in apply_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 387 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/slicing.py", line 348 in gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5646 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:41.258630: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007ef948ff9700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef9497fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef949ffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef94a7fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef94affd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef94b7fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef94bfff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef95c9b0700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007ef95d1b1700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007ef9a89fa700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007efc62dec4c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 1474 in broadcast_arrays
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5814 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:42.050767: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007f2bb17fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bb1ffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bb2ffd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bb27fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bb37fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2babfff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bb3fff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bc89b0700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f2bc91b1700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007f2c111fb700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007f2ecf6dc4c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/dispatch.py", line 86 in apply_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 387 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 420 in add
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5377 in _normalize_index
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5767 in <genexpr>
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5769 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+2025-03-18 17:26:43.777726: F external/tsl/tsl/platform/default/env.cc:74] Check failed: ret == 0 (11 vs. 0)Thread tf_XLACpuCompile creation via pthread_create() failed.
+Fatal Python error: Aborted
+
+Thread 0x00007f82fd7fa700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f82fdffb700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f82fe7fc700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f82feffd700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f82ff7fe700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f82fffff700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f83129a5700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f83131a6700 (most recent call first):
+  <no Python frame>
+
+Thread 0x00007f83139a7700 (most recent call first):
+  File "/usr/local/lib/python3.11/threading.py", line 331 in wait
+  File "/usr/local/lib/python3.11/threading.py", line 629 in wait
+  File "/usr/local/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x00007f835d2fb700 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 47 in _recv_msg
+  File "/usr/local/lib/python3.11/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 153 in _read_thread
+  File "/usr/local/lib/python3.11/threading.py", line 982 in run
+  File "/usr/local/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/usr/local/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Current thread 0x00007f861d7a84c0 (most recent call first):
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 237 in backend_compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/profiler.py", line 335 in wrapper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 501 in _compile_and_write_cache
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/compiler.py", line 330 in compile_or_get_cached
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2678 in _cached_compilation
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2860 in from_hlo
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/interpreters/pxla.py", line 2363 in compile
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1438 in _pjit_call_impl_python
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1508 in call_impl_cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 1525 in _pjit_call_impl
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 2789 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 181 in _python_pjit_helper
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/pjit.py", line 304 in cache_miss
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 179 in reraise_with_filtered_traceback
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/dispatch.py", line 86 in apply_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 879 in process_primitive
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 391 in bind_with_trace
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/core.py", line 387 in bind
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 623 in concatenate
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5915 in _index_to_gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5625 in _gather
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/numpy/lax_numpy.py", line 5616 in _rewriting_take
+  File "/usr/local/lib/python3.11/site-packages/jax/_src/array.py", line 336 in __getitem__
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/metrics.py", line 65 in compute
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 626 in <dictcomp>
+  File "/usr/local/lib/python3.11/site-packages/clu/metrics.py", line 625 in compute
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/ogbg_pytorch/workload.py", line 243 in _normalize_eval_metrics
+  File "/algorithmic-efficiency/algoperf/workloads/ogbg/workload.py", line 193 in _eval_model_on_split
+  File "/algorithmic-efficiency/algoperf/spec.py", line 322 in eval_model
+  File "/algorithmic-efficiency/submission_runner.py", line 429 in train_once
+  File "/algorithmic-efficiency/submission_runner.py", line 668 in score_submission_on_workload
+  File "/algorithmic-efficiency/submission_runner.py", line 734 in main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254 in _run_main
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308 in run
+  File "/algorithmic-efficiency/submission_runner.py", line 766 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy._core._multiarray_tests, numpy.linalg._umath_linalg, jaxlib.cpu_feature_guard, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector, scipy._lib._ccallback_c, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, scipy.sparse._sparsetools, _csparsetools, scipy.sparse._csparsetools, scipy.linalg._fblas, scipy.linalg._flapack, scipy.linalg.cython_lapack, scipy.linalg._cythonized_array_utils, scipy.linalg._solve_toeplitz, scipy.linalg._decomp_lu_cython, scipy.linalg._matfuncs_sqrtm_triu, scipy.linalg._matfuncs_expm, scipy.linalg._linalg_pythran, scipy.linalg.cython_blas, scipy.linalg._decomp_update, scipy.sparse.linalg._dsolve._superlu, scipy.sparse.linalg._eigen.arpack._arpack, scipy.sparse.linalg._propack._spropack, scipy.sparse.linalg._propack._dpropack, scipy.sparse.linalg._propack._cpropack, scipy.sparse.linalg._propack._zpropack, scipy.sparse.csgraph._tools, scipy.sparse.csgraph._shortest_path, scipy.sparse.csgraph._traversal, scipy.sparse.csgraph._min_spanning_tree, scipy.sparse.csgraph._flow, scipy.sparse.csgraph._matching, scipy.sparse.csgraph._reordering, PIL._imaging, psutil._psutil_linux, psutil._psutil_posix, pyarrow.lib, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, kiwisolver._cext, sklearn.__check_build._check_build, scipy.special._ufuncs_cxx, scipy.special._ufuncs, scipy.special._specfun, scipy.special._comb, scipy.special._ellip_harm_2, scipy.spatial._ckdtree, scipy._lib.messagestream, scipy.spatial._qhull, scipy.spatial._voronoi, scipy.spatial._distance_wrap, scipy.spatial._hausdorff, scipy.spatial.transform._rotation, scipy.optimize._group_columns, scipy.optimize._trlib._trlib, scipy.optimize._lbfgsb, _moduleTNC, scipy.optimize._moduleTNC, scipy.optimize._cobyla, scipy.optimize._slsqp, scipy.optimize._minpack, scipy.optimize._lsq.givens_elimination, scipy.optimize._zeros, scipy.optimize._cython_nnls, scipy._lib._uarray._uarray, scipy.linalg._decomp_interpolative, scipy.optimize._bglu_dense, scipy.optimize._lsap, scipy.optimize._direct, scipy.integrate._odepack, scipy.integrate._quadpack, scipy.integrate._vode, scipy.integrate._dop, scipy.integrate._lsoda, scipy.interpolate._fitpack, scipy.interpolate._dfitpack, scipy.interpolate._dierckx, scipy.interpolate._ppoly, scipy.interpolate._interpnd, scipy.interpolate._rbfinterp_pythran, scipy.interpolate._rgi_cython, scipy.interpolate._bspl, scipy.special.cython_special, scipy.stats._stats, scipy.stats._sobol, scipy.stats._qmc_cy, scipy.stats._biasedurn, scipy.stats._stats_pythran, scipy.stats._levy_stable.levyst, scipy.stats._ansari_swilk_statistics, scipy.stats._mvn, scipy.stats._rcont.rcont, scipy.ndimage._nd_image, scipy.ndimage._rank_filter_1d, _ni_label, scipy.ndimage._ni_label, sklearn.utils._isfinite, sklearn.utils.sparsefuncs_fast, sklearn.utils.murmurhash, sklearn.utils._openmp_helpers, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, msgpack._cmsgpack, yaml._yaml, sklearn.metrics.cluster._expected_mutual_info_fast, sklearn.preprocessing._csr_polynomial_expansion, sklearn.preprocessing._target_encoder_fast, sklearn.metrics._dist_metrics, sklearn.metrics._pairwise_distances_reduction._datasets_pair, sklearn.utils._cython_blas, sklearn.metrics._pairwise_distances_reduction._base, sklearn.metrics._pairwise_distances_reduction._middle_term_computer, sklearn.utils._heap, sklearn.utils._sorting, sklearn.metrics._pairwise_distances_reduction._argkmin, sklearn.metrics._pairwise_distances_reduction._argkmin_classmode, sklearn.utils._vector_sentinel, sklearn.metrics._pairwise_distances_reduction._radius_neighbors, sklearn.metrics._pairwise_distances_reduction._radius_neighbors_classmode, sklearn.metrics._pairwise_fast, markupsafe._speedups, cuda_utils, __triton_launcher (total: 207)
+W0318 17:28:53.442000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 45 closing signal SIGTERM
+W0318 17:28:53.442000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 46 closing signal SIGTERM
+W0318 17:28:53.442000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 47 closing signal SIGTERM
+W0318 17:28:53.443000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 48 closing signal SIGTERM
+W0318 17:28:53.443000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 49 closing signal SIGTERM
+W0318 17:28:53.443000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 50 closing signal SIGTERM
+W0318 17:28:53.443000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 51 closing signal SIGTERM
+E0318 17:29:06.968000 9 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -6) local_rank: 0 (pid: 44) of binary: /usr/local/bin/python3.11
+Traceback (most recent call last):
+  File "/usr/local/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/usr/local/lib/python3.11/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+===================================================
+submission_runner.py FAILED
+---------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+---------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-03-18_17:28:53
+  host      : 17762b387742
+  rank      : 0 (local_rank: 0)
+  exitcode  : -6 (pid: 44)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 44
+===================================================

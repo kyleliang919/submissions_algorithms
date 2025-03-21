@@ -1,0 +1,292 @@
+torchrun --redirects 1:0,2:0,3:0,4:0,5:0,6:0,7:0 --standalone --nnodes=1 --nproc_per_node=8 submission_runner.py --framework=pytorch --workload=fastmri --submission_path=submissions_algorithms/submissions/self_tuning/schedule_free_adamw_v2/submission.py --data_dir=/data/fastmri --num_tuning_trials=1 --experiment_dir=/experiment_runs --experiment_name=submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2 --overwrite=True --save_checkpoints=False --rng_seed=78736736 --torch_compile=true --tuning_ruleset=self 2>&1 | tee -a /logs/fastmri_pytorch_03-18-2025-15-55-38.log
+W0318 15:55:39.629000 9 site-packages/torch/distributed/run.py:793] 
+W0318 15:55:39.629000 9 site-packages/torch/distributed/run.py:793] *****************************************
+W0318 15:55:39.629000 9 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0318 15:55:39.629000 9 site-packages/torch/distributed/run.py:793] *****************************************
+2025-03-18 15:55:40.747919: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.747911: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.747932: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.747911: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.747911: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.747915: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.747911: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-18 15:55:40.748001: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313340.768974      44 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313340.768976      46 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313340.768972      51 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313340.768979      48 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313340.768979      45 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313340.768976      49 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742313340.768974      50 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313340.768975      47 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742313340.775142      49 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775145      44 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775143      46 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775142      51 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775145      47 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775167      45 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775189      48 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742313340.775261      50 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+[rank0]:[W318 15:55:49.938506266 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank6]:[W318 15:55:49.057662204 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 6]  using GPU 6 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank3]:[W318 15:55:49.057782393 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank1]:[W318 15:55:49.059446441 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank5]:[W318 15:55:49.070601976 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank4]:[W318 15:55:49.112631864 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank2]:[W318 15:55:49.112653550 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank7]:[W318 15:55:49.118785972 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 7]  using GPU 7 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+I0318 15:55:50.944774 140305231852736 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944774 139852185351360 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944780 140588408169664 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944774 140241104688320 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944774 139961096074432 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944786 139773141812416 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944791 140615791334592 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.944860 140169187202240 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch.
+I0318 15:55:50.984715 139852185351360 submission_runner.py:665] Creating directory at /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch/trial_1.
+I0318 15:55:51.314617 139852185351360 submission_runner.py:218] Initializing dataset.
+I0318 15:55:51.314812 139852185351360 submission_runner.py:229] Initializing model.
+I0318 15:55:51.489864 139852185351360 submission_runner.py:268] Performing `torch.compile`.
+I0318 15:55:52.413122 139961096074432 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.413290 139961096074432 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.418702 139852185351360 submission_runner.py:272] Initializing optimizer.
+I0318 15:55:52.419331 139852185351360 submission_runner.py:279] Initializing metrics bundle.
+I0318 15:55:52.419490 139852185351360 submission_runner.py:301] Initializing checkpoint and logger.
+I0318 15:55:52.419717 139852185351360 submission_runner.py:321] Saving meta data to /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch/trial_1/meta_data_0.json.
+I0318 15:55:52.419907 139852185351360 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.419962 139852185351360 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.424540 140615791334592 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.424709 140615791334592 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.426430 139773141812416 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.426596 139773141812416 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.429758 140241104688320 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.429928 140241104688320 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.433882 140588408169664 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.434046 140588408169664 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.434709 140305231852736 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.434887 140305231852736 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.435618 140169187202240 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0318 15:55:52.435778 140169187202240 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0318 15:55:52.706634 139852185351360 submission_runner.py:325] Saving flags to /experiment_runs/submissions/rolling_leaderboard/self_tuning/schedule_free_adamw_v2/study_2/fastmri_pytorch/trial_1/flags_0.json.
+I0318 15:55:52.758003 139852185351360 submission_runner.py:337] Starting training loop.
+[rank5]:W0318 15:55:52.789000 49 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank1]:W0318 15:55:52.790000 45 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank3]:W0318 15:55:52.790000 47 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank7]:W0318 15:55:52.791000 51 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank6]:W0318 15:55:52.791000 50 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank2]:W0318 15:55:52.791000 46 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank4]:W0318 15:55:52.791000 48 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank0]:W0318 15:58:10.156000 44 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank5]:W0318 15:58:34.482000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank5]:W0318 15:58:34.482000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank5]:W0318 15:58:34.482000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank5]:W0318 15:58:34.482000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank5]:W0318 15:58:34.482000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank4]:W0318 15:58:34.624000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank4]:W0318 15:58:34.624000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank4]:W0318 15:58:34.624000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank4]:W0318 15:58:34.624000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank4]:W0318 15:58:34.624000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank6]:W0318 15:58:34.625000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank6]:W0318 15:58:34.625000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank6]:W0318 15:58:34.625000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank6]:W0318 15:58:34.625000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank6]:W0318 15:58:34.625000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank7]:W0318 15:58:34.625000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank7]:W0318 15:58:34.625000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank7]:W0318 15:58:34.625000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank7]:W0318 15:58:34.625000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank7]:W0318 15:58:34.625000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank3]:W0318 15:58:34.749000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank3]:W0318 15:58:34.749000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank3]:W0318 15:58:34.749000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank3]:W0318 15:58:34.749000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank3]:W0318 15:58:34.749000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank2]:W0318 15:58:34.756000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank2]:W0318 15:58:34.756000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank2]:W0318 15:58:34.756000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank2]:W0318 15:58:34.756000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank2]:W0318 15:58:34.756000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank1]:W0318 15:58:34.848000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank1]:W0318 15:58:34.848000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank1]:W0318 15:58:34.848000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank1]:W0318 15:58:34.848000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank1]:W0318 15:58:34.848000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank0]:W0318 15:58:36.307000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank0]:W0318 15:58:36.307000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank0]:W0318 15:58:36.307000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' size mismatch at index 1. expected 1, actual 64
+[rank0]:W0318 15:58:36.307000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank0]:W0318 15:58:36.307000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+I0318 15:58:51.278128 139852185351360 spec.py:321] Evaluating on the training split.
+[rank0]:W0318 16:01:19.206000 44 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank0]:W0318 16:01:19.206000 44 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank0]:W0318 16:01:19.206000 44 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank0]:W0318 16:01:19.206000 44 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank0]:W0318 16:01:19.206000 44 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank7]:W0318 16:01:19.214000 51 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank7]:W0318 16:01:19.214000 51 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank7]:W0318 16:01:19.214000 51 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank7]:W0318 16:01:19.214000 51 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank7]:W0318 16:01:19.214000 51 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank6]:W0318 16:01:19.221000 50 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank6]:W0318 16:01:19.221000 50 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank6]:W0318 16:01:19.221000 50 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank6]:W0318 16:01:19.221000 50 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank6]:W0318 16:01:19.221000 50 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank1]:W0318 16:01:19.229000 45 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank1]:W0318 16:01:19.229000 45 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank1]:W0318 16:01:19.229000 45 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank1]:W0318 16:01:19.229000 45 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank1]:W0318 16:01:19.229000 45 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank2]:W0318 16:01:19.242000 46 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank2]:W0318 16:01:19.242000 46 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank2]:W0318 16:01:19.242000 46 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank2]:W0318 16:01:19.242000 46 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank2]:W0318 16:01:19.242000 46 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank4]:W0318 16:01:19.248000 48 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank4]:W0318 16:01:19.248000 48 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank4]:W0318 16:01:19.248000 48 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank4]:W0318 16:01:19.248000 48 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank4]:W0318 16:01:19.248000 48 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank3]:W0318 16:01:19.249000 47 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank3]:W0318 16:01:19.249000 47 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank3]:W0318 16:01:19.249000 47 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank3]:W0318 16:01:19.249000 47 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank3]:W0318 16:01:19.249000 47 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank5]:W0318 16:01:19.251000 49 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] torch._dynamo hit config.cache_size_limit (8)
+[rank5]:W0318 16:01:19.251000 49 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:168)
+[rank5]:W0318 16:01:19.251000 49 site-packages/torch/_dynamo/convert_frame.py:844] [3/8]    last reason: 3/0: tensor 'L['x']' size mismatch at index 0. expected 2, actual 32
+[rank5]:W0318 16:01:19.251000 49 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank5]:W0318 16:01:19.251000 49 site-packages/torch/_dynamo/convert_frame.py:844] [3/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+I0318 16:03:04.318670 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:05:40.952929 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:08:21.128307 139852185351360 submission_runner.py:469] Time since start: 748.37s, 	Step: 1, 	{'train/ssim': 0.2584668738501413, 'train/loss': 0.8387602397373745, 'validation/ssim': 0.24462457848990574, 'validation/loss': 0.8479531480813872, 'validation/num_examples': 3554, 'test/ssim': 0.2683172793203278, 'test/loss': 0.8470894292358978, 'test/num_examples': 3581, 'score': 177.89722108840942, 'total_duration': 748.370521068573, 'accumulated_submission_time': 177.89722108840942, 'accumulated_eval_time': 569.8503625392914, 'accumulated_logging_time': 0}
+I0318 16:08:21.134082 139803123246848 logging_writer.py:48] [1] accumulated_eval_time=569.85, accumulated_logging_time=0, accumulated_submission_time=177.897, global_step=1, preemption_count=0, score=177.897, test/loss=0.847089, test/num_examples=3581, test/ssim=0.268317, total_duration=748.371, train/loss=0.83876, train/ssim=0.258467, validation/loss=0.847953, validation/num_examples=3554, validation/ssim=0.244625
+I0318 16:09:42.331960 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:09:44.298940 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:09:46.469848 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:09:48.710211 139852185351360 submission_runner.py:469] Time since start: 835.95s, 	Step: 522, 	{'train/ssim': 0.7261838912963867, 'train/loss': 0.2845198767525809, 'validation/ssim': 0.7051318441808525, 'validation/loss': 0.3025142087920301, 'validation/num_examples': 3554, 'test/ssim': 0.7224712185405613, 'test/loss': 0.30459477974029603, 'test/num_examples': 3581, 'score': 257.5276620388031, 'total_duration': 835.9524536132812, 'accumulated_submission_time': 257.5276620388031, 'accumulated_eval_time': 576.2288517951965, 'accumulated_logging_time': 0.030009031295776367}
+I0318 16:09:48.720958 139803114854144 logging_writer.py:48] [522] accumulated_eval_time=576.229, accumulated_logging_time=0.030009, accumulated_submission_time=257.528, global_step=522, preemption_count=0, score=257.528, test/loss=0.304595, test/num_examples=3581, test/ssim=0.722471, total_duration=835.952, train/loss=0.28452, train/ssim=0.726184, validation/loss=0.302514, validation/num_examples=3554, validation/ssim=0.705132
+I0318 16:11:09.740232 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:11:11.878556 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:11:14.103630 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:11:16.374912 139852185351360 submission_runner.py:469] Time since start: 923.62s, 	Step: 679, 	{'train/ssim': 0.729384354182652, 'train/loss': 0.2820215736116682, 'validation/ssim': 0.7084091950750915, 'validation/loss': 0.29986771479978547, 'validation/num_examples': 3554, 'test/ssim': 0.7256768851665037, 'test/loss': 0.3018579640158126, 'test/num_examples': 3581, 'score': 337.26311111450195, 'total_duration': 923.6171021461487, 'accumulated_submission_time': 337.26311111450195, 'accumulated_eval_time': 582.8637964725494, 'accumulated_logging_time': 0.049019575119018555}
+I0318 16:11:16.387621 139803123246848 logging_writer.py:48] [679] accumulated_eval_time=582.864, accumulated_logging_time=0.0490196, accumulated_submission_time=337.263, global_step=679, preemption_count=0, score=337.263, test/loss=0.301858, test/num_examples=3581, test/ssim=0.725677, total_duration=923.617, train/loss=0.282022, train/ssim=0.729384, validation/loss=0.299868, validation/num_examples=3554, validation/ssim=0.708409
+I0318 16:12:37.348964 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:12:39.466230 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:12:41.760867 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:12:43.990425 139852185351360 submission_runner.py:469] Time since start: 1011.23s, 	Step: 831, 	{'train/ssim': 0.7315913609095982, 'train/loss': 0.2802659102848598, 'validation/ssim': 0.7109179220376688, 'validation/loss': 0.2978818224733575, 'validation/num_examples': 3554, 'test/ssim': 0.7280849530290072, 'test/loss': 0.29991346336349833, 'test/num_examples': 3581, 'score': 416.9672677516937, 'total_duration': 1011.2326695919037, 'accumulated_submission_time': 416.9672677516937, 'accumulated_eval_time': 589.5053839683533, 'accumulated_logging_time': 0.06978130340576172}
+I0318 16:12:43.999937 139803114854144 logging_writer.py:48] [831] accumulated_eval_time=589.505, accumulated_logging_time=0.0697813, accumulated_submission_time=416.967, global_step=831, preemption_count=0, score=416.967, test/loss=0.299913, test/num_examples=3581, test/ssim=0.728085, total_duration=1011.23, train/loss=0.280266, train/ssim=0.731591, validation/loss=0.297882, validation/num_examples=3554, validation/ssim=0.710918
+I0318 16:14:04.881904 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:14:06.978195 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:14:09.182449 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:14:11.380126 139852185351360 submission_runner.py:469] Time since start: 1098.62s, 	Step: 989, 	{'train/ssim': 0.7330016408647809, 'train/loss': 0.27883013657161165, 'validation/ssim': 0.7123077512793683, 'validation/loss': 0.29638005537334694, 'validation/num_examples': 3554, 'test/ssim': 0.729454553982826, 'test/loss': 0.29840386163519267, 'test/num_examples': 3581, 'score': 496.64826703071594, 'total_duration': 1098.62237906456, 'accumulated_submission_time': 496.64826703071594, 'accumulated_eval_time': 596.003826379776, 'accumulated_logging_time': 0.08722901344299316}
+I0318 16:14:11.389756 139803123246848 logging_writer.py:48] [989] accumulated_eval_time=596.004, accumulated_logging_time=0.087229, accumulated_submission_time=496.648, global_step=989, preemption_count=0, score=496.648, test/loss=0.298404, test/num_examples=3581, test/ssim=0.729455, total_duration=1098.62, train/loss=0.27883, train/ssim=0.733002, validation/loss=0.29638, validation/num_examples=3554, validation/ssim=0.712308
+I0318 16:15:32.335843 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:15:34.443212 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:15:36.703518 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:15:38.952702 139852185351360 submission_runner.py:469] Time since start: 1186.19s, 	Step: 1144, 	{'train/ssim': 0.7340540204729352, 'train/loss': 0.2777456556047712, 'validation/ssim': 0.7131760510824071, 'validation/loss': 0.2954068589089758, 'validation/num_examples': 3554, 'test/ssim': 0.7304367751457345, 'test/loss': 0.2973029789928616, 'test/num_examples': 3581, 'score': 576.3759775161743, 'total_duration': 1186.1949138641357, 'accumulated_submission_time': 576.3759775161743, 'accumulated_eval_time': 602.6208281517029, 'accumulated_logging_time': 0.10509848594665527}
+I0318 16:15:38.961937 139803114854144 logging_writer.py:48] [1144] accumulated_eval_time=602.621, accumulated_logging_time=0.105098, accumulated_submission_time=576.376, global_step=1144, preemption_count=0, score=576.376, test/loss=0.297303, test/num_examples=3581, test/ssim=0.730437, total_duration=1186.19, train/loss=0.277746, train/ssim=0.734054, validation/loss=0.295407, validation/num_examples=3554, validation/ssim=0.713176
+I0318 16:17:00.527373 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:17:02.636938 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:17:04.906038 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:17:07.171369 139852185351360 submission_runner.py:469] Time since start: 1274.41s, 	Step: 1305, 	{'train/ssim': 0.7351010867527553, 'train/loss': 0.27685630321502686, 'validation/ssim': 0.7142770195114659, 'validation/loss': 0.29454027647105374, 'validation/num_examples': 3554, 'test/ssim': 0.7315081713819463, 'test/loss': 0.2963634023317509, 'test/num_examples': 3581, 'score': 656.6326191425323, 'total_duration': 1274.4133896827698, 'accumulated_submission_time': 656.6326191425323, 'accumulated_eval_time': 609.2647631168365, 'accumulated_logging_time': 0.12221741676330566}
+I0318 16:17:07.188009 139803123246848 logging_writer.py:48] [1305] accumulated_eval_time=609.265, accumulated_logging_time=0.122217, accumulated_submission_time=656.633, global_step=1305, preemption_count=0, score=656.633, test/loss=0.296363, test/num_examples=3581, test/ssim=0.731508, total_duration=1274.41, train/loss=0.276856, train/ssim=0.735101, validation/loss=0.29454, validation/num_examples=3554, validation/ssim=0.714277
+I0318 16:18:28.248498 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:18:30.351835 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:18:32.626965 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:18:34.880188 139852185351360 submission_runner.py:469] Time since start: 1362.12s, 	Step: 1467, 	{'train/ssim': 0.735576697758266, 'train/loss': 0.2765369244984218, 'validation/ssim': 0.7147560269898354, 'validation/loss': 0.2941792863235087, 'validation/num_examples': 3554, 'test/ssim': 0.7320135649739947, 'test/loss': 0.29596763681147026, 'test/num_examples': 3581, 'score': 736.4144349098206, 'total_duration': 1362.1224009990692, 'accumulated_submission_time': 736.4144349098206, 'accumulated_eval_time': 615.8965694904327, 'accumulated_logging_time': 0.15384197235107422}
+I0318 16:18:34.889852 139803114854144 logging_writer.py:48] [1467] accumulated_eval_time=615.897, accumulated_logging_time=0.153842, accumulated_submission_time=736.414, global_step=1467, preemption_count=0, score=736.414, test/loss=0.295968, test/num_examples=3581, test/ssim=0.732014, total_duration=1362.12, train/loss=0.276537, train/ssim=0.735577, validation/loss=0.294179, validation/num_examples=3554, validation/ssim=0.714756
+I0318 16:19:55.756395 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:19:57.859196 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:20:00.068889 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:20:02.264475 139852185351360 submission_runner.py:469] Time since start: 1449.51s, 	Step: 1627, 	{'train/ssim': 0.7363688605172294, 'train/loss': 0.2756372519901821, 'validation/ssim': 0.715514621509215, 'validation/loss': 0.29325699256119864, 'validation/num_examples': 3554, 'test/ssim': 0.7328255490130201, 'test/loss': 0.29496884871980594, 'test/num_examples': 3581, 'score': 815.998485326767, 'total_duration': 1449.506706237793, 'accumulated_submission_time': 815.998485326767, 'accumulated_eval_time': 622.4048092365265, 'accumulated_logging_time': 0.17800188064575195}
+I0318 16:20:02.273866 139803123246848 logging_writer.py:48] [1627] accumulated_eval_time=622.405, accumulated_logging_time=0.178002, accumulated_submission_time=815.998, global_step=1627, preemption_count=0, score=815.998, test/loss=0.294969, test/num_examples=3581, test/ssim=0.732826, total_duration=1449.51, train/loss=0.275637, train/ssim=0.736369, validation/loss=0.293257, validation/num_examples=3554, validation/ssim=0.715515
+I0318 16:21:23.089726 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:21:25.193465 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:21:27.642728 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:21:29.919438 139852185351360 submission_runner.py:469] Time since start: 1537.16s, 	Step: 1787, 	{'train/ssim': 0.7370794841221401, 'train/loss': 0.27490111759730745, 'validation/ssim': 0.7162279462841165, 'validation/loss': 0.29254603775015825, 'validation/num_examples': 3554, 'test/ssim': 0.7335146787079377, 'test/loss': 0.29423635866814435, 'test/num_examples': 3581, 'score': 895.5268774032593, 'total_duration': 1537.1615118980408, 'accumulated_submission_time': 895.5268774032593, 'accumulated_eval_time': 629.2344737052917, 'accumulated_logging_time': 0.1953732967376709}
+I0318 16:21:29.960894 139803114854144 logging_writer.py:48] [1787] accumulated_eval_time=629.234, accumulated_logging_time=0.195373, accumulated_submission_time=895.527, global_step=1787, preemption_count=0, score=895.527, test/loss=0.294236, test/num_examples=3581, test/ssim=0.733515, total_duration=1537.16, train/loss=0.274901, train/ssim=0.737079, validation/loss=0.292546, validation/num_examples=3554, validation/ssim=0.716228
+I0318 16:22:50.557199 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:22:52.646964 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:22:54.986386 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:22:57.279107 139852185351360 submission_runner.py:469] Time since start: 1624.52s, 	Step: 1994, 	{'train/ssim': 0.7378394944327218, 'train/loss': 0.274273293358939, 'validation/ssim': 0.7170329783562536, 'validation/loss': 0.2918592977872643, 'validation/num_examples': 3554, 'test/ssim': 0.7343058006885297, 'test/loss': 0.2935376160639486, 'test/num_examples': 3581, 'score': 974.7299950122833, 'total_duration': 1624.520911693573, 'accumulated_submission_time': 974.7299950122833, 'accumulated_eval_time': 635.9560589790344, 'accumulated_logging_time': 0.2564127445220947}
+I0318 16:22:57.291878 139803123246848 logging_writer.py:48] [1994] accumulated_eval_time=635.956, accumulated_logging_time=0.256413, accumulated_submission_time=974.73, global_step=1994, preemption_count=0, score=974.73, test/loss=0.293538, test/num_examples=3581, test/ssim=0.734306, total_duration=1624.52, train/loss=0.274273, train/ssim=0.737839, validation/loss=0.291859, validation/num_examples=3554, validation/ssim=0.717033
+I0318 16:24:17.879246 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:24:19.920903 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:24:22.262203 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:24:24.469922 139852185351360 submission_runner.py:469] Time since start: 1711.71s, 	Step: 3944, 	{'train/ssim': 0.742178099496024, 'train/loss': 0.27063303334372385, 'validation/ssim': 0.7209066671136396, 'validation/loss': 0.2885780999951639, 'validation/num_examples': 3554, 'test/ssim': 0.7381892796835731, 'test/loss': 0.29008692251640605, 'test/num_examples': 3581, 'score': 1053.5406641960144, 'total_duration': 1711.7121608257294, 'accumulated_submission_time': 1053.5406641960144, 'accumulated_eval_time': 642.546843290329, 'accumulated_logging_time': 0.2851831912994385}
+I0318 16:24:24.488564 139803114854144 logging_writer.py:48] [3944] accumulated_eval_time=642.547, accumulated_logging_time=0.285183, accumulated_submission_time=1053.54, global_step=3944, preemption_count=0, score=1053.54, test/loss=0.290087, test/num_examples=3581, test/ssim=0.738189, total_duration=1711.71, train/loss=0.270633, train/ssim=0.742178, validation/loss=0.288578, validation/num_examples=3554, validation/ssim=0.720907
+I0318 16:25:45.119199 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:25:47.179503 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:25:49.555203 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:25:51.770231 139852185351360 submission_runner.py:469] Time since start: 1799.01s, 	Step: 5891, 	{'train/ssim': 0.744222709110805, 'train/loss': 0.2690622295652117, 'validation/ssim': 0.7226758966569359, 'validation/loss': 0.2872316170490117, 'validation/num_examples': 3554, 'test/ssim': 0.7399333068626082, 'test/loss': 0.28869414149766126, 'test/num_examples': 3581, 'score': 1132.4130067825317, 'total_duration': 1799.0124642848969, 'accumulated_submission_time': 1132.4130067825317, 'accumulated_eval_time': 649.1981134414673, 'accumulated_logging_time': 0.31214451789855957}
+I0318 16:25:51.779821 139803123246848 logging_writer.py:48] [5891] accumulated_eval_time=649.198, accumulated_logging_time=0.312145, accumulated_submission_time=1132.41, global_step=5891, preemption_count=0, score=1132.41, test/loss=0.288694, test/num_examples=3581, test/ssim=0.739933, total_duration=1799.01, train/loss=0.269062, train/ssim=0.744223, validation/loss=0.287232, validation/num_examples=3554, validation/ssim=0.722676
+I0318 16:27:12.405407 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:27:14.482143 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:27:16.716808 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:27:18.927164 139852185351360 submission_runner.py:469] Time since start: 1886.17s, 	Step: 7837, 	{'train/ssim': 0.745373180934361, 'train/loss': 0.2681546211242676, 'validation/ssim': 0.7236047851012943, 'validation/loss': 0.28650429574840847, 'validation/num_examples': 3554, 'test/ssim': 0.7408410791111072, 'test/loss': 0.28794808429035185, 'test/num_examples': 3581, 'score': 1211.219669342041, 'total_duration': 1886.169159412384, 'accumulated_submission_time': 1211.219669342041, 'accumulated_eval_time': 655.719758272171, 'accumulated_logging_time': 0.32989001274108887}
+I0318 16:27:18.964695 139803114854144 logging_writer.py:48] [7837] accumulated_eval_time=655.72, accumulated_logging_time=0.32989, accumulated_submission_time=1211.22, global_step=7837, preemption_count=0, score=1211.22, test/loss=0.287948, test/num_examples=3581, test/ssim=0.740841, total_duration=1886.17, train/loss=0.268155, train/ssim=0.745373, validation/loss=0.286504, validation/num_examples=3554, validation/ssim=0.723605
+I0318 16:28:39.537008 139852185351360 spec.py:321] Evaluating on the training split.
+I0318 16:28:41.614558 139852185351360 spec.py:333] Evaluating on the validation split.
+I0318 16:28:43.863127 139852185351360 spec.py:349] Evaluating on the test split.
+I0318 16:28:46.098164 139852185351360 submission_runner.py:469] Time since start: 1973.34s, 	Step: 9780, 	{'train/ssim': 0.746171133858817, 'train/loss': 0.26756857122693745, 'validation/ssim': 0.724237943272545, 'validation/loss': 0.28607727291212365, 'validation/num_examples': 3554, 'test/ssim': 0.7414533737084613, 'test/loss': 0.28750493599029603, 'test/num_examples': 3581, 'score': 1290.0041983127594, 'total_duration': 1973.340395450592, 'accumulated_submission_time': 1290.0041983127594, 'accumulated_eval_time': 662.2809743881226, 'accumulated_logging_time': 0.37580347061157227}
+I0318 16:28:46.109067 139803123246848 logging_writer.py:48] [9780] accumulated_eval_time=662.281, accumulated_logging_time=0.375803, accumulated_submission_time=1290, global_step=9780, preemption_count=0, score=1290, test/loss=0.287505, test/num_examples=3581, test/ssim=0.741453, total_duration=1973.34, train/loss=0.267569, train/ssim=0.746171, validation/loss=0.286077, validation/num_examples=3554, validation/ssim=0.724238
+I0318 16:28:46.688289 139803114854144 logging_writer.py:48] [9780] global_step=9780, preemption_count=0, score=1290
+I0318 16:28:47.502339 139852185351360 submission_runner.py:750] Final fastmri score: 1290.0041983127594
