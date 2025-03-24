@@ -1,0 +1,10 @@
+submission_name: Schedule-Free AdamW
+submission_folder: submissions/external_tuning/schedule_free_adamw_v2
+authors: >-
+  Alice Yang, Aaron Defazio, Konstantin Mishchenko
+affiliations: Meta AI, Samsung AI
+version: "2.0"
+ruleset: external
+framework: PyTorch
+description: >-
+  An externally tuned version of Schedule Free AdamW ([Defazio et al., 2024](https://openreview.net/forum?id=0XeNkkENuI)) with a list of five hyperparameter configurations. Version 2.0 uses slightly different hyperparameter configurations. It also makes use of the batch-norm fixes made after the competition deadline, and which follows the published version of Schedule-Free in a few small details for consistency.
