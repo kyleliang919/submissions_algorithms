@@ -1,0 +1,929 @@
+torchrun --redirects 1:0,2:0,3:0,4:0,5:0,6:0,7:0 --standalone --nnodes=1 --nproc_per_node=8 submission_runner.py --framework=pytorch --workload=fastmri --submission_path=submissions_algorithms/leaderboard/external_tuning/shampoo_submission/submission.py --data_dir=/data/fastmri --num_tuning_trials=1 --experiment_dir=/experiment_runs --experiment_name=submissions/rolling_leaderboard/external_tuning/shampoo/study_1 --overwrite=True --save_checkpoints=False --rng_seed=63183566 --torch_compile=true --tuning_ruleset=external --tuning_search_space=submissions_algorithms/leaderboard/external_tuning/shampoo_submission/tuning_search_space.json --num_tuning_trials=5 --hparam_start_index=4 --hparam_end_index=5 2>&1 | tee -a /logs/fastmri_pytorch_03-15-2025-18-44-40.log
+W0315 18:44:45.262000 9 site-packages/torch/distributed/run.py:793] 
+W0315 18:44:45.262000 9 site-packages/torch/distributed/run.py:793] *****************************************
+W0315 18:44:45.262000 9 site-packages/torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0315 18:44:45.262000 9 site-packages/torch/distributed/run.py:793] *****************************************
+2025-03-15 18:44:47.892092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892096: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892093: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892094: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 18:44:47.892092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742064287.914152      51 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742064287.914153      47 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742064287.914155      48 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742064287.914156      49 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742064287.914156      50 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1742064287.914154      46 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742064287.914153      44 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742064287.914171      45 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1742064287.920678      46 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920678      44 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920678      49 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920678      45 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920684      51 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920679      48 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920688      47 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1742064287.920716      50 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+[rank0]:[W315 18:45:01.872371146 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank7]:[W315 18:45:02.139755041 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 7]  using GPU 7 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank4]:[W315 18:45:02.168466935 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 4]  using GPU 4 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank6]:[W315 18:45:02.177581825 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 6]  using GPU 6 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank5]:[W315 18:45:02.182477435 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 5]  using GPU 5 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank3]:[W315 18:45:02.201537407 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank1]:[W315 18:45:02.236865987 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank2]:[W315 18:45:02.241159395 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+I0315 18:45:04.004381 140362302117056 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004380 140285399921856 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004380 140332141286592 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004381 139780370744512 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004384 140417395983552 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004381 139729449292992 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004482 139810147488960 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.004461 140234870936768 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch.
+I0315 18:45:04.220579 139810147488960 submission_runner.py:606] Using RNG seed 63183566
+I0315 18:45:04.220606 139780370744512 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.220606 140285399921856 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.220646 140362302117056 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.220772 140417395983552 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.221251 139729449292992 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.221371 140332141286592 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.221810 139810147488960 submission_runner.py:615] --- Tuning run 5/5 ---
+I0315 18:45:04.221923 139810147488960 submission_runner.py:620] Creating tuning directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5.
+I0315 18:45:04.222162 139810147488960 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.222351 140234870936768 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/hparams.json.
+I0315 18:45:04.568445 139810147488960 submission_runner.py:218] Initializing dataset.
+I0315 18:45:04.568620 139810147488960 submission_runner.py:229] Initializing model.
+I0315 18:45:04.727942 139810147488960 submission_runner.py:268] Performing `torch.compile`.
+W0315 18:45:05.689734 139780370744512 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.689731 140362302117056 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.689730 140234870936768 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.689888 140234870936768 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+W0315 18:45:05.689886 140362302117056 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+W0315 18:45:05.689897 139780370744512 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+W0315 18:45:05.690589 140332141286592 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.690770 140332141286592 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+I0315 18:45:05.691082 139810147488960 submission_runner.py:272] Initializing optimizer.
+W0315 18:45:05.691154 140285399921856 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.691316 140285399921856 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+W0315 18:45:05.692526 139810147488960 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.692630 139810147488960 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+W0315 18:45:05.692619 140417395983552 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+W0315 18:45:05.692800 140417395983552 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+I0315 18:45:05.692865 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.692852 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.692926 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([288, 288])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.695523 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.695543 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.695561 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.693163 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.695740 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.695751 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.695768 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+W0315 18:45:05.695787 139729449292992 distributed_shampoo.py:341] start_preconditioning_step set to -1. Setting start_preconditioning_step equal to precondition frequency 100 by default.
+I0315 18:45:05.695912 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.695915 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.695924 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+W0315 18:45:05.695952 139729449292992 distributed_shampoo.py:359] Nesterov flag is enabled but momentum parameter is zero! Continuing without using momentum or Nesterov acceleration...
+I0315 18:45:05.695996 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([1024, 1024]), torch.Size([9, 9])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.696058 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.696063 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.696071 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.693758 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.696206 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.696222 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.696223 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.696350 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.696380 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.696391 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.696422 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.696516 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.696547 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.696620 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.696635 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([128, 128]), torch.Size([576, 576])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.696682 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.696719 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.696790 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.696792 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([128, 128]), torch.Size([384, 384]), torch.Size([3, 3])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.696823 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.696835 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.696871 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.696939 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.696993 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.697019 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.697098 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.697256 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.697249 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.697316 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([256, 256]), torch.Size([768, 768]), torch.Size([3, 3])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.697416 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.697420 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.695073 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.697505 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.697561 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.697705 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.697740 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.697740 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.695290 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.697831 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([256, 256]), torch.Size([384, 384]), torch.Size([3, 3])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.697865 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.697858 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([256, 256]), torch.Size([512, 512]), torch.Size([9, 9])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.697911 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.697925 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.697984 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.698038 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.698056 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.698029 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.698067 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.698195 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.698212 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.698214 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.698210 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.698228 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([32, 32]), torch.Size([576, 576])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.698232 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([512, 512]), torch.Size([768, 768]), torch.Size([3, 3])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.698347 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.698360 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.698369 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.698380 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.698415 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.698477 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.698511 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.698512 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.698517 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([64, 64]), torch.Size([576, 576])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.698606 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.698618 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.698640 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.698697 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.698736 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.698722 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([128, 128]), torch.Size([768, 768]), torch.Size([3, 3])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.698748 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.698761 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.698777 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.698782 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.698852 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.698904 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.698909 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.698909 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.698915 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.698932 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.699020 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.699035 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.699041 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.699059 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.699079 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.699135 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.699153 139780370744512 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.699181 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.699229 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.699236 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.699239 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.699272 139780370744512 shampoo_preconditioner_list.py:612] Rank 4: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.699314 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.699323 139780370744512 shampoo_preconditioner_list.py:615] Rank 4: ShampooPreconditionerList Bytes Breakdown: (663552, 8389256)
+I0315 18:45:05.699358 139780370744512 shampoo_preconditioner_list.py:618] Rank 4: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.699362 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.699362 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.699391 139780370744512 shampoo_preconditioner_list.py:621] Rank 4: ShampooPreconditionerList Total Bytes: 9052808
+I0315 18:45:05.699395 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.699437 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([128, 128]), torch.Size([384, 384]), torch.Size([3, 3])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.699478 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.699497 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.699540 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.699543 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.699590 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.699609 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.699633 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.699673 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.699677 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.699701 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.699715 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.699738 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.699754 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([64, 64]), torch.Size([384, 384]), torch.Size([3, 3])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.699772 140234870936768 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.699806 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.699815 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.699858 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.699870 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.699868 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([32, 32])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.699893 140234870936768 shampoo_preconditioner_list.py:612] Rank 2: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.699919 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.699935 140234870936768 shampoo_preconditioner_list.py:615] Rank 2: ShampooPreconditionerList Bytes Breakdown: (663552,)
+I0315 18:45:05.699949 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.699949 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.699969 140234870936768 shampoo_preconditioner_list.py:618] Rank 2: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.699978 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.700000 140234870936768 shampoo_preconditioner_list.py:621] Rank 2: ShampooPreconditionerList Total Bytes: 663552
+I0315 18:45:05.700015 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.700044 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.700039 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([1, 1])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.700084 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.700080 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.700103 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.700100 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([512, 512]), torch.Size([512, 512]), torch.Size([9, 9])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.700155 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.700153 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.700174 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.700205 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.700205 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.700209 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.700203 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.700278 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.700291 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.700293 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.700300 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.700313 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([256, 768, 3])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.700323 140285399921856 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.700344 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.700381 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.700382 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.700399 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.700428 140285399921856 shampoo_preconditioner_list.py:612] Rank 1: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.700443 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.700452 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.700461 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.700478 140285399921856 shampoo_preconditioner_list.py:615] Rank 1: ShampooPreconditionerList Bytes Breakdown: (663552,)
+I0315 18:45:05.700495 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.700495 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.700506 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.700511 140285399921856 shampoo_preconditioner_list.py:618] Rank 1: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.700506 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([64, 64]), torch.Size([576, 576])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.700542 140285399921856 shampoo_preconditioner_list.py:621] Rank 1: ShampooPreconditionerList Total Bytes: 663552
+I0315 18:45:05.700552 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.700559 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.700611 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.700618 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.700620 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.700647 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.700649 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([32, 576])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.700679 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.700716 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.700747 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.700739 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.700749 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.700768 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.700777 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.700760 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([256, 256]), torch.Size([512, 512])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.700808 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.700827 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.700874 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.700866 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([256, 512, 9])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.700877 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.698472 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 0.block_0 ([torch.Size([0])]) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.700927 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.700926 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.700933 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.700939 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.700959 140332141286592 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([64, 64]), torch.Size([128, 128])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.700984 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.700984 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.700992 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.700991 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([128, 128]), torch.Size([256, 256])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.701037 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.701042 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.701044 139780370744512 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.701061 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.701092 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.701096 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.701113 139780370744512 shampoo_preconditioner_list.py:375] Rank 4: AdaGradPreconditionerList Numel Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 589824, 0, 0, 0, 0, 18432, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.701106 140332141286592 shampoo_preconditioner_list.py:612] Rank 7: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.701152 140332141286592 shampoo_preconditioner_list.py:615] Rank 7: ShampooPreconditionerList Bytes Breakdown: (663552, 8389256, 696320, 2686976, 2785280, 1310792)
+I0315 18:45:05.701144 140362302117056 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.701153 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.701155 139780370744512 shampoo_preconditioner_list.py:378] Rank 4: AdaGradPreconditionerList Bytes Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2359296, 0, 0, 0, 0, 73728, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.701155 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.701132 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 1.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701186 139780370744512 shampoo_preconditioner_list.py:381] Rank 4: AdaGradPreconditionerList Total Elements: 608256
+I0315 18:45:05.701191 140332141286592 shampoo_preconditioner_list.py:618] Rank 7: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.701194 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.701203 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.701221 139780370744512 shampoo_preconditioner_list.py:384] Rank 4: AdaGradPreconditionerList Total Bytes: 2433024
+I0315 18:45:05.701223 140332141286592 shampoo_preconditioner_list.py:621] Rank 7: ShampooPreconditionerList Total Bytes: 16532176
+I0315 18:45:05.701252 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701262 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([512, 768, 3])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.701270 140362302117056 shampoo_preconditioner_list.py:612] Rank 6: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.701309 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.701311 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701323 140362302117056 shampoo_preconditioner_list.py:615] Rank 6: ShampooPreconditionerList Bytes Breakdown: (663552, 8389256, 696320, 2686976, 2785280, 1310792, 1704008)
+I0315 18:45:05.701302 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([1024, 1024]), torch.Size([9, 9])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701330 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.701358 140362302117056 shampoo_preconditioner_list.py:618] Rank 6: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.701364 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.701390 140362302117056 shampoo_preconditioner_list.py:621] Rank 6: ShampooPreconditionerList Total Bytes: 18236184
+I0315 18:45:05.701389 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.701399 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.701415 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.701413 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.701430 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.701443 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.701429 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 2.block_0 ([torch.Size([64, 64]), torch.Size([288, 288])]) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.701471 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.701482 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.701494 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.701521 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.701524 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.701532 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([1024, 9])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701545 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.701577 140234870936768 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.701613 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.701624 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.701640 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.701667 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.701647 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([288])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.701637 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 3.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.701689 140234870936768 shampoo_preconditioner_list.py:375] Rank 2: AdaGradPreconditionerList Numel Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1179648, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.701701 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.701725 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.701733 140234870936768 shampoo_preconditioner_list.py:378] Rank 2: AdaGradPreconditionerList Bytes Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4718592, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.701744 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701764 140234870936768 shampoo_preconditioner_list.py:381] Rank 2: AdaGradPreconditionerList Total Elements: 1179648
+I0315 18:45:05.701784 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.701794 140234870936768 shampoo_preconditioner_list.py:384] Rank 2: AdaGradPreconditionerList Total Bytes: 4718592
+I0315 18:45:05.701799 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.701812 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.701810 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 4.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.701841 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.701867 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.701897 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.701928 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.701936 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.701953 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.701962 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 5.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.702007 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.702052 139810147488960 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.702063 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.702107 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 6.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.702114 140285399921856 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.702163 139810147488960 shampoo_preconditioner_list.py:612] Rank 0: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.702180 140285399921856 shampoo_preconditioner_list.py:375] Rank 1: AdaGradPreconditionerList Numel Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 1179648, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.702210 139810147488960 shampoo_preconditioner_list.py:615] Rank 0: ShampooPreconditionerList Bytes Breakdown: (663552,)
+I0315 18:45:05.702216 140285399921856 shampoo_preconditioner_list.py:378] Rank 1: AdaGradPreconditionerList Bytes Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 4718592, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.702248 140285399921856 shampoo_preconditioner_list.py:381] Rank 1: AdaGradPreconditionerList Total Elements: 1179648
+I0315 18:45:05.702249 139810147488960 shampoo_preconditioner_list.py:618] Rank 0: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.702223 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([512, 512]), torch.Size([1024, 1024])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.702281 139810147488960 shampoo_preconditioner_list.py:621] Rank 0: ShampooPreconditionerList Total Bytes: 663552
+I0315 18:45:05.702284 140285399921856 shampoo_preconditioner_list.py:384] Rank 1: AdaGradPreconditionerList Total Bytes: 4718592
+I0315 18:45:05.702372 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([128, 576])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.702417 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.702412 139780370744512 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.702478 139780370744512 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.702492 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.702505 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.702554 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.702535 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([128, 384, 3])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.702557 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.702585 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.702624 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.702649 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.702657 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([256, 384, 3])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.702672 140417395983552 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.702695 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.702719 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.702739 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.702751 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.702781 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.702804 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.702812 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.702808 140417395983552 shampoo_preconditioner_list.py:612] Rank 5: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.702840 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.702853 140417395983552 shampoo_preconditioner_list.py:615] Rank 5: ShampooPreconditionerList Bytes Breakdown: (663552, 8389256, 696320, 2686976)
+I0315 18:45:05.702866 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.702868 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.702887 140417395983552 shampoo_preconditioner_list.py:618] Rank 5: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.702900 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.702919 140417395983552 shampoo_preconditioner_list.py:621] Rank 5: ShampooPreconditionerList Total Bytes: 12436104
+I0315 18:45:05.702933 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.702921 140234870936768 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.702968 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.702970 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([128, 768, 3])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.702989 140234870936768 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.702995 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.703029 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.703020 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 7.block_0 ([torch.Size([256, 256]), torch.Size([768, 768]), torch.Size([3, 3])]) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.703050 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.703057 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([128, 384, 3])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.703104 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.703114 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.703133 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([64, 384, 3])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.703148 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([512, 512, 9])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.703163 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.703182 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.703208 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.703215 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.703219 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.703222 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 8.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.703250 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([0])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.703267 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.703271 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.703274 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.703318 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.703325 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.703327 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.703360 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([64, 576])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.703377 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.703373 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 9.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.703379 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.703415 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([32])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.703427 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.703431 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.703441 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.703477 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.703482 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.703499 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.703508 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([1])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.703518 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 10.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.703533 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.703536 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.703572 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.703587 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.703598 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.703606 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.703638 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([0])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.703664 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.703664 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([256, 512])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.703687 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 11.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.703691 140332141286592 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([64, 128])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.703704 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.703722 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.703738 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([128, 256])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.703759 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.703769 140332141286592 shampoo_preconditioner_list.py:375] Rank 7: AdaGradPreconditionerList Numel Breakdown: (0, 9216, 0, 0, 73728, 0, 0, 0, 0, 0, 0, 0, 294912, 147456, 73728, 0, 0, 0, 0, 0, 0, 0, 0, 8192)
+I0315 18:45:05.703780 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.703801 140362302117056 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.703805 140332141286592 shampoo_preconditioner_list.py:378] Rank 7: AdaGradPreconditionerList Bytes Breakdown: (0, 36864, 0, 0, 294912, 0, 0, 0, 0, 0, 0, 0, 1179648, 589824, 294912, 0, 0, 0, 0, 0, 0, 0, 0, 32768)
+I0315 18:45:05.703817 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.703830 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.703836 140332141286592 shampoo_preconditioner_list.py:381] Rank 7: AdaGradPreconditionerList Total Elements: 607232
+I0315 18:45:05.703846 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 12.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.703866 140332141286592 shampoo_preconditioner_list.py:384] Rank 7: AdaGradPreconditionerList Total Bytes: 2428928
+I0315 18:45:05.703869 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.703885 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.703881 140362302117056 shampoo_preconditioner_list.py:375] Rank 6: AdaGradPreconditionerList Numel Breakdown: (288, 0, 0, 0, 0, 147456, 294912, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 1, 0, 131072, 32768, 0)
+I0315 18:45:05.703919 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.703931 140362302117056 shampoo_preconditioner_list.py:378] Rank 6: AdaGradPreconditionerList Bytes Breakdown: (1152, 0, 0, 0, 0, 589824, 1179648, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 4, 0, 524288, 131072, 0)
+I0315 18:45:05.703940 139810147488960 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.703922 140285399921856 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.703963 140362302117056 shampoo_preconditioner_list.py:381] Rank 6: AdaGradPreconditionerList Total Elements: 606529
+I0315 18:45:05.703975 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.703986 140285399921856 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.703986 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 13.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.704000 140362302117056 shampoo_preconditioner_list.py:384] Rank 6: AdaGradPreconditionerList Total Bytes: 2426116
+I0315 18:45:05.704008 139810147488960 shampoo_preconditioner_list.py:375] Rank 0: AdaGradPreconditionerList Numel Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 0, 2359296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.704027 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.704043 139810147488960 shampoo_preconditioner_list.py:378] Rank 0: AdaGradPreconditionerList Bytes Breakdown: (0, 0, 0, 0, 0, 0, 0, 0, 0, 9437184, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.704074 139810147488960 shampoo_preconditioner_list.py:381] Rank 0: AdaGradPreconditionerList Total Elements: 2359296
+I0315 18:45:05.704109 139810147488960 shampoo_preconditioner_list.py:384] Rank 0: AdaGradPreconditionerList Total Bytes: 9437184
+I0315 18:45:05.704120 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([64, 576])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.704130 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 14.block_0 ([torch.Size([0]), torch.Size([0]), torch.Size([0])]) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.704188 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.704247 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 15.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.704276 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([1024, 9])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.704345 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.704370 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 16.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.704404 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.704489 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([512, 1024])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.704490 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 17.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.704558 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.704576 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 18.block_0 ([torch.Size([0])]) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.704616 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.704669 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 19.block_0 ([torch.Size([0])]) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.704677 140417395983552 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.704771 140417395983552 shampoo_preconditioner_list.py:375] Rank 5: AdaGradPreconditionerList Numel Breakdown: (0, 0, 0, 36864, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36864, 0, 9216, 0, 0, 524288, 0, 0, 0)
+I0315 18:45:05.704806 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 20.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.704815 140417395983552 shampoo_preconditioner_list.py:378] Rank 5: AdaGradPreconditionerList Bytes Breakdown: (0, 0, 0, 147456, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 147456, 0, 36864, 0, 0, 2097152, 0, 0, 0)
+I0315 18:45:05.704849 140417395983552 shampoo_preconditioner_list.py:381] Rank 5: AdaGradPreconditionerList Total Elements: 607232
+I0315 18:45:05.704885 140417395983552 shampoo_preconditioner_list.py:384] Rank 5: AdaGradPreconditionerList Total Bytes: 2428928
+I0315 18:45:05.704945 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 21.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.705070 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 22.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.705161 139810147488960 submission.py:142] No large parameters detected! Continuing with only Shampoo....
+I0315 18:45:05.705192 139729449292992 shampoo_preconditioner_list.py:574] Instantiated Shampoo Preconditioner 23.block_0 ([torch.Size([0]), torch.Size([0])]) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.705300 139729449292992 shampoo_preconditioner_list.py:612] Rank 3: ShampooPreconditionerList Numel Breakdown: (165888, 2097314, 174080, 671744, 696320, 327698, 426002, 1310738, 1703954, 1048738, 655522, 1310738, 1212434, 327698, 303122, 671744, 665600, 2097314, 2048, 2, 2621440, 655360, 163840, 40960)
+I0315 18:45:05.705350 139729449292992 shampoo_preconditioner_list.py:615] Rank 3: ShampooPreconditionerList Bytes Breakdown: (663552, 8389256)
+I0315 18:45:05.705367 139810147488960 submission_runner.py:279] Initializing metrics bundle.
+I0315 18:45:05.705389 139729449292992 shampoo_preconditioner_list.py:618] Rank 3: ShampooPreconditionerList Total Elements: 19350298
+I0315 18:45:05.705421 139729449292992 shampoo_preconditioner_list.py:621] Rank 3: ShampooPreconditionerList Total Bytes: 9052808
+I0315 18:45:05.705511 139810147488960 submission_runner.py:301] Initializing checkpoint and logger.
+I0315 18:45:05.705632 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 0.block_0 (torch.Size([0])) for Parameter 0 (torch.Size([32, 1, 3, 3])), Block block_0 (torch.Size([288])).
+I0315 18:45:05.705674 140332141286592 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.705724 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 1.block_0 (torch.Size([0])) for Parameter 1 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.705757 140332141286592 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.705833 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 2.block_0 (torch.Size([64, 288])) for Parameter 2 (torch.Size([64, 32, 3, 3])), Block block_0 (torch.Size([64, 288])).
+I0315 18:45:05.705870 140362302117056 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.705915 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 3.block_0 (torch.Size([0])) for Parameter 3 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.705957 140362302117056 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.705972 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 4.block_0 (torch.Size([0])) for Parameter 4 (torch.Size([128, 64, 3, 3])), Block block_0 (torch.Size([128, 576])).
+I0315 18:45:05.705976 139810147488960 submission_runner.py:321] Saving meta data to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/meta_data_0.json.
+I0315 18:45:05.706027 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 5.block_0 (torch.Size([0])) for Parameter 5 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.706088 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 6.block_0 (torch.Size([0])) for Parameter 6 (torch.Size([256, 128, 3, 3])), Block block_0 (torch.Size([256, 384, 3])).
+I0315 18:45:05.706105 140417395983552 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.706150 139810147488960 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.706186 140417395983552 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.706194 139810147488960 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:05.706188 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 7.block_0 (torch.Size([256, 768, 3])) for Parameter 7 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.706257 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 8.block_0 (torch.Size([0])) for Parameter 8 (torch.Size([512, 256, 3, 3])), Block block_0 (torch.Size([512, 768, 3])).
+I0315 18:45:05.706320 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 9.block_0 (torch.Size([0])) for Parameter 9 (torch.Size([512, 512, 3, 3])), Block block_0 (torch.Size([512, 512, 9])).
+I0315 18:45:05.706381 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 10.block_0 (torch.Size([0])) for Parameter 10 (torch.Size([256, 512, 3, 3])), Block block_0 (torch.Size([256, 512, 9])).
+I0315 18:45:05.706441 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 11.block_0 (torch.Size([0])) for Parameter 11 (torch.Size([256, 256, 3, 3])), Block block_0 (torch.Size([256, 768, 3])).
+I0315 18:45:05.706500 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 12.block_0 (torch.Size([0])) for Parameter 12 (torch.Size([128, 256, 3, 3])), Block block_0 (torch.Size([128, 768, 3])).
+I0315 18:45:05.706558 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 13.block_0 (torch.Size([0])) for Parameter 13 (torch.Size([128, 128, 3, 3])), Block block_0 (torch.Size([128, 384, 3])).
+I0315 18:45:05.706618 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 14.block_0 (torch.Size([0])) for Parameter 14 (torch.Size([64, 128, 3, 3])), Block block_0 (torch.Size([64, 384, 3])).
+I0315 18:45:05.706684 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 15.block_0 (torch.Size([0])) for Parameter 15 (torch.Size([64, 64, 3, 3])), Block block_0 (torch.Size([64, 576])).
+I0315 18:45:05.706744 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 16.block_0 (torch.Size([0])) for Parameter 16 (torch.Size([32, 64, 3, 3])), Block block_0 (torch.Size([32, 576])).
+I0315 18:45:05.706801 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 17.block_0 (torch.Size([0])) for Parameter 17 (torch.Size([32, 32, 3, 3])), Block block_0 (torch.Size([1024, 9])).
+I0315 18:45:05.706858 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 18.block_0 (torch.Size([0])) for Parameter 18 (torch.Size([1, 32, 1, 1])), Block block_0 (torch.Size([32])).
+I0315 18:45:05.706925 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 19.block_0 (torch.Size([0])) for Parameter 19 (torch.Size([1])), Block block_0 (torch.Size([1])).
+I0315 18:45:05.706980 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 20.block_0 (torch.Size([0])) for Parameter 20 (torch.Size([512, 256, 2, 2])), Block block_0 (torch.Size([512, 1024])).
+I0315 18:45:05.707035 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 21.block_0 (torch.Size([0])) for Parameter 21 (torch.Size([256, 128, 2, 2])), Block block_0 (torch.Size([256, 512])).
+I0315 18:45:05.707090 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 22.block_0 (torch.Size([0])) for Parameter 22 (torch.Size([128, 64, 2, 2])), Block block_0 (torch.Size([128, 256])).
+I0315 18:45:05.707147 139729449292992 shampoo_preconditioner_list.py:352] Instantiated Adagrad Preconditioner 23.block_0 (torch.Size([0])) for Parameter 23 (torch.Size([64, 32, 2, 2])), Block block_0 (torch.Size([64, 128])).
+I0315 18:45:05.707219 139729449292992 shampoo_preconditioner_list.py:375] Rank 3: AdaGradPreconditionerList Numel Breakdown: (0, 0, 18432, 0, 0, 0, 0, 589824, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.707259 139729449292992 shampoo_preconditioner_list.py:378] Rank 3: AdaGradPreconditionerList Bytes Breakdown: (0, 0, 73728, 0, 0, 0, 0, 2359296, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+I0315 18:45:05.707295 139729449292992 shampoo_preconditioner_list.py:381] Rank 3: AdaGradPreconditionerList Total Elements: 608256
+I0315 18:45:05.707330 139729449292992 shampoo_preconditioner_list.py:384] Rank 3: AdaGradPreconditionerList Total Bytes: 2433024
+I0315 18:45:05.708451 139729449292992 logger_utils.py:262] Unable to record workload.train_mean information. Continuing without it.
+I0315 18:45:05.708531 139729449292992 logger_utils.py:262] Unable to record workload.train_stddev information. Continuing without it.
+I0315 18:45:06.074816 139810147488960 submission_runner.py:325] Saving flags to /experiment_runs/submissions/rolling_leaderboard/external_tuning/shampoo/study_1/fastmri_pytorch/trial_5/flags_0.json.
+I0315 18:45:06.108318 139810147488960 submission_runner.py:337] Starting training loop.
+[rank3]:W0315 18:45:06.143000 47 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank5]:W0315 18:45:06.143000 49 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank1]:W0315 18:45:06.144000 45 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank7]:W0315 18:45:06.144000 51 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank6]:W0315 18:45:06.144000 50 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank4]:W0315 18:45:06.144000 48 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank2]:W0315 18:45:06.144000 46 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank0]:W0315 18:45:31.635000 44 site-packages/torch/_logging/_internal.py:1081] [0/0] Profiler function <class 'torch.autograd.profiler.record_function'> will be ignored
+[rank7]:W0315 18:46:04.582000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank7]:W0315 18:46:04.582000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank7]:W0315 18:46:04.582000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank7]:W0315 18:46:04.582000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank7]:W0315 18:46:04.582000 51 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank3]:W0315 18:46:04.623000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank3]:W0315 18:46:04.623000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank3]:W0315 18:46:04.623000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank3]:W0315 18:46:04.623000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank3]:W0315 18:46:04.623000 47 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank6]:W0315 18:46:04.777000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank6]:W0315 18:46:04.777000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank6]:W0315 18:46:04.777000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank6]:W0315 18:46:04.777000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank6]:W0315 18:46:04.777000 50 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank2]:W0315 18:46:04.790000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank2]:W0315 18:46:04.790000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank2]:W0315 18:46:04.790000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank2]:W0315 18:46:04.790000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank2]:W0315 18:46:04.790000 46 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank5]:W0315 18:46:04.801000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank5]:W0315 18:46:04.801000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank5]:W0315 18:46:04.801000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank5]:W0315 18:46:04.801000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank5]:W0315 18:46:04.801000 49 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank1]:W0315 18:46:04.821000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank1]:W0315 18:46:04.821000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank1]:W0315 18:46:04.821000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank1]:W0315 18:46:04.821000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank1]:W0315 18:46:04.821000 45 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank4]:W0315 18:46:04.828000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank4]:W0315 18:46:04.828000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank4]:W0315 18:46:04.828000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank4]:W0315 18:46:04.828000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank4]:W0315 18:46:04.828000 48 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+[rank0]:W0315 18:46:06.706000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] torch._dynamo hit config.cache_size_limit (8)
+[rank0]:W0315 18:46:06.706000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    function: 'forward' (/algorithmic-efficiency/algoperf/workloads/fastmri/fastmri_pytorch/models.py:141)
+[rank0]:W0315 18:46:06.706000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8]    last reason: 2/0: tensor 'L['x']' requires_grad mismatch. expected requires_grad=0
+[rank0]:W0315 18:46:06.706000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank0]:W0315 18:46:06.706000 44 site-packages/torch/_dynamo/convert_frame.py:844] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+I0315 18:46:15.645619 139782475548416 logging_writer.py:48] [0] global_step=0, grad_norm=4.67377, loss=0.952844
+I0315 18:46:15.664067 139810147488960 submission.py:265] 0) loss = 0.953, grad_norm = 4.674
+I0315 18:46:16.332972 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:47:32.507275 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:48:02.973443 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:48:43.330626 139810147488960 submission_runner.py:469] Time since start: 217.22s, 	Step: 1, 	{'train/ssim': 0.2217003447668893, 'train/loss': 0.9455616814749581, 'validation/ssim': 0.21532239683169493, 'validation/loss': 0.9523664741752251, 'validation/num_examples': 3554, 'test/ssim': 0.2393434594310685, 'test/loss': 0.9480460432447291, 'test/num_examples': 3581, 'score': 69.55673336982727, 'total_duration': 217.22249388694763, 'accumulated_submission_time': 69.55673336982727, 'accumulated_eval_time': 146.99801993370056, 'accumulated_logging_time': 0}
+I0315 18:48:43.339089 139767832377088 logging_writer.py:48] [1] accumulated_eval_time=146.998, accumulated_logging_time=0, accumulated_submission_time=69.5567, global_step=1, preemption_count=0, score=69.5567, test/loss=0.948046, test/num_examples=3581, test/ssim=0.239343, total_duration=217.222, train/loss=0.945562, train/ssim=0.2217, validation/loss=0.952366, validation/num_examples=3554, validation/ssim=0.215322
+I0315 18:48:44.396082 139767823984384 logging_writer.py:48] [1] global_step=1, grad_norm=5.08287, loss=0.914958
+I0315 18:48:44.399422 139810147488960 submission.py:265] 1) loss = 0.915, grad_norm = 5.083
+I0315 18:48:44.506385 139767832377088 logging_writer.py:48] [2] global_step=2, grad_norm=4.57595, loss=0.970298
+I0315 18:48:44.511262 139810147488960 submission.py:265] 2) loss = 0.970, grad_norm = 4.576
+I0315 18:48:44.599842 139767823984384 logging_writer.py:48] [3] global_step=3, grad_norm=4.8173, loss=0.95769
+I0315 18:48:44.604697 139810147488960 submission.py:265] 3) loss = 0.958, grad_norm = 4.817
+I0315 18:48:44.696462 139767832377088 logging_writer.py:48] [4] global_step=4, grad_norm=4.92639, loss=0.905025
+I0315 18:48:44.706441 139810147488960 submission.py:265] 4) loss = 0.905, grad_norm = 4.926
+I0315 18:48:44.783891 139767823984384 logging_writer.py:48] [5] global_step=5, grad_norm=4.98893, loss=0.951332
+I0315 18:48:44.788367 139810147488960 submission.py:265] 5) loss = 0.951, grad_norm = 4.989
+I0315 18:48:44.862952 139767832377088 logging_writer.py:48] [6] global_step=6, grad_norm=4.69379, loss=0.926396
+I0315 18:48:44.867244 139810147488960 submission.py:265] 6) loss = 0.926, grad_norm = 4.694
+I0315 18:48:44.946398 139767823984384 logging_writer.py:48] [7] global_step=7, grad_norm=5.14661, loss=0.895057
+I0315 18:48:44.950972 139810147488960 submission.py:265] 7) loss = 0.895, grad_norm = 5.147
+I0315 18:48:45.036197 139767832377088 logging_writer.py:48] [8] global_step=8, grad_norm=5.22466, loss=0.869227
+I0315 18:48:45.042169 139810147488960 submission.py:265] 8) loss = 0.869, grad_norm = 5.225
+I0315 18:48:45.128253 139767823984384 logging_writer.py:48] [9] global_step=9, grad_norm=5.03932, loss=0.900025
+I0315 18:48:45.132975 139810147488960 submission.py:265] 9) loss = 0.900, grad_norm = 5.039
+I0315 18:48:45.221633 139767832377088 logging_writer.py:48] [10] global_step=10, grad_norm=4.46036, loss=0.924146
+I0315 18:48:45.226340 139810147488960 submission.py:265] 10) loss = 0.924, grad_norm = 4.460
+I0315 18:48:45.304838 139767823984384 logging_writer.py:48] [11] global_step=11, grad_norm=4.82163, loss=0.911814
+I0315 18:48:45.309226 139810147488960 submission.py:265] 11) loss = 0.912, grad_norm = 4.822
+I0315 18:48:45.396788 139767832377088 logging_writer.py:48] [12] global_step=12, grad_norm=4.59166, loss=0.818936
+I0315 18:48:45.402226 139810147488960 submission.py:265] 12) loss = 0.819, grad_norm = 4.592
+I0315 18:48:45.474928 139767823984384 logging_writer.py:48] [13] global_step=13, grad_norm=4.10681, loss=0.853666
+I0315 18:48:45.481419 139810147488960 submission.py:265] 13) loss = 0.854, grad_norm = 4.107
+I0315 18:48:45.556320 139767832377088 logging_writer.py:48] [14] global_step=14, grad_norm=4.62531, loss=0.847617
+I0315 18:48:45.565213 139810147488960 submission.py:265] 14) loss = 0.848, grad_norm = 4.625
+I0315 18:48:45.653323 139767823984384 logging_writer.py:48] [15] global_step=15, grad_norm=4.3446, loss=0.79986
+I0315 18:48:45.662667 139810147488960 submission.py:265] 15) loss = 0.800, grad_norm = 4.345
+I0315 18:48:45.740850 139767832377088 logging_writer.py:48] [16] global_step=16, grad_norm=3.83295, loss=0.819433
+I0315 18:48:45.749056 139810147488960 submission.py:265] 16) loss = 0.819, grad_norm = 3.833
+I0315 18:48:45.829116 139767823984384 logging_writer.py:48] [17] global_step=17, grad_norm=3.8463, loss=0.85417
+I0315 18:48:45.833358 139810147488960 submission.py:265] 17) loss = 0.854, grad_norm = 3.846
+I0315 18:48:45.922378 139767832377088 logging_writer.py:48] [18] global_step=18, grad_norm=3.97859, loss=0.758065
+I0315 18:48:45.926311 139810147488960 submission.py:265] 18) loss = 0.758, grad_norm = 3.979
+I0315 18:48:45.995450 139767823984384 logging_writer.py:48] [19] global_step=19, grad_norm=4.08452, loss=0.766737
+I0315 18:48:46.008122 139810147488960 submission.py:265] 19) loss = 0.767, grad_norm = 4.085
+I0315 18:48:46.081441 139767832377088 logging_writer.py:48] [20] global_step=20, grad_norm=3.6992, loss=0.743359
+I0315 18:48:46.086512 139810147488960 submission.py:265] 20) loss = 0.743, grad_norm = 3.699
+I0315 18:48:46.179644 139767823984384 logging_writer.py:48] [21] global_step=21, grad_norm=3.3244, loss=0.740641
+I0315 18:48:46.184745 139810147488960 submission.py:265] 21) loss = 0.741, grad_norm = 3.324
+I0315 18:48:46.271841 139767832377088 logging_writer.py:48] [22] global_step=22, grad_norm=3.68607, loss=0.702693
+I0315 18:48:46.277367 139810147488960 submission.py:265] 22) loss = 0.703, grad_norm = 3.686
+I0315 18:48:46.373506 139767823984384 logging_writer.py:48] [23] global_step=23, grad_norm=3.75086, loss=0.645859
+I0315 18:48:46.377820 139810147488960 submission.py:265] 23) loss = 0.646, grad_norm = 3.751
+I0315 18:48:46.459389 139767832377088 logging_writer.py:48] [24] global_step=24, grad_norm=3.27092, loss=0.68313
+I0315 18:48:46.469380 139810147488960 submission.py:265] 24) loss = 0.683, grad_norm = 3.271
+I0315 18:48:46.549387 139767823984384 logging_writer.py:48] [25] global_step=25, grad_norm=3.4863, loss=0.668792
+I0315 18:48:46.555925 139810147488960 submission.py:265] 25) loss = 0.669, grad_norm = 3.486
+I0315 18:48:46.641278 139767832377088 logging_writer.py:48] [26] global_step=26, grad_norm=3.39016, loss=0.682747
+I0315 18:48:46.646127 139810147488960 submission.py:265] 26) loss = 0.683, grad_norm = 3.390
+I0315 18:48:46.720961 139767823984384 logging_writer.py:48] [27] global_step=27, grad_norm=3.19011, loss=0.595184
+I0315 18:48:46.725390 139810147488960 submission.py:265] 27) loss = 0.595, grad_norm = 3.190
+I0315 18:48:46.806015 139767832377088 logging_writer.py:48] [28] global_step=28, grad_norm=3.04837, loss=0.627748
+I0315 18:48:46.810377 139810147488960 submission.py:265] 28) loss = 0.628, grad_norm = 3.048
+I0315 18:48:46.890166 139767823984384 logging_writer.py:48] [29] global_step=29, grad_norm=2.74737, loss=0.616187
+I0315 18:48:46.903325 139810147488960 submission.py:265] 29) loss = 0.616, grad_norm = 2.747
+I0315 18:48:46.988575 139767832377088 logging_writer.py:48] [30] global_step=30, grad_norm=3.15691, loss=0.688061
+I0315 18:48:46.996161 139810147488960 submission.py:265] 30) loss = 0.688, grad_norm = 3.157
+I0315 18:48:47.084049 139767823984384 logging_writer.py:48] [31] global_step=31, grad_norm=2.92687, loss=0.572492
+I0315 18:48:47.089066 139810147488960 submission.py:265] 31) loss = 0.572, grad_norm = 2.927
+I0315 18:48:47.169579 139767832377088 logging_writer.py:48] [32] global_step=32, grad_norm=2.45483, loss=0.618557
+I0315 18:48:47.176053 139810147488960 submission.py:265] 32) loss = 0.619, grad_norm = 2.455
+I0315 18:48:47.245141 139767823984384 logging_writer.py:48] [33] global_step=33, grad_norm=2.60498, loss=0.629332
+I0315 18:48:47.249885 139810147488960 submission.py:265] 33) loss = 0.629, grad_norm = 2.605
+I0315 18:48:47.327707 139767832377088 logging_writer.py:48] [34] global_step=34, grad_norm=2.42425, loss=0.563486
+I0315 18:48:47.332024 139810147488960 submission.py:265] 34) loss = 0.563, grad_norm = 2.424
+I0315 18:48:47.412393 139767823984384 logging_writer.py:48] [35] global_step=35, grad_norm=2.1032, loss=0.578125
+I0315 18:48:47.416658 139810147488960 submission.py:265] 35) loss = 0.578, grad_norm = 2.103
+I0315 18:48:47.491546 139767832377088 logging_writer.py:48] [36] global_step=36, grad_norm=1.61622, loss=0.644712
+I0315 18:48:47.496875 139810147488960 submission.py:265] 36) loss = 0.645, grad_norm = 1.616
+I0315 18:48:47.573520 139767823984384 logging_writer.py:48] [37] global_step=37, grad_norm=2.18593, loss=0.498522
+I0315 18:48:47.579654 139810147488960 submission.py:265] 37) loss = 0.499, grad_norm = 2.186
+I0315 18:48:47.661908 139767832377088 logging_writer.py:48] [38] global_step=38, grad_norm=1.82277, loss=0.495873
+I0315 18:48:47.667218 139810147488960 submission.py:265] 38) loss = 0.496, grad_norm = 1.823
+I0315 18:48:47.744641 139767823984384 logging_writer.py:48] [39] global_step=39, grad_norm=1.60894, loss=0.494676
+I0315 18:48:47.750604 139810147488960 submission.py:265] 39) loss = 0.495, grad_norm = 1.609
+I0315 18:48:47.834378 139767832377088 logging_writer.py:48] [40] global_step=40, grad_norm=1.60074, loss=0.472011
+I0315 18:48:47.839586 139810147488960 submission.py:265] 40) loss = 0.472, grad_norm = 1.601
+I0315 18:48:47.913320 139767823984384 logging_writer.py:48] [41] global_step=41, grad_norm=1.49712, loss=0.540114
+I0315 18:48:47.918783 139810147488960 submission.py:265] 41) loss = 0.540, grad_norm = 1.497
+I0315 18:48:47.990628 139767832377088 logging_writer.py:48] [42] global_step=42, grad_norm=1.49702, loss=0.484208
+I0315 18:48:47.994812 139810147488960 submission.py:265] 42) loss = 0.484, grad_norm = 1.497
+I0315 18:48:48.070824 139767823984384 logging_writer.py:48] [43] global_step=43, grad_norm=1.15129, loss=0.425043
+I0315 18:48:48.074791 139810147488960 submission.py:265] 43) loss = 0.425, grad_norm = 1.151
+I0315 18:48:48.150806 139767832377088 logging_writer.py:48] [44] global_step=44, grad_norm=1.28013, loss=0.501697
+I0315 18:48:48.157962 139810147488960 submission.py:265] 44) loss = 0.502, grad_norm = 1.280
+I0315 18:48:48.224328 139767823984384 logging_writer.py:48] [45] global_step=45, grad_norm=0.960539, loss=0.519319
+I0315 18:48:48.230263 139810147488960 submission.py:265] 45) loss = 0.519, grad_norm = 0.961
+I0315 18:48:48.303857 139767832377088 logging_writer.py:48] [46] global_step=46, grad_norm=1.10966, loss=0.52067
+I0315 18:48:48.308014 139810147488960 submission.py:265] 46) loss = 0.521, grad_norm = 1.110
+I0315 18:48:48.379110 139767823984384 logging_writer.py:48] [47] global_step=47, grad_norm=0.953697, loss=0.457771
+I0315 18:48:48.386031 139810147488960 submission.py:265] 47) loss = 0.458, grad_norm = 0.954
+I0315 18:48:48.463660 139767832377088 logging_writer.py:48] [48] global_step=48, grad_norm=0.937038, loss=0.52414
+I0315 18:48:48.468013 139810147488960 submission.py:265] 48) loss = 0.524, grad_norm = 0.937
+I0315 18:48:48.544538 139767823984384 logging_writer.py:48] [49] global_step=49, grad_norm=0.950737, loss=0.499633
+I0315 18:48:48.551460 139810147488960 submission.py:265] 49) loss = 0.500, grad_norm = 0.951
+I0315 18:48:48.620607 139767832377088 logging_writer.py:48] [50] global_step=50, grad_norm=1.00501, loss=0.390256
+I0315 18:48:48.626195 139810147488960 submission.py:265] 50) loss = 0.390, grad_norm = 1.005
+I0315 18:48:48.702169 139767823984384 logging_writer.py:48] [51] global_step=51, grad_norm=0.965158, loss=0.40385
+I0315 18:48:48.708251 139810147488960 submission.py:265] 51) loss = 0.404, grad_norm = 0.965
+I0315 18:48:48.781545 139767832377088 logging_writer.py:48] [52] global_step=52, grad_norm=0.919259, loss=0.467172
+I0315 18:48:48.789387 139810147488960 submission.py:265] 52) loss = 0.467, grad_norm = 0.919
+I0315 18:48:49.128384 139767823984384 logging_writer.py:48] [53] global_step=53, grad_norm=1.0024, loss=0.463742
+I0315 18:48:49.134980 139810147488960 submission.py:265] 53) loss = 0.464, grad_norm = 1.002
+I0315 18:48:49.446299 139767832377088 logging_writer.py:48] [54] global_step=54, grad_norm=0.924501, loss=0.500354
+I0315 18:48:49.452445 139810147488960 submission.py:265] 54) loss = 0.500, grad_norm = 0.925
+I0315 18:48:49.630149 139767823984384 logging_writer.py:48] [55] global_step=55, grad_norm=0.952094, loss=0.426311
+I0315 18:48:49.639386 139810147488960 submission.py:265] 55) loss = 0.426, grad_norm = 0.952
+I0315 18:48:50.316350 139767832377088 logging_writer.py:48] [56] global_step=56, grad_norm=0.97995, loss=0.432472
+I0315 18:48:50.321179 139810147488960 submission.py:265] 56) loss = 0.432, grad_norm = 0.980
+I0315 18:48:50.584818 139767823984384 logging_writer.py:48] [57] global_step=57, grad_norm=0.975624, loss=0.416267
+I0315 18:48:50.589005 139810147488960 submission.py:265] 57) loss = 0.416, grad_norm = 0.976
+I0315 18:48:50.939713 139767832377088 logging_writer.py:48] [58] global_step=58, grad_norm=0.965792, loss=0.371408
+I0315 18:48:50.947745 139810147488960 submission.py:265] 58) loss = 0.371, grad_norm = 0.966
+I0315 18:48:51.353907 139767823984384 logging_writer.py:48] [59] global_step=59, grad_norm=0.986828, loss=0.411532
+I0315 18:48:51.358261 139810147488960 submission.py:265] 59) loss = 0.412, grad_norm = 0.987
+I0315 18:48:51.600720 139767832377088 logging_writer.py:48] [60] global_step=60, grad_norm=0.971635, loss=0.380094
+I0315 18:48:51.605288 139810147488960 submission.py:265] 60) loss = 0.380, grad_norm = 0.972
+I0315 18:48:51.909977 139767823984384 logging_writer.py:48] [61] global_step=61, grad_norm=0.966038, loss=0.377921
+I0315 18:48:51.914959 139810147488960 submission.py:265] 61) loss = 0.378, grad_norm = 0.966
+I0315 18:48:52.388154 139767832377088 logging_writer.py:48] [62] global_step=62, grad_norm=0.93768, loss=0.397842
+I0315 18:48:52.394845 139810147488960 submission.py:265] 62) loss = 0.398, grad_norm = 0.938
+I0315 18:48:52.930247 139767823984384 logging_writer.py:48] [63] global_step=63, grad_norm=0.907462, loss=0.365097
+I0315 18:48:52.936427 139810147488960 submission.py:265] 63) loss = 0.365, grad_norm = 0.907
+I0315 18:48:53.252256 139767832377088 logging_writer.py:48] [64] global_step=64, grad_norm=0.949333, loss=0.457291
+I0315 18:48:53.260986 139810147488960 submission.py:265] 64) loss = 0.457, grad_norm = 0.949
+I0315 18:48:53.412432 139767823984384 logging_writer.py:48] [65] global_step=65, grad_norm=0.880775, loss=0.412156
+I0315 18:48:53.420289 139810147488960 submission.py:265] 65) loss = 0.412, grad_norm = 0.881
+I0315 18:48:53.579354 139767832377088 logging_writer.py:48] [66] global_step=66, grad_norm=0.944014, loss=0.451394
+I0315 18:48:53.584718 139810147488960 submission.py:265] 66) loss = 0.451, grad_norm = 0.944
+I0315 18:48:53.748873 139767823984384 logging_writer.py:48] [67] global_step=67, grad_norm=0.849744, loss=0.480829
+I0315 18:48:53.754282 139810147488960 submission.py:265] 67) loss = 0.481, grad_norm = 0.850
+I0315 18:48:53.897564 139767832377088 logging_writer.py:48] [68] global_step=68, grad_norm=0.841311, loss=0.401009
+I0315 18:48:53.903919 139810147488960 submission.py:265] 68) loss = 0.401, grad_norm = 0.841
+I0315 18:48:54.053956 139767823984384 logging_writer.py:48] [69] global_step=69, grad_norm=0.814112, loss=0.380671
+I0315 18:48:54.060909 139810147488960 submission.py:265] 69) loss = 0.381, grad_norm = 0.814
+I0315 18:48:54.258853 139767832377088 logging_writer.py:48] [70] global_step=70, grad_norm=0.774689, loss=0.358611
+I0315 18:48:54.265164 139810147488960 submission.py:265] 70) loss = 0.359, grad_norm = 0.775
+I0315 18:48:54.360501 139767823984384 logging_writer.py:48] [71] global_step=71, grad_norm=0.706842, loss=0.394424
+I0315 18:48:54.366816 139810147488960 submission.py:265] 71) loss = 0.394, grad_norm = 0.707
+I0315 18:48:54.485347 139767832377088 logging_writer.py:48] [72] global_step=72, grad_norm=0.692288, loss=0.432392
+I0315 18:48:54.492851 139810147488960 submission.py:265] 72) loss = 0.432, grad_norm = 0.692
+I0315 18:48:54.622493 139767823984384 logging_writer.py:48] [73] global_step=73, grad_norm=0.649087, loss=0.377343
+I0315 18:48:54.630471 139810147488960 submission.py:265] 73) loss = 0.377, grad_norm = 0.649
+I0315 18:48:54.744620 139767832377088 logging_writer.py:48] [74] global_step=74, grad_norm=0.633157, loss=0.459294
+I0315 18:48:54.751757 139810147488960 submission.py:265] 74) loss = 0.459, grad_norm = 0.633
+I0315 18:48:54.843439 139767823984384 logging_writer.py:48] [75] global_step=75, grad_norm=0.54712, loss=0.422381
+I0315 18:48:54.848977 139810147488960 submission.py:265] 75) loss = 0.422, grad_norm = 0.547
+I0315 18:48:54.967838 139767832377088 logging_writer.py:48] [76] global_step=76, grad_norm=0.586019, loss=0.342695
+I0315 18:48:54.972857 139810147488960 submission.py:265] 76) loss = 0.343, grad_norm = 0.586
+I0315 18:48:55.103455 139767823984384 logging_writer.py:48] [77] global_step=77, grad_norm=0.521066, loss=0.37755
+I0315 18:48:55.110254 139810147488960 submission.py:265] 77) loss = 0.378, grad_norm = 0.521
+I0315 18:48:55.223286 139767832377088 logging_writer.py:48] [78] global_step=78, grad_norm=0.586913, loss=0.326904
+I0315 18:48:55.228582 139810147488960 submission.py:265] 78) loss = 0.327, grad_norm = 0.587
+I0315 18:48:55.345381 139767823984384 logging_writer.py:48] [79] global_step=79, grad_norm=0.510534, loss=0.394311
+I0315 18:48:55.354752 139810147488960 submission.py:265] 79) loss = 0.394, grad_norm = 0.511
+I0315 18:48:55.513329 139767832377088 logging_writer.py:48] [80] global_step=80, grad_norm=0.495714, loss=0.377739
+I0315 18:48:55.517917 139810147488960 submission.py:265] 80) loss = 0.378, grad_norm = 0.496
+I0315 18:48:55.627103 139767823984384 logging_writer.py:48] [81] global_step=81, grad_norm=0.522312, loss=0.333508
+I0315 18:48:55.632025 139810147488960 submission.py:265] 81) loss = 0.334, grad_norm = 0.522
+I0315 18:48:55.780470 139767832377088 logging_writer.py:48] [82] global_step=82, grad_norm=0.424017, loss=0.395048
+I0315 18:48:55.788200 139810147488960 submission.py:265] 82) loss = 0.395, grad_norm = 0.424
+I0315 18:48:55.888973 139767823984384 logging_writer.py:48] [83] global_step=83, grad_norm=0.565014, loss=0.332653
+I0315 18:48:55.894890 139810147488960 submission.py:265] 83) loss = 0.333, grad_norm = 0.565
+I0315 18:48:56.044080 139767832377088 logging_writer.py:48] [84] global_step=84, grad_norm=0.577543, loss=0.335813
+I0315 18:48:56.053202 139810147488960 submission.py:265] 84) loss = 0.336, grad_norm = 0.578
+I0315 18:48:56.258929 139767823984384 logging_writer.py:48] [85] global_step=85, grad_norm=0.394306, loss=0.463671
+I0315 18:48:56.263808 139810147488960 submission.py:265] 85) loss = 0.464, grad_norm = 0.394
+I0315 18:48:56.431000 139767832377088 logging_writer.py:48] [86] global_step=86, grad_norm=0.496973, loss=0.453688
+I0315 18:48:56.436765 139810147488960 submission.py:265] 86) loss = 0.454, grad_norm = 0.497
+I0315 18:48:56.539201 139767823984384 logging_writer.py:48] [87] global_step=87, grad_norm=0.474174, loss=0.426225
+I0315 18:48:56.544427 139810147488960 submission.py:265] 87) loss = 0.426, grad_norm = 0.474
+I0315 18:48:56.687059 139767832377088 logging_writer.py:48] [88] global_step=88, grad_norm=0.445024, loss=0.373105
+I0315 18:48:56.691002 139810147488960 submission.py:265] 88) loss = 0.373, grad_norm = 0.445
+I0315 18:48:56.935327 139767823984384 logging_writer.py:48] [89] global_step=89, grad_norm=0.534336, loss=0.360303
+I0315 18:48:56.942239 139810147488960 submission.py:265] 89) loss = 0.360, grad_norm = 0.534
+I0315 18:48:57.159730 139767832377088 logging_writer.py:48] [90] global_step=90, grad_norm=0.528702, loss=0.445967
+I0315 18:48:57.164700 139810147488960 submission.py:265] 90) loss = 0.446, grad_norm = 0.529
+I0315 18:48:57.449953 139767823984384 logging_writer.py:48] [91] global_step=91, grad_norm=0.553014, loss=0.366714
+I0315 18:48:57.455394 139810147488960 submission.py:265] 91) loss = 0.367, grad_norm = 0.553
+I0315 18:48:57.742130 139767832377088 logging_writer.py:48] [92] global_step=92, grad_norm=0.540229, loss=0.367605
+I0315 18:48:57.748340 139810147488960 submission.py:265] 92) loss = 0.368, grad_norm = 0.540
+I0315 18:48:58.038589 139767823984384 logging_writer.py:48] [93] global_step=93, grad_norm=0.508563, loss=0.431626
+I0315 18:48:58.045078 139810147488960 submission.py:265] 93) loss = 0.432, grad_norm = 0.509
+I0315 18:48:58.280250 139767832377088 logging_writer.py:48] [94] global_step=94, grad_norm=0.382002, loss=0.409604
+I0315 18:48:58.285365 139810147488960 submission.py:265] 94) loss = 0.410, grad_norm = 0.382
+I0315 18:48:58.548286 139767823984384 logging_writer.py:48] [95] global_step=95, grad_norm=0.608648, loss=0.38636
+I0315 18:48:58.554403 139810147488960 submission.py:265] 95) loss = 0.386, grad_norm = 0.609
+I0315 18:48:58.952748 139767832377088 logging_writer.py:48] [96] global_step=96, grad_norm=0.3887, loss=0.417467
+I0315 18:48:58.957036 139810147488960 submission.py:265] 96) loss = 0.417, grad_norm = 0.389
+I0315 18:48:59.214644 139767823984384 logging_writer.py:48] [97] global_step=97, grad_norm=0.524697, loss=0.377469
+I0315 18:48:59.221477 139810147488960 submission.py:265] 97) loss = 0.377, grad_norm = 0.525
+I0315 18:48:59.609601 139767832377088 logging_writer.py:48] [98] global_step=98, grad_norm=0.369466, loss=0.426853
+I0315 18:48:59.614207 139810147488960 submission.py:265] 98) loss = 0.427, grad_norm = 0.369
+I0315 18:49:00.130568 139767823984384 logging_writer.py:48] [99] global_step=99, grad_norm=0.539637, loss=0.426957
+I0315 18:49:00.136265 139810147488960 submission.py:265] 99) loss = 0.427, grad_norm = 0.540
+I0315 18:49:00.209005 139767832377088 logging_writer.py:48] [100] global_step=100, grad_norm=0.674318, loss=0.285794
+I0315 18:49:00.215190 139810147488960 submission.py:265] 100) loss = 0.286, grad_norm = 0.674
+I0315 18:50:04.157697 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:50:06.278528 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:50:08.496806 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:50:10.830443 139810147488960 submission_runner.py:469] Time since start: 304.72s, 	Step: 389, 	{'train/ssim': 0.7028932571411133, 'train/loss': 0.30498766899108887, 'validation/ssim': 0.6802990880653841, 'validation/loss': 0.32711886447268923, 'validation/num_examples': 3554, 'test/ssim': 0.69869344882278, 'test/loss': 0.328780211805798, 'test/num_examples': 3581, 'score': 148.61792993545532, 'total_duration': 304.72228622436523, 'accumulated_submission_time': 148.61792993545532, 'accumulated_eval_time': 153.6709852218628, 'accumulated_logging_time': 0.017391204833984375}
+I0315 18:50:10.841048 139767823984384 logging_writer.py:48] [389] accumulated_eval_time=153.671, accumulated_logging_time=0.0173912, accumulated_submission_time=148.618, global_step=389, preemption_count=0, score=148.618, test/loss=0.32878, test/num_examples=3581, test/ssim=0.698693, total_duration=304.722, train/loss=0.304988, train/ssim=0.702893, validation/loss=0.327119, validation/num_examples=3554, validation/ssim=0.680299
+I0315 18:50:33.937788 139767832377088 logging_writer.py:48] [500] global_step=500, grad_norm=0.0800348, loss=0.284431
+I0315 18:50:33.944257 139810147488960 submission.py:265] 500) loss = 0.284, grad_norm = 0.080
+I0315 18:51:31.665509 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:51:33.964099 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:51:36.308466 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:51:38.592334 139810147488960 submission_runner.py:469] Time since start: 392.48s, 	Step: 755, 	{'train/ssim': 0.72705078125, 'train/loss': 0.28301755019596647, 'validation/ssim': 0.7053682223155248, 'validation/loss': 0.30358103600256753, 'validation/num_examples': 3554, 'test/ssim': 0.7224614692779601, 'test/loss': 0.30572555784871547, 'test/num_examples': 3581, 'score': 227.76240706443787, 'total_duration': 392.484219789505, 'accumulated_submission_time': 227.76240706443787, 'accumulated_eval_time': 160.59793496131897, 'accumulated_logging_time': 0.03591513633728027}
+I0315 18:51:38.603245 139767823984384 logging_writer.py:48] [755] accumulated_eval_time=160.598, accumulated_logging_time=0.0359151, accumulated_submission_time=227.762, global_step=755, preemption_count=0, score=227.762, test/loss=0.305726, test/num_examples=3581, test/ssim=0.722461, total_duration=392.484, train/loss=0.283018, train/ssim=0.727051, validation/loss=0.303581, validation/num_examples=3554, validation/ssim=0.705368
+I0315 18:52:59.347570 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:53:01.517565 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:53:04.101824 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:53:06.302794 139810147488960 submission_runner.py:469] Time since start: 480.19s, 	Step: 995, 	{'train/ssim': 0.7321147237505231, 'train/loss': 0.2776509182793753, 'validation/ssim': 0.7099908883476365, 'validation/loss': 0.2980421556806591, 'validation/num_examples': 3554, 'test/ssim': 0.7270311463714745, 'test/loss': 0.30013616242844177, 'test/num_examples': 3581, 'score': 306.9708893299103, 'total_duration': 480.1946783065796, 'accumulated_submission_time': 306.9708893299103, 'accumulated_eval_time': 167.55344891548157, 'accumulated_logging_time': 0.05532693862915039}
+I0315 18:53:06.348134 139767832377088 logging_writer.py:48] [995] accumulated_eval_time=167.553, accumulated_logging_time=0.0553269, accumulated_submission_time=306.971, global_step=995, preemption_count=0, score=306.971, test/loss=0.300136, test/num_examples=3581, test/ssim=0.727031, total_duration=480.195, train/loss=0.277651, train/ssim=0.732115, validation/loss=0.298042, validation/num_examples=3554, validation/ssim=0.709991
+I0315 18:53:07.516867 139767823984384 logging_writer.py:48] [1000] global_step=1000, grad_norm=0.0651813, loss=0.383718
+I0315 18:53:07.520701 139810147488960 submission.py:265] 1000) loss = 0.384, grad_norm = 0.065
+I0315 18:53:37.670736 139767832377088 logging_writer.py:48] [1500] global_step=1500, grad_norm=0.0547444, loss=0.316652
+I0315 18:53:37.674007 139810147488960 submission.py:265] 1500) loss = 0.317, grad_norm = 0.055
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+/usr/local/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:240: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+I0315 18:54:07.981911 139767823984384 logging_writer.py:48] [2000] global_step=2000, grad_norm=0.0426914, loss=0.253182
+I0315 18:54:07.985606 139810147488960 submission.py:265] 2000) loss = 0.253, grad_norm = 0.043
+I0315 18:54:26.968353 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:54:28.997803 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:54:31.243091 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:54:33.365381 139810147488960 submission_runner.py:469] Time since start: 567.26s, 	Step: 2305, 	{'train/ssim': 0.7431771414620536, 'train/loss': 0.2686363458633423, 'validation/ssim': 0.7201176408843908, 'validation/loss': 0.28943314173950124, 'validation/num_examples': 3554, 'test/ssim': 0.7373514566898213, 'test/loss': 0.2909549477712231, 'test/num_examples': 3581, 'score': 385.69184708595276, 'total_duration': 567.2572915554047, 'accumulated_submission_time': 385.69184708595276, 'accumulated_eval_time': 173.95059657096863, 'accumulated_logging_time': 0.11103630065917969}
+I0315 18:54:33.375778 139767832377088 logging_writer.py:48] [2305] accumulated_eval_time=173.951, accumulated_logging_time=0.111036, accumulated_submission_time=385.692, global_step=2305, preemption_count=0, score=385.692, test/loss=0.290955, test/num_examples=3581, test/ssim=0.737351, total_duration=567.257, train/loss=0.268636, train/ssim=0.743177, validation/loss=0.289433, validation/num_examples=3554, validation/ssim=0.720118
+I0315 18:54:45.904617 139767823984384 logging_writer.py:48] [2500] global_step=2500, grad_norm=0.0549725, loss=0.282267
+I0315 18:54:45.908273 139810147488960 submission.py:265] 2500) loss = 0.282, grad_norm = 0.055
+I0315 18:55:16.125846 139767832377088 logging_writer.py:48] [3000] global_step=3000, grad_norm=0.123267, loss=0.221755
+I0315 18:55:16.129185 139810147488960 submission.py:265] 3000) loss = 0.222, grad_norm = 0.123
+I0315 18:55:46.459175 139767823984384 logging_writer.py:48] [3500] global_step=3500, grad_norm=0.0802883, loss=0.179975
+I0315 18:55:46.462429 139810147488960 submission.py:265] 3500) loss = 0.180, grad_norm = 0.080
+I0315 18:55:54.083968 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:55:56.086394 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:55:58.251520 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:56:00.360049 139810147488960 submission_runner.py:469] Time since start: 654.25s, 	Step: 3616, 	{'train/ssim': 0.7450756345476423, 'train/loss': 0.26681998797825407, 'validation/ssim': 0.7219236907357907, 'validation/loss': 0.28760926563818934, 'validation/num_examples': 3554, 'test/ssim': 0.7390999835285186, 'test/loss': 0.2890475352227904, 'test/num_examples': 3581, 'score': 464.5290868282318, 'total_duration': 654.2519266605377, 'accumulated_submission_time': 464.5290868282318, 'accumulated_eval_time': 180.2268307209015, 'accumulated_logging_time': 0.12996864318847656}
+I0315 18:56:00.370122 139767832377088 logging_writer.py:48] [3616] accumulated_eval_time=180.227, accumulated_logging_time=0.129969, accumulated_submission_time=464.529, global_step=3616, preemption_count=0, score=464.529, test/loss=0.289048, test/num_examples=3581, test/ssim=0.7391, total_duration=654.252, train/loss=0.26682, train/ssim=0.745076, validation/loss=0.287609, validation/num_examples=3554, validation/ssim=0.721924
+I0315 18:56:24.425155 139767823984384 logging_writer.py:48] [4000] global_step=4000, grad_norm=1.30217, loss=0.250553
+I0315 18:56:24.428462 139810147488960 submission.py:265] 4000) loss = 0.251, grad_norm = 1.302
+I0315 18:56:54.616162 139767832377088 logging_writer.py:48] [4500] global_step=4500, grad_norm=0.0635297, loss=0.265025
+I0315 18:56:54.620027 139810147488960 submission.py:265] 4500) loss = 0.265, grad_norm = 0.064
+I0315 18:57:21.058257 139810147488960 spec.py:321] Evaluating on the training split.
+I0315 18:57:23.068698 139810147488960 spec.py:333] Evaluating on the validation split.
+I0315 18:57:25.193992 139810147488960 spec.py:349] Evaluating on the test split.
+I0315 18:57:27.284449 139810147488960 submission_runner.py:469] Time since start: 741.18s, 	Step: 4928, 	{'train/ssim': 0.747300284249442, 'train/loss': 0.2659456559589931, 'validation/ssim': 0.724076442256964, 'validation/loss': 0.286746032062245, 'validation/num_examples': 3554, 'test/ssim': 0.741336927970539, 'test/loss': 0.2881038679619869, 'test/num_examples': 3581, 'score': 543.2976958751678, 'total_duration': 741.1763627529144, 'accumulated_submission_time': 543.2976958751678, 'accumulated_eval_time': 186.453111410141, 'accumulated_logging_time': 0.14830780029296875}
+I0315 18:57:27.294789 139767823984384 logging_writer.py:48] [4928] accumulated_eval_time=186.453, accumulated_logging_time=0.148308, accumulated_submission_time=543.298, global_step=4928, preemption_count=0, score=543.298, test/loss=0.288104, test/num_examples=3581, test/ssim=0.741337, total_duration=741.176, train/loss=0.265946, train/ssim=0.7473, validation/loss=0.286746, validation/num_examples=3554, validation/ssim=0.724076
+I0315 18:57:27.905929 139767832377088 logging_writer.py:48] [4928] global_step=4928, preemption_count=0, score=543.298
+I0315 18:57:28.964173 139810147488960 submission_runner.py:646] Tuning trial 5/5
+I0315 18:57:28.964368 139810147488960 submission_runner.py:647] Hyperparameters: Hyperparameters(learning_rate=0.001308209823469072, one_minus_beta1=0.02686663061, one_minus_beta2=0.00187670778, epsilon=1e-08, one_minus_momentum=0.0, use_momentum=False, weight_decay=0.16375311233774334, max_preconditioner_dim=1024, precondition_frequency=100, start_preconditioning_step=-1, inv_root_override=0, exponent_multiplier=1.0, grafting_type='ADAM', grafting_epsilon=1e-08, use_normalized_grafting=False, communication_dtype='FP32', communicate_params=True, use_cosine_decay=True, warmup_factor=0.1, label_smoothing=0.1, dropout_rate=0.0, use_nadam=True, step_hint_factor=1.0)
+I0315 18:57:28.964991 139810147488960 submission_runner.py:648] Metrics: {'eval_results': [(1, {'train/ssim': 0.2217003447668893, 'train/loss': 0.9455616814749581, 'validation/ssim': 0.21532239683169493, 'validation/loss': 0.9523664741752251, 'validation/num_examples': 3554, 'test/ssim': 0.2393434594310685, 'test/loss': 0.9480460432447291, 'test/num_examples': 3581, 'score': 69.55673336982727, 'total_duration': 217.22249388694763, 'accumulated_submission_time': 69.55673336982727, 'accumulated_eval_time': 146.99801993370056, 'accumulated_logging_time': 0, 'global_step': 1, 'preemption_count': 0}), (389, {'train/ssim': 0.7028932571411133, 'train/loss': 0.30498766899108887, 'validation/ssim': 0.6802990880653841, 'validation/loss': 0.32711886447268923, 'validation/num_examples': 3554, 'test/ssim': 0.69869344882278, 'test/loss': 0.328780211805798, 'test/num_examples': 3581, 'score': 148.61792993545532, 'total_duration': 304.72228622436523, 'accumulated_submission_time': 148.61792993545532, 'accumulated_eval_time': 153.6709852218628, 'accumulated_logging_time': 0.017391204833984375, 'global_step': 389, 'preemption_count': 0}), (755, {'train/ssim': 0.72705078125, 'train/loss': 0.28301755019596647, 'validation/ssim': 0.7053682223155248, 'validation/loss': 0.30358103600256753, 'validation/num_examples': 3554, 'test/ssim': 0.7224614692779601, 'test/loss': 0.30572555784871547, 'test/num_examples': 3581, 'score': 227.76240706443787, 'total_duration': 392.484219789505, 'accumulated_submission_time': 227.76240706443787, 'accumulated_eval_time': 160.59793496131897, 'accumulated_logging_time': 0.03591513633728027, 'global_step': 755, 'preemption_count': 0}), (995, {'train/ssim': 0.7321147237505231, 'train/loss': 0.2776509182793753, 'validation/ssim': 0.7099908883476365, 'validation/loss': 0.2980421556806591, 'validation/num_examples': 3554, 'test/ssim': 0.7270311463714745, 'test/loss': 0.30013616242844177, 'test/num_examples': 3581, 'score': 306.9708893299103, 'total_duration': 480.1946783065796, 'accumulated_submission_time': 306.9708893299103, 'accumulated_eval_time': 167.55344891548157, 'accumulated_logging_time': 0.05532693862915039, 'global_step': 995, 'preemption_count': 0}), (2305, {'train/ssim': 0.7431771414620536, 'train/loss': 0.2686363458633423, 'validation/ssim': 0.7201176408843908, 'validation/loss': 0.28943314173950124, 'validation/num_examples': 3554, 'test/ssim': 0.7373514566898213, 'test/loss': 0.2909549477712231, 'test/num_examples': 3581, 'score': 385.69184708595276, 'total_duration': 567.2572915554047, 'accumulated_submission_time': 385.69184708595276, 'accumulated_eval_time': 173.95059657096863, 'accumulated_logging_time': 0.11103630065917969, 'global_step': 2305, 'preemption_count': 0}), (3616, {'train/ssim': 0.7450756345476423, 'train/loss': 0.26681998797825407, 'validation/ssim': 0.7219236907357907, 'validation/loss': 0.28760926563818934, 'validation/num_examples': 3554, 'test/ssim': 0.7390999835285186, 'test/loss': 0.2890475352227904, 'test/num_examples': 3581, 'score': 464.5290868282318, 'total_duration': 654.2519266605377, 'accumulated_submission_time': 464.5290868282318, 'accumulated_eval_time': 180.2268307209015, 'accumulated_logging_time': 0.12996864318847656, 'global_step': 3616, 'preemption_count': 0}), (4928, {'train/ssim': 0.747300284249442, 'train/loss': 0.2659456559589931, 'validation/ssim': 0.724076442256964, 'validation/loss': 0.286746032062245, 'validation/num_examples': 3554, 'test/ssim': 0.741336927970539, 'test/loss': 0.2881038679619869, 'test/num_examples': 3581, 'score': 543.2976958751678, 'total_duration': 741.1763627529144, 'accumulated_submission_time': 543.2976958751678, 'accumulated_eval_time': 186.453111410141, 'accumulated_logging_time': 0.14830780029296875, 'global_step': 4928, 'preemption_count': 0})], 'global_step': 4928}
+I0315 18:57:28.965054 139810147488960 submission_runner.py:649] Timing: 543.2976958751678
+I0315 18:57:28.965090 139810147488960 submission_runner.py:651] Total number of evals: 7
+I0315 18:57:28.965141 139810147488960 submission_runner.py:652] ====================
+I0315 18:57:28.965218 139810147488960 submission_runner.py:750] Final fastmri score: 4

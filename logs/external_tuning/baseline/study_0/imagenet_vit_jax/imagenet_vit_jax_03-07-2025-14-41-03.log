@@ -1,0 +1,1105 @@
+python submission_runner.py --framework=jax --workload=imagenet_vit --submission_path=prize_qualification_baselines/external_tuning/jax_nadamw_full_budget.py --data_dir=/data/imagenet/jax --num_tuning_trials=1 --experiment_dir=/experiment_runs --experiment_name=submissions/rolling_leaderboard/external_tuning/baseline/study_0 --overwrite=True --save_checkpoints=False --rng_seed=616093163 --imagenet_v2_data_dir=/data/imagenet/jax --tuning_ruleset=external --tuning_search_space=prize_qualification_baselines/external_tuning/tuning_search_space.json --num_tuning_trials=5 --hparam_start_index=4 --hparam_end_index=5 2>&1 | tee -a /logs/imagenet_vit_jax_03-07-2025-14-41-03.log
+2025-03-07 14:41:21.812092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1741358482.371828       9 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1741358482.640922       9 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ERROR:root:Unable to import wandb.
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/algoperf/logger_utils.py", line 27, in <module>
+    import wandb  # pylint: disable=g-import-not-at-top
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'wandb'
+I0307 14:42:16.348720 140688817403072 logger_utils.py:81] Creating experiment directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/baseline/study_0/imagenet_vit_jax.
+I0307 14:42:19.236856 140688817403072 xla_bridge.py:884] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: CUDA
+I0307 14:42:19.239768 140688817403072 xla_bridge.py:884] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+I0307 14:42:19.264054 140688817403072 submission_runner.py:606] Using RNG seed 616093163
+I0307 14:42:22.874766 140688817403072 submission_runner.py:615] --- Tuning run 5/5 ---
+I0307 14:42:22.874941 140688817403072 submission_runner.py:620] Creating tuning directory at /experiment_runs/submissions/rolling_leaderboard/external_tuning/baseline/study_0/imagenet_vit_jax/trial_5.
+I0307 14:42:22.875122 140688817403072 logger_utils.py:97] Saving hparams to /experiment_runs/submissions/rolling_leaderboard/external_tuning/baseline/study_0/imagenet_vit_jax/trial_5/hparams.json.
+I0307 14:42:23.111853 140688817403072 submission_runner.py:218] Initializing dataset.
+I0307 14:42:24.708672 140688817403072 dataset_info.py:690] Load dataset info from /data/imagenet/jax/imagenet2012/5.1.0
+I0307 14:42:25.059868 140688817403072 reader.py:261] Creating a tf.data.Dataset reading 1024 files located in folders: /data/imagenet/jax/imagenet2012/5.1.0.
+I0307 14:42:25.471248 140688817403072 logging_logger.py:49] Constructing tf.data.Dataset imagenet2012 for split train, from /data/imagenet/jax/imagenet2012/5.1.0
+I0307 14:42:33.752730 140688817403072 submission_runner.py:229] Initializing model.
+I0307 14:43:11.334407 140688817403072 submission_runner.py:272] Initializing optimizer.
+I0307 14:43:11.960984 140688817403072 submission_runner.py:279] Initializing metrics bundle.
+I0307 14:43:11.961252 140688817403072 submission_runner.py:301] Initializing checkpoint and logger.
+I0307 14:43:11.962361 140688817403072 checkpoints.py:1101] Found no checkpoint files in /experiment_runs/submissions/rolling_leaderboard/external_tuning/baseline/study_0/imagenet_vit_jax/trial_5 with prefix checkpoint_
+I0307 14:43:11.962452 140688817403072 submission_runner.py:321] Saving meta data to /experiment_runs/submissions/rolling_leaderboard/external_tuning/baseline/study_0/imagenet_vit_jax/trial_5/meta_data_0.json.
+I0307 14:43:12.481758 140688817403072 submission_runner.py:325] Saving flags to /experiment_runs/submissions/rolling_leaderboard/external_tuning/baseline/study_0/imagenet_vit_jax/trial_5/flags_0.json.
+I0307 14:43:12.817320 140688817403072 submission_runner.py:337] Starting training loop.
+E0307 14:44:27.453683     160 pjrt_stream_executor_client.cc:2826] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.454059     162 pjrt_stream_executor_client.cc:2826] Execution of replica 1 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.457802     168 pjrt_stream_executor_client.cc:2826] Execution of replica 4 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.458232     170 pjrt_stream_executor_client.cc:2826] Execution of replica 5 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.460229     166 pjrt_stream_executor_client.cc:2826] Execution of replica 3 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.461193     172 pjrt_stream_executor_client.cc:2826] Execution of replica 6 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.462157     164 pjrt_stream_executor_client.cc:2826] Execution of replica 2 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+E0307 14:44:27.463351     174 pjrt_stream_executor_client.cc:2826] Execution of replica 7 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+
+Traceback (most recent call last):
+  File "/algorithmic-efficiency/submission_runner.py", line 766, in <module>
+    app.run(main)
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 308, in run
+    _run_main(main, args)
+  File "/usr/local/lib/python3.11/site-packages/absl/app.py", line 254, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/algorithmic-efficiency/submission_runner.py", line 734, in main
+    score = score_submission_on_workload(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/algorithmic-efficiency/submission_runner.py", line 630, in score_submission_on_workload
+    timing, metrics = train_once(workload, workload_name,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/algorithmic-efficiency/submission_runner.py", line 361, in train_once
+    optimizer_state, model_params, model_state = update_params(
+                                                 ^^^^^^^^^^^^^^
+  File "/algorithmic-efficiency/prize_qualification_baselines/external_tuning/jax_nadamw_full_budget.py", line 284, in update_params
+    outputs = pmapped_train_step(workload,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13516544224 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  327.16MiB
+              constant allocation:         4B
+        maybe_live_out allocation:  253.18MiB
+     preallocated temp allocation:   12.59GiB
+  preallocated temp fragmentation:  265.17MiB (2.06%)
+                 total allocation:   12.91GiB
+              total fragmentation:  266.39MiB (2.02%)
+Peak buffers:
+	Buffer 1:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_9/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 2:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_10/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 3:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/transpose(jvp(ViT))/Transformer/encoderblock_11/MlpBlock_3/Dense_0/reduce_sum[axes=(0, 1)]" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=49 deduplicated_name="input_add_reduce_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 4:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_11/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 5:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_10/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 6:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_9/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 7:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_8/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 8:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_7/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 9:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_6/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 10:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_5/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 11:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_4/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 12:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_3/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 13:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_2/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 14:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_1/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+	Buffer 15:
+		Size: 147.00MiB
+		Operator: op_name="pmap(pmapped_train_step)/jit(main)/jvp(ViT)/Transformer/encoderblock_0/MlpBlock_3/Dropout_0/select_n" source_file="/algorithmic-efficiency/algoperf/workloads/imagenet_vit/imagenet_jax/models.py" source_line=56 deduplicated_name="loop_select_fusion"
+		XLA Label: fusion
+		Shape: f32[128,196,1536]
+		==========================
+
+: while running replica 0 and partition 0 of a replicated computation (other replicas may have failed as well).
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
