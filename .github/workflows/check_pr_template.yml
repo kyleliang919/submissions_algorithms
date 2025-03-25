@@ -150,10 +150,13 @@ jobs:
             // Create submission_info.yml
             try {
               let submissionPath;
+              // Remove any leading/trailing slashes and potential duplicate paths
+              const cleanFolder = data.submission_folder.replace(/^\/+|\/+$/g, '').replace(/^(external_tuning|self_tuning)\//, '');
+              
               if (data.ruleset === 'external') {
-                submissionPath = `submissions/external_tuning/${data.submission_folder}`;
+                submissionPath = `submissions/external_tuning/${cleanFolder}`;
               } else if (data.ruleset === 'self-tuning') {
-                submissionPath = `submissions/self_tuning/${data.submission_folder}`;
+                submissionPath = `submissions/self_tuning/${cleanFolder}`;
               } else {
                 core.setFailed(`Invalid ruleset value: ${data.ruleset}. Must be "external" or "self-tuning".`);
                 return;
