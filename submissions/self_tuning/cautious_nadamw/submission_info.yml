@@ -5,5 +5,4 @@ affiliations: ""
 version: "1.0"
 ruleset: self-tuning
 framework: JAX
-description: >-
-  Cautious NadamW ([Liang, 2025](https://arxiv.org/abs/2411.16085)).
+description: Cautious NadamW ([Liang, 2025](https://arxiv.org/abs/2411.16085)).
